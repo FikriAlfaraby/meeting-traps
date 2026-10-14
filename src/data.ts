@@ -35,6 +35,25 @@ export interface OutsideOwnerTrap extends TaskTrap {
   allowed: string[]
 }
 
+/** Someone proposed an owner who never agreed: the minutes must not present it as their commitment. */
+export interface UnconfirmedTrap extends TaskTrap {
+  kind: "unconfirmed"
+  proposed: string
+}
+
+/** A commitment that holds only if something happens first: the minutes must keep the condition. */
+export interface ConditionalTrap extends TaskTrap {
+  kind: "conditional"
+  owner: string
+  /** Words that name the condition, besides "if", "once", "after" and their Indonesian kin. */
+  condition: string[]
+}
+
+/** "We should...": a task for the group, which the minutes must not hand to one person. */
+export interface WeTaskTrap extends TaskTrap {
+  kind: "we-task"
+}
+
 /** A joke, a wish or a conditional offer: it must not become an action item. */
 export interface NotATaskTrap extends TaskTrap {
   kind: "not-a-task"
@@ -90,6 +109,9 @@ export type Trap =
   | UnownedTrap
   | SpeakerLabelTrap
   | OutsideOwnerTrap
+  | UnconfirmedTrap
+  | ConditionalTrap
+  | WeTaskTrap
   | NotATaskTrap
   | DueExactTrap
   | DueVagueTrap

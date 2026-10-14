@@ -12,7 +12,8 @@
     "Pak Hendra",
     "Dewi",
     "Mei",
-    "Andre"
+    "Andre",
+    "Raj"
   ],
   "meetings": [
     {
@@ -1635,6 +1636,1037 @@
             "reconcil"
           ],
           "why": "'Today' is Thursday 15 October."
+        }
+      ]
+    },
+    {
+      "id": "m17",
+      "title": "QRIS pilot review",
+      "date": "2026-10-12",
+      "weekday": "Monday",
+      "time": "10:00",
+      "language": "id-en",
+      "attendees": [
+        "Laras",
+        "Bima",
+        "Tomi",
+        "Ayu",
+        "Kevin"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Laras",
+          "Pagi semua. Weekend gimana? Ada yang ke mana?"
+        ],
+        [
+          "Ayu",
+          "Gue ke nikahan sepupu di Bogor, macet parah."
+        ],
+        [
+          "Tomi",
+          "Gue cuma tidur sih, sumpah."
+        ],
+        [
+          "Laras",
+          "Haha, valid. Oke kita mulai. Agenda: review pilot QRIS minggu lalu, terus persiapan launch."
+        ],
+        [
+          "Kevin",
+          "Pilotnya jalan ke 5 persen user. Total 4.200 transaksi QRIS, success rate 97 persen."
+        ],
+        [
+          "Laras",
+          "Lumayan. Yang 3 persen gagal kenapa?"
+        ],
+        [
+          "Kevin",
+          "Mayoritas timeout di sisi acquirer. Sisanya user batal sendiri."
+        ],
+        [
+          "Ayu",
+          "Dari CS ada 31 tiket. Paling banyak soal pembayaran udah sukses tapi status di app masih pending."
+        ],
+        [
+          "Bima",
+          "Itu callback dari acquirer yang telat. Kadang baru masuk sepuluh menit kemudian."
+        ],
+        [
+          "Tomi",
+          "Hmm, ntar gue cek log callback-nya deh."
+        ],
+        [
+          "Laras",
+          "Oke."
+        ],
+        [
+          "Bima",
+          "Tomi bisa sekalian bikin retry buat callback yang telat kayaknya."
+        ],
+        [
+          "Tomi",
+          "Hmm, itu agak gede sih kerjaannya."
+        ],
+        [
+          "Laras",
+          "Oke, itu kita lihat nanti."
+        ],
+        [
+          "Ayu",
+          "Terus FAQ soal status pending perlu ditambah. Gue update hari Jumat ya."
+        ],
+        [
+          "Laras",
+          "Sip."
+        ],
+        [
+          "Kevin",
+          "Satu lagi. Finance minta laporan settlement QRIS harian, karena dananya masuk H+1."
+        ],
+        [
+          "Laras",
+          "Kevin, bisa dibikinin dashboard-nya?"
+        ],
+        [
+          "Kevin",
+          "Bisa, tapi bukan minggu ini. Minggu depan ya."
+        ],
+        [
+          "Laras",
+          "Oke, minggu depan."
+        ],
+        [
+          "Bima",
+          "Soal launch tanggal 20: gimana kalau kita batasi ke 50 persen user dulu, sampai callback-nya beres?"
+        ],
+        [
+          "Laras",
+          "Hmm. Kev, menurut data gimana?"
+        ],
+        [
+          "Kevin",
+          "97 persen sukses itu udah di atas target kita, 95."
+        ],
+        [
+          "Tomi",
+          "Dan kalau dibatasi, kampanye marketing-nya jadi aneh."
+        ],
+        [
+          "Laras",
+          "Oke. Launch tetap untuk semua user, nggak kita batasi."
+        ],
+        [
+          "Bima",
+          "Oke, fair."
+        ],
+        [
+          "Laras",
+          "Satu lagi: kita juga harus kabarin merchant soal settlement H+1 ini."
+        ],
+        [
+          "Ayu",
+          "Iya, banyak merchant yang nanya."
+        ],
+        [
+          "Ayu",
+          "Eh sorry, balik ke FAQ tadi. Jumat gue cuti ternyata. Senin aja ya."
+        ],
+        [
+          "Laras",
+          "Oke, Senin."
+        ],
+        [
+          "Laras",
+          "Udah ya. Makasih semua, semangat minggu launch."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m17-callback",
+          "kind": "owned",
+          "task": [
+            "callback log",
+            "log"
+          ],
+          "owner": "Tomi",
+          "exclude": [
+            "retry"
+          ],
+          "why": "'Ntar gue cek log callback-nya deh': a light promise, but Tomi's own."
+        },
+        {
+          "id": "m17-callback-due",
+          "kind": "due-none",
+          "task": [
+            "callback log",
+            "log"
+          ],
+          "exclude": [
+            "retry"
+          ],
+          "why": "Tomi gives no date."
+        },
+        {
+          "id": "m17-retry",
+          "kind": "unconfirmed",
+          "task": [
+            "retry"
+          ],
+          "proposed": "Tomi",
+          "why": "Bima suggests Tomi build the retry; Tomi only says it is big, and Laras puts it off."
+        },
+        {
+          "id": "m17-faq",
+          "kind": "owned",
+          "task": [
+            "faq"
+          ],
+          "owner": "Ayu",
+          "why": "Ayu takes the FAQ update."
+        },
+        {
+          "id": "m17-faq-due",
+          "kind": "due-exact",
+          "task": [
+            "faq"
+          ],
+          "date": "2026-10-19",
+          "why": "Ayu first says Friday, then moves it: 'Senin aja'. After a Monday meeting: Monday 19 October."
+        },
+        {
+          "id": "m17-dashboard",
+          "kind": "owned",
+          "task": [
+            "dashboard"
+          ],
+          "owner": "Kevin",
+          "why": "Laras asks Kevin; he agrees."
+        },
+        {
+          "id": "m17-dashboard-due",
+          "kind": "due-vague",
+          "task": [
+            "dashboard"
+          ],
+          "said": "minggu depan",
+          "why": "'Minggu depan': next week, no day."
+        },
+        {
+          "id": "m17-limit",
+          "kind": "not-decided",
+          "topic": [
+            "50"
+          ],
+          "why": "Limiting the launch to half the users was proposed and turned down."
+        },
+        {
+          "id": "m17-all",
+          "kind": "decided",
+          "topic": [
+            "all users",
+            "semua user",
+            "every user",
+            "100%",
+            "100 percent",
+            "not limit",
+            "no limit",
+            "won't limit",
+            "will not limit",
+            "not be limited",
+            "without limit",
+            "unrestricted"
+          ],
+          "why": "Decided: the launch stays open to all users."
+        },
+        {
+          "id": "m17-merchants",
+          "kind": "we-task",
+          "task": [
+            "merchant"
+          ],
+          "why": "'Kita juga harus kabarin merchant': we, not a person."
+        }
+      ]
+    },
+    {
+      "id": "m18",
+      "title": "11.11 war room",
+      "date": "2026-10-14",
+      "weekday": "Wednesday",
+      "time": "15:00",
+      "language": "id-en",
+      "attendees": [
+        "Laras",
+        "Sekar",
+        "Kevin",
+        "Ayu",
+        "Tomi",
+        "Bima"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Laras",
+          "Oke, war room 11.11 pertama. Kurang dari empat minggu lagi."
+        ],
+        [
+          "Kevin",
+          "Gue bawa martabak, ambil aja ya."
+        ],
+        [
+          "Ayu",
+          "Wah, makasih Kev!"
+        ],
+        [
+          "Laras",
+          "Oke. Pertama, voucher. Minggu lalu kita belum mutusin batasnya."
+        ],
+        [
+          "Kevin",
+          "Data tahun lalu: 8 persen user pakai voucher lebih dari sekali, dan itu nyedot 30 persen budget."
+        ],
+        [
+          "Laras",
+          "Itu gede. Marketing udah setuju kalau kita batasi?"
+        ],
+        [
+          "Ayu",
+          "Udah, kemarin mereka bilang oke di chat."
+        ],
+        [
+          "Laras",
+          "Oke, diputuskan: satu voucher per user selama 11.11."
+        ],
+        [
+          "Tomi",
+          "Sip, itu gampang di backend."
+        ],
+        [
+          "Laras",
+          "Kedua, banner. Sekar, versi kedua bannernya bisa?"
+        ],
+        [
+          "Sekar",
+          "Gue lihat dulu ya kerjaan gue minggu ini."
+        ],
+        [
+          "Laras",
+          "Oke."
+        ],
+        [
+          "Bima",
+          "Terus migrasi tabel voucher. Tomi, tolong bikin script migrasinya ya."
+        ],
+        [
+          "Tomi",
+          "Bisa."
+        ],
+        [
+          "Kevin",
+          "Oh iya, data A/B test checkout kemarin gue kirim sore ini ya, ke channel squad."
+        ],
+        [
+          "Laras",
+          "Thanks Kev."
+        ],
+        [
+          "Bima",
+          "Eh tunggu, script migrasi itu ternyata udah gue bikin minggu lalu. Nggak usah, Tom."
+        ],
+        [
+          "Tomi",
+          "Oh oke, mantap."
+        ],
+        [
+          "Ayu",
+          "Ketiga: email ke merchant soal syarat promo."
+        ],
+        [
+          "Laras",
+          "Itu nunggu legal. Kalau legal oke, Ayu yang kirim email ke merchant."
+        ],
+        [
+          "Ayu",
+          "Siap, kalau udah oke dari legal."
+        ],
+        [
+          "Sekar",
+          "Btw martabaknya enak banget, beli di mana?"
+        ],
+        [
+          "Kevin",
+          "Deket kantor, yang di pojok."
+        ],
+        [
+          "Laras",
+          "Oke, segitu dulu. Makasih semua."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m18-voucher",
+          "kind": "decided",
+          "topic": [
+            "voucher"
+          ],
+          "also": [
+            "one",
+            "1 ",
+            "single",
+            "satu",
+            "per user"
+          ],
+          "why": "Decided: one voucher per user during 11.11."
+        },
+        {
+          "id": "m18-banner",
+          "kind": "unconfirmed",
+          "task": [
+            "banner"
+          ],
+          "proposed": "Sekar",
+          "why": "Laras asks Sekar; Sekar only says she will check her workload first."
+        },
+        {
+          "id": "m18-migration",
+          "kind": "not-a-task",
+          "task": [
+            "migrat"
+          ],
+          "why": "Tomi was asked, then Bima says the script already exists: cancelled."
+        },
+        {
+          "id": "m18-ab",
+          "kind": "owned",
+          "task": [
+            "a/b",
+            "ab test",
+            "a b test"
+          ],
+          "owner": "Kevin",
+          "why": "Kevin, between bites of martabak, will send the A/B data."
+        },
+        {
+          "id": "m18-ab-due",
+          "kind": "due-exact",
+          "task": [
+            "a/b",
+            "ab test",
+            "a b test"
+          ],
+          "date": "2026-10-14",
+          "why": "'Sore ini': this afternoon, Wednesday 14 October."
+        },
+        {
+          "id": "m18-email",
+          "kind": "conditional",
+          "task": [
+            "merchant"
+          ],
+          "owner": "Ayu",
+          "condition": [
+            "legal"
+          ],
+          "why": "Ayu sends the email only once legal agrees."
+        }
+      ]
+    },
+    {
+      "id": "m19",
+      "title": "SendWave vendor call",
+      "date": "2026-10-13",
+      "weekday": "Tuesday",
+      "time": "13:00",
+      "language": "en",
+      "attendees": [
+        "Laras",
+        "Bima",
+        "Raj"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Raj",
+          "Thanks for making time. How's the week going?"
+        ],
+        [
+          "Laras",
+          "Busy, we're launching QRIS next week."
+        ],
+        [
+          "Raj",
+          "Congratulations! So, about OTP delivery: we can do Indonesian SMS at 210 rupiah per message."
+        ],
+        [
+          "Bima",
+          "Our current provider is around 250, but delivery is what matters. Our OTPs arrive late."
+        ],
+        [
+          "Raj",
+          "Our median delivery in Indonesia is under four seconds."
+        ],
+        [
+          "Bima",
+          "Can you also share the delivery-rate report for Indonesia, by carrier?"
+        ],
+        [
+          "Raj",
+          "Let me check whether I'm allowed to share that one."
+        ],
+        [
+          "Laras",
+          "And the price, is that final?"
+        ],
+        [
+          "Raj",
+          "I can revise it for your volume. I'll send the revised pricing tomorrow."
+        ],
+        [
+          "Laras",
+          "Good."
+        ],
+        [
+          "Raj",
+          "Would you sign a 12-month contract? That's where the best price is."
+        ],
+        [
+          "Laras",
+          "We'd have to discuss that with finance first."
+        ],
+        [
+          "Bima",
+          "One more thing: do you support WhatsApp OTP as a fallback?"
+        ],
+        [
+          "Raj",
+          "Yes, it's in beta in Indonesia."
+        ],
+        [
+          "Laras",
+          "Okay. To be clear on our side: we won't switch providers this quarter, whatever the price. Q1 at the earliest."
+        ],
+        [
+          "Raj",
+          "Understood, that's helpful."
+        ],
+        [
+          "Laras",
+          "Internally, someone has to compare your numbers with our current provider's."
+        ],
+        [
+          "Bima",
+          "Yeah, we'll need that before Q1."
+        ],
+        [
+          "Raj",
+          "Great talking to you both."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m19-pricing",
+          "kind": "owned",
+          "task": [
+            "pricing",
+            "price"
+          ],
+          "owner": "Raj",
+          "exclude": [
+            "compare"
+          ],
+          "why": "Raj will send revised pricing."
+        },
+        {
+          "id": "m19-pricing-due",
+          "kind": "due-exact",
+          "task": [
+            "pricing",
+            "price"
+          ],
+          "date": "2026-10-14",
+          "exclude": [
+            "compare"
+          ],
+          "why": "'Tomorrow' after a Tuesday call: Wednesday 14 October."
+        },
+        {
+          "id": "m19-report",
+          "kind": "unconfirmed",
+          "task": [
+            "delivery rate",
+            "delivery-rate",
+            "carrier"
+          ],
+          "proposed": "Raj",
+          "why": "Raj only says he will check whether he may share the report."
+        },
+        {
+          "id": "m19-switch",
+          "kind": "decided",
+          "topic": [
+            "switch",
+            "quarter",
+            "q1"
+          ],
+          "why": "Decided: no switch this quarter; Q1 at the earliest."
+        },
+        {
+          "id": "m19-contract",
+          "kind": "not-decided",
+          "topic": [
+            "12-month",
+            "12 month",
+            "twelve-month",
+            "contract"
+          ],
+          "why": "A 12-month contract needs finance first."
+        },
+        {
+          "id": "m19-compare",
+          "kind": "unowned",
+          "task": [
+            "compare",
+            "comparison"
+          ],
+          "why": "'Someone has to compare' the numbers; Bima agrees it is needed, nobody takes it."
+        }
+      ]
+    },
+    {
+      "id": "m20",
+      "title": "Incident review: double charges",
+      "date": "2026-10-16",
+      "weekday": "Friday",
+      "time": "09:00",
+      "language": "en",
+      "attendees": [
+        "Laras",
+        "Bima",
+        "Tomi",
+        "Rina",
+        "Ayu"
+      ],
+      "speakersUnresolved": true,
+      "lines": [
+        [
+          "Speaker 1",
+          "Okay, um, let's start. This is the review for Wednesday's double charges."
+        ],
+        [
+          "Speaker 2",
+          "So, uh, timeline first. At 14:02 the acquirer started timing out, and our client retried."
+        ],
+        [
+          "Speaker 3",
+          "And the retry didn't carry an idempotency key, so the second request charged again."
+        ],
+        [
+          "Speaker 1",
+          "How many customers?"
+        ],
+        [
+          "Speaker 5",
+          "Twelve tickets came in. Probably more who didn't complain."
+        ],
+        [
+          "Speaker 2",
+          "Logs say 37 double charges."
+        ],
+        [
+          "Speaker 1",
+          "Okay. First, the fix."
+        ],
+        [
+          "Speaker 3",
+          "I'll add the idempotency key check today. It's small."
+        ],
+        [
+          "Speaker 1",
+          "Good. Then the refunds. All 37 are refunded?"
+        ],
+        [
+          "Speaker 5",
+          "The twelve with tickets, yes. The other twenty-five, not yet."
+        ],
+        [
+          "Speaker 1",
+          "We should email the affected customers today, and refund the rest."
+        ],
+        [
+          "Speaker 4",
+          "I'll write the postmortem doc."
+        ],
+        [
+          "Speaker 2",
+          "Uh, actually I have the full timeline open already."
+        ],
+        [
+          "Speaker 4",
+          "Oh, then you write it, you know it better."
+        ],
+        [
+          "Speaker 2",
+          "Fine, I'll write it. By Monday."
+        ],
+        [
+          "Speaker 1",
+          "Thanks. Anything else? The test that should have caught this?"
+        ],
+        [
+          "Speaker 4",
+          "There's no test for retries with a timeout. Someone should add one."
+        ],
+        [
+          "Speaker 1",
+          "Agreed."
+        ],
+        [
+          "Speaker 1",
+          "Okay, um, that's it. Thanks everyone."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m20-key",
+          "kind": "speaker-label",
+          "task": [
+            "idempotency"
+          ],
+          "owner": "Speaker 3",
+          "why": "The recording does not say who Speaker 3 is."
+        },
+        {
+          "id": "m20-key-due",
+          "kind": "due-exact",
+          "task": [
+            "idempotency"
+          ],
+          "date": "2026-10-16",
+          "why": "'Today' is Friday 16 October."
+        },
+        {
+          "id": "m20-postmortem",
+          "kind": "speaker-label",
+          "task": [
+            "postmortem",
+            "post-mortem"
+          ],
+          "owner": "Speaker 2",
+          "why": "Speaker 4 offers, then hands it to Speaker 2, who takes it."
+        },
+        {
+          "id": "m20-postmortem-due",
+          "kind": "due-exact",
+          "task": [
+            "postmortem",
+            "post-mortem"
+          ],
+          "date": "2026-10-19",
+          "why": "'By Monday' after a Friday meeting: Monday 19 October."
+        },
+        {
+          "id": "m20-email",
+          "kind": "we-task",
+          "task": [
+            "email"
+          ],
+          "why": "'We should email the affected customers': we, not a person."
+        },
+        {
+          "id": "m20-test",
+          "kind": "unowned",
+          "task": [
+            "test"
+          ],
+          "why": "'Someone should add one.' Nobody takes it."
+        }
+      ],
+      "note": "A transcript with filler words and unnamed speakers, the way a recorder writes it."
+    },
+    {
+      "id": "m21",
+      "title": "1:1 Laras and Bima",
+      "date": "2026-10-14",
+      "weekday": "Wednesday",
+      "time": "17:00",
+      "language": "id-en",
+      "attendees": [
+        "Laras",
+        "Bima"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Laras",
+          "Gimana kabar? Anak lo udah sembuh?"
+        ],
+        [
+          "Bima",
+          "Udah, alhamdulillah. Kemarin sempat demam tiga hari."
+        ],
+        [
+          "Laras",
+          "Syukurlah. Oke, ada yang mau lo bahas duluan?"
+        ],
+        [
+          "Bima",
+          "Iya, gue mau ambil cuti tanggal 2 sampai 6 November."
+        ],
+        [
+          "Laras",
+          "Oke, aman. Nanti gue bantu cari pengganti on-call selama lo cuti."
+        ],
+        [
+          "Bima",
+          "Thanks. Terus soal Tomi: menurut gue dia udah siap naik ke senior."
+        ],
+        [
+          "Laras",
+          "Setuju, kerjanya bagus banget di QRIS."
+        ],
+        [
+          "Bima",
+          "Rekomendasinya gue tulis minggu ini ya."
+        ],
+        [
+          "Laras",
+          "Oke."
+        ],
+        [
+          "Bima",
+          "Satu lagi, soal hiring. Kita jadi buka posisi backend baru?"
+        ],
+        [
+          "Laras",
+          "Udah gue omongin sama Pak Hendra. Kita nggak buka posisi baru sampai Januari, budget-nya belum ada."
+        ],
+        [
+          "Bima",
+          "Oke, paham."
+        ],
+        [
+          "Laras",
+          "Kita juga perlu ngomongin roadmap Q1, tapi nanti aja pas offsite."
+        ],
+        [
+          "Bima",
+          "Setuju. Udah capek gue hari ini, haha."
+        ],
+        [
+          "Laras",
+          "Haha, sama. Makasih ya Bim."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m21-oncall",
+          "kind": "owned",
+          "task": [
+            "on-call",
+            "on call",
+            "oncall"
+          ],
+          "owner": "Laras",
+          "why": "Laras takes finding an on-call stand-in."
+        },
+        {
+          "id": "m21-oncall-due",
+          "kind": "due-none",
+          "task": [
+            "on-call",
+            "on call",
+            "oncall"
+          ],
+          "why": "No date: only 'during the leave'."
+        },
+        {
+          "id": "m21-promo",
+          "kind": "owned",
+          "task": [
+            "recommend",
+            "rekomendasi"
+          ],
+          "owner": "Bima",
+          "why": "Bima will write Tomi's recommendation; Tomi is named, Bima owns it."
+        },
+        {
+          "id": "m21-promo-due",
+          "kind": "due-vague",
+          "task": [
+            "recommend",
+            "rekomendasi"
+          ],
+          "said": "minggu ini",
+          "why": "'Minggu ini': this week, no day."
+        },
+        {
+          "id": "m21-hiring",
+          "kind": "decided",
+          "topic": [
+            "position",
+            "posisi",
+            "hiring",
+            "headcount",
+            "role"
+          ],
+          "also": [
+            "january",
+            "januari"
+          ],
+          "why": "Decided: no new positions until January."
+        },
+        {
+          "id": "m21-roadmap",
+          "kind": "not-a-task",
+          "task": [
+            "roadmap"
+          ],
+          "why": "Put off to the offsite: 'nanti aja pas offsite'."
+        },
+        {
+          "id": "m21-leave",
+          "kind": "not-a-task",
+          "task": [
+            "cuti",
+            "leave"
+          ],
+          "exclude": [
+            "on-call",
+            "on call",
+            "oncall",
+            "replacement",
+            "pengganti",
+            "cover",
+            "stand-in",
+            "stand in"
+          ],
+          "why": "Bima's leave is news, not a task."
+        }
+      ]
+    },
+    {
+      "id": "m22",
+      "title": "Address form design critique",
+      "date": "2026-10-13",
+      "weekday": "Tuesday",
+      "time": "10:30",
+      "language": "en",
+      "attendees": [
+        "Laras",
+        "Sekar",
+        "Rina",
+        "Bima"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Sekar",
+          "So this is the new address form. The big change is the map picker at the top."
+        ],
+        [
+          "Bima",
+          "Looks clean."
+        ],
+        [
+          "Laras",
+          "I like it. Let's go with the map picker."
+        ],
+        [
+          "Rina",
+          "Wait, one thing. On older Android phones the map SDK crashed in my tests last month."
+        ],
+        [
+          "Sekar",
+          "Which phones?"
+        ],
+        [
+          "Rina",
+          "Mostly 2 GB RAM devices. That's a lot of our users outside Java."
+        ],
+        [
+          "Laras",
+          "Hmm. Then let's not decide on the map picker today."
+        ],
+        [
+          "Laras",
+          "Sekar, can you test it on a low-end device first?"
+        ],
+        [
+          "Sekar",
+          "Sure, I'll do it by Thursday."
+        ],
+        [
+          "Bima",
+          "If this ships late I'll personally hand-deliver every package, haha."
+        ],
+        [
+          "Rina",
+          "Haha, I'll hold you to that."
+        ],
+        [
+          "Laras",
+          "Also, the error states have no copy yet. Someone should write it."
+        ],
+        [
+          "Sekar",
+          "The fallback without the map is the old form, right?"
+        ],
+        [
+          "Laras",
+          "Yes, for now."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m22-map",
+          "kind": "not-decided",
+          "topic": [
+            "map picker",
+            "map-picker"
+          ],
+          "why": "First 'let's go with the map picker', then 'let's not decide on the map picker today'."
+        },
+        {
+          "id": "m22-lowend",
+          "kind": "owned",
+          "task": [
+            "low-end",
+            "low end",
+            "2 gb",
+            "older android"
+          ],
+          "owner": "Sekar",
+          "why": "Laras asks Sekar; she agrees."
+        },
+        {
+          "id": "m22-lowend-due",
+          "kind": "due-exact",
+          "task": [
+            "low-end",
+            "low end",
+            "2 gb",
+            "older android"
+          ],
+          "date": "2026-10-15",
+          "why": "'By Thursday' after a Tuesday meeting: Thursday 15 October."
+        },
+        {
+          "id": "m22-copy",
+          "kind": "unowned",
+          "task": [
+            "copy"
+          ],
+          "why": "'Someone should write it.' Nobody takes it."
+        },
+        {
+          "id": "m22-joke",
+          "kind": "not-a-task",
+          "task": [
+            "hand-deliver",
+            "hand deliver",
+            "deliver every package"
+          ],
+          "why": "A joke, with laughter."
         }
       ]
     }

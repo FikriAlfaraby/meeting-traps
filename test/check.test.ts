@@ -228,3 +228,37 @@ describe("misreadings found by reading every flag", () => {
     assert.equal(check.traps.find((t) => t.trap === "m10-release")?.outcome, "pass")
   })
 })
+
+describe("the harder traps of v0.2", () => {
+  const outcome = (id: string, minutes: string, trap: string) => checkMinutes(meeting(id), data, minutes).traps.find((t) => t.trap === trap)?.outcome
+
+  it("an owner who never agreed: named outright is invented; marked as unconfirmed, or unclear, is not (m17)", () => {
+    assert.equal(outcome("m17", "## Action items\n- Build a retry for late callbacks — Tomi", "m17-retry"), "invented")
+    assert.equal(outcome("m17", "## Action items\n- Build a retry for late callbacks — Tomi (proposed by Bima, not confirmed)", "m17-retry"), "pass")
+    assert.equal(outcome("m17", "## Action items\n- Build a retry for late callbacks — owner unclear", "m17-retry"), "pass")
+  })
+
+  it("a conditional commitment keeps its condition (m18)", () => {
+    assert.equal(outcome("m18", "## Action items\n- Email merchants about the promo terms — Ayu — once legal approves", "m18-email"), "pass")
+    assert.equal(outcome("m18", "## Action items\n- Email merchants about the promo terms — Ayu — Friday", "m18-email"), "invented")
+  })
+
+  it("a 'we' task stays with the group (m17)", () => {
+    assert.equal(outcome("m17", "## Action items\n- Notify merchants about H+1 settlement — Owner: squad", "m17-merchants"), "pass")
+    assert.equal(outcome("m17", "## Action items\n- Notify merchants about H+1 settlement — Owner: Ayu", "m17-merchants"), "invented")
+  })
+
+  it("a date moved in the meeting: the new date passes, also next to the old one; the old date alone does not (m17)", () => {
+    assert.equal(outcome("m17", "## Action items\n- Update the FAQ on pending status — Ayu — Monday 19 Oct (moved from Friday 16 Oct)", "m17-faq-due"), "pass")
+    assert.equal(outcome("m17", "## Action items\n- Update the FAQ on pending status — Ayu — Friday 16 Oct", "m17-faq-due"), "invented")
+  })
+
+  it("a task handed from one unnamed speaker to another goes to the second (m20)", () => {
+    assert.equal(outcome("m20", "## Action items\n- Write the postmortem doc — Speaker 2 — Monday", "m20-postmortem"), "pass")
+    assert.equal(outcome("m20", "## Action items\n- Write the postmortem doc — Speaker 4 — Monday", "m20-postmortem"), "invented")
+  })
+
+  it("a task cancelled in the meeting is not an action item (m18)", () => {
+    assert.equal(outcome("m18", "## Action items\n- Write the voucher table migration script — Tomi", "m18-migration"), "invented")
+  })
+})

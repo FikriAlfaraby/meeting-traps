@@ -66,12 +66,13 @@ describe("the published results", () => {
     for (const file of readdirSync(new URL("../results/", import.meta.url)).filter((f) => f.endsWith(".json"))) {
       const result = JSON.parse(readFileSync(new URL(`../results/${file}`, import.meta.url), "utf8")) as ReturnType<typeof score>
       const o = result.summary.outcomes
-      const row = `| ${result.model.name} | ${o.pass} of ${total} | ${o.invented} | ${o.missed} | ${o.review} |`
+      const checks = result.runs.reduce((n, r) => n + r.traps.length, 0)
+      const row = `| ${result.model.name} | ${o.pass} of ${checks} | ${o.invented} | ${o.missed} | ${o.review} |`
       assert.ok(readme.includes(row), `README is missing: ${row}`)
     }
     const traps = data.meetings.flatMap((m) => m.traps)
     const controls = traps.filter((t) => t.kind === "owned" || t.kind === "due-exact" || t.kind === "decided").length
-    assert.ok(readme.includes(`${data.meetings.length} meetings`), "meeting count")
+    assert.ok(readme.includes(`**${data.meetings.length} meetings`), "meeting count")
     assert.ok(readme.includes(`${total} checks: ${total - controls} traps`), "trap count")
     assert.ok(readme.includes(`${controls} controls`), "control count")
     const lines = data.meetings.map((m) => m.lines.length)

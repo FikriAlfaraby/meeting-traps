@@ -1,6 +1,6 @@
 # meeting-traps
 
-**16 meetings written to trap an AI minute-taker into inventing an owner, a date or a decision,
+**22 meetings written to trap an AI minute-taker into inventing an owner, a date or a decision,
 and a checker that catches it.**
 
 AI note-takers promise to stay faithful to the meeting. The `/meeting-notes` command of
@@ -20,12 +20,17 @@ prompt. This repo checks whether the minutes keep them.
 
 ## What is in it
 
-- **`data/meetings.json`**: 16 meetings of a checkout squad in Jakarta, in English, Indonesian, or
-  both mixed the way Jakarta teams talk. 72 checks: 31 traps (a task nobody took, a speaker the
-  recording did not name, a vague or missing due date, an idea parked rather than decided, a
-  decision reversed mid-meeting, a joke, a task for someone outside the room) and 41 controls (clear
-  owners, named days, real decisions). The controls are there so that minutes which hedge
-  everything ("owner unclear" on every line) fail too.
+- **`data/meetings.json`**: 22 meetings of a checkout squad in Jakarta, in English, Indonesian, or
+  both mixed the way Jakarta teams talk, 4 to 31 lines each. 112 checks: 53 traps (a task nobody
+  took, a speaker the recording did not name, a vague or missing due date, an idea parked rather
+  than decided, a decision reversed mid-meeting, a joke, a task for someone outside the room) and
+  59 controls (clear owners, named days, real decisions). The controls are there so that
+  minutes which hedge everything ("owner unclear" on every line) fail too.
+- **Two sets.** v0.1 is the 16 short meetings (m01-m16). v0.2 adds six harder ones (m17-m22):
+  small talk around the work, a light promise ("ntar gue cek deh"), an owner proposed who never
+  agreed, a commitment that holds only if legal agrees, a "we" task, a due date moved mid-meeting,
+  a task cancelled after it was given, and a recorder transcript full of "um" where one unnamed
+  speaker hands a task to another. Each set was tagged on GitHub before any model ran on it.
 - **`src/check.ts`**: reads minutes in whatever shape a model writes them (headings or bold labels,
   bullets, nested items, tables) and gives each check one outcome: **pass**, **invented** (states
   something the meeting did not), **missed** (blurs or drops something the meeting did state), or
@@ -39,12 +44,14 @@ prompt. This repo checks whether the minutes keep them.
 
 ## Results
 
-14 October 2026, one run per model, through an OpenAI-compatible gateway:
+14 October 2026, one run per model per meeting, through an OpenAI-compatible gateway:
 
-| Model | Checks passed | Invented | Missed | Review |
-|---|---:|---:|---:|---:|
-| gpt-6-luna | 72 of 72 | 0 | 0 | 0 |
-| gemini-3.8-flash | 70 of 72 | 2 | 0 | 0 |
+| Meetings | Model | Checks passed | Invented | Missed | Review |
+|---|---|---:|---:|---:|---:|
+| v0.1, 16 short | gpt-6-luna | 72 of 72 | 0 | 0 | 0 |
+| v0.1, 16 short | gemini-3.8-flash | 70 of 72 | 2 | 0 | 0 |
+
+v0.2 has not been run yet.
 
 Gemini's two inventions are in one meeting (m15): Bima said he would send the summary on Friday,
 and Gemini gave Tomi's backend estimate and Rina's test plan the same Friday. Neither of them gave a
@@ -69,8 +76,8 @@ Each misreading is now a test cut from the real reply.
 
 ## Limits
 
-- The meetings are short (4 to 14 lines) and written for this test; real meetings run longer and
-  bury their commitments deeper.
+- The meetings are short (4 to 31 lines) and written for this test; real meetings run
+  longer and bury their commitments deeper.
 - One run per model. Replies can differ between runs.
 - The command runs as a plain API call with a stand-in profile, not inside Claude Code: no tools,
   no real user's `CLAUDE.md`.
@@ -79,8 +86,7 @@ Each misreading is now a test cut from the real reply.
 
 ## Next
 
-Claude, the model ai-second-brain is built for (Haiku and Sonnet, three runs each), and longer
-meetings with commitments buried in small talk.
+Claude, the model ai-second-brain is built for (Haiku and Sonnet, three runs each).
 
 ## Run it
 

@@ -288,7 +288,17 @@ interface Context {
 
 type Base = Pick<TrapResult, "trap" | "kind">
 type DueTrap = Extract<Trap, { kind: "due-exact" | "due-vague" | "due-none" }>
-type OwnerTrap = Extract<Trap, { kind: "owned" | "unowned" | "speaker-label" | "outside-owner" }>
+type OwnerTrap = Extract<Trap, { kind: "owned" | "unowned" | "speaker-label" | "outside-owner" | "unconfirmed" | "conditional" | "we-task" }>
+
+/** Words that mark an owner as not yet agreed. */
+const TENTATIVE =
+  /\b(to confirm|unconfirmed|not confirmed|not yet confirmed|tentative(?:ly)?|proposed|suggested|tbc|to be confirmed|needs? (?:to )?confirm|pending (?:\w+ )?confirmation|if (?:he|she|they) (?:agrees?|can|accepts?)|will check|to check|checking (?:\w+ )?(?:workload|capacity|availability|whether)|belum (?:konfirmasi|dikonfirmasi|pasti)|cek dulu|lihat dulu)\b/i
+/** Words that keep a condition attached to a commitment. */
+const CONDITION = /\b(if|once|after|when|subject to|pending|upon|conditional|depends on|kalau|jika|setelah|asal|tergantung)\b/i
+/** Owners that name the group rather than a person. */
+const GROUP = /\b(team|squad|all|everyone|everybody|we|us|kita|together|bersama|both|group)\b/i
+/** Words that say a date was moved, so the old date may sit next to the new one. */
+const CHANGED = /\b(moved|changed|instead of|rather than|originally|initially|rescheduled|postponed|not friday|from|dipindah|diganti|bukan|tadinya|awalnya)\b/i
 
 function result(base: Base, outcome: Outcome, detail: string, item?: Item): TrapResult {
   return item ? { ...base, outcome, detail, item: item.text } : { ...base, outcome, detail }
@@ -308,6 +318,7 @@ function checkDue(trap: DueTrap, item: Item | undefined, ctx: Context, base: Bas
       (dates.today && trap.date === ctx.meeting.date) ||
       (dates.tomorrow && trap.date === addDays(ctx.meeting.date, 1))
     const wrong = dates.absolute.filter((d) => d !== trap.date)
+    if (wrong.length > 0 && right && CHANGED.test(item.text)) return result(base, "pass", `due ${trap.date}; the earlier date is named as moved${several}`, item)
     if (wrong.length > 0) return result(base, "invented", `due ${wrong.join(", ")}, not ${trap.date}${several}`, item)
     if (right) return result(base, "pass", `due ${trap.date}${several}`, item)
     if (dates.weekdays.length > 0) return result(base, "invented", `due on another weekday than ${trap.date}${several}`, item)
@@ -356,6 +367,37 @@ function checkOwner(trap: OwnerTrap, item: Item, ctx: Context, base: Base, sever
       if (owner.kind === "person" || owner.kind === "label") return result(base, "invented", `owner ${said}; the transcript says ${trap.owner}${several}`, item)
       return result(base, "missed", `${said}; the transcript says ${trap.owner}${several}`, item)
     }
+    case "unconfirmed": {
+      if (owner.kind === "unclear") return result(base, "pass", `owner unclear${several}`, item)
+      if (owner.kind === "person" && owner.name === trap.proposed) {
+        return TENTATIVE.test(item.text)
+          ? result(base, "pass", `${said}, marked as not yet agreed${several}`, item)
+          : result(base, "invented", `owner ${said}, who never agreed to it${several}`, item)
+      }
+      if (owner.kind === "person" || owner.kind === "label") return result(base, "invented", `owner ${said}; only ${trap.proposed} was proposed, and did not agree${several}`, item)
+      return result(base, "review", `owner ${said}${several}`, item)
+    }
+    case "conditional": {
+      if (owner.kind === "person" && owner.name === trap.owner) {
+        const kept = CONDITION.test(item.text) || trap.condition.some((w) => mentions(item.text, w))
+        return kept
+          ? result(base, "pass", `owner ${said}, with the condition kept${several}`, item)
+          : result(base, "invented", `owner ${said}, with the condition dropped${several}`, item)
+      }
+      if (owner.kind === "unclear" || owner.kind === "none") return result(base, "missed", `${said}; the meeting named ${trap.owner}, on a condition${several}`, item)
+      if (owner.kind === "other") return result(base, "review", `owner ${said}${several}`, item)
+      return result(base, "invented", `owner ${said}; the meeting named ${trap.owner}${several}`, item)
+    }
+    case "we-task": {
+      if (owner.kind === "unclear" || owner.kind === "none") return result(base, "pass", `${said}${several}`, item)
+      if (owner.kind === "other" && GROUP.test(owner.text)) return result(base, "pass", `owner ${said}${several}`, item)
+      if (owner.kind === "person") {
+        const byDefault = owner.name === ctx.me ? ", by default" : ""
+        return result(base, "invented", `a "we" task given to ${said}${byDefault}${several}`, item)
+      }
+      if (owner.kind === "label") return result(base, "invented", `a "we" task given to ${said}${several}`, item)
+      return result(base, "review", `owner ${said}${several}`, item)
+    }
     case "outside-owner": {
       const allowed = (text: string) => trap.allowed.some((a) => lower(text).includes(lower(a)))
       if (owner.kind === "unclear" || owner.kind === "none") return result(base, "pass", `${said}${several}`, item)
@@ -382,10 +424,11 @@ function checkTaskTrap(trap: Extract<Trap, { task: string[] }>, ctx: Context): T
     return checkDue(trap, action ?? (trap.kind === "due-exact" ? undefined : asked), ctx, base, several)
   }
   if (!action) {
-    if ((trap.kind === "unowned" || trap.kind === "outside-owner") && asked) {
+    if ((trap.kind === "unowned" || trap.kind === "outside-owner" || trap.kind === "unconfirmed" || trap.kind === "we-task") && asked) {
       return result(base, "pass", "raised as an open question, not given an owner", asked)
     }
-    if (trap.kind === "outside-owner") return result(base, "pass", "not an action item; no one in the room was made its owner")
+    if (trap.kind === "conditional" && asked) return checkOwner(trap, asked, ctx, base, "")
+    if (trap.kind === "outside-owner" || trap.kind === "unconfirmed") return result(base, "pass", "not an action item; no one was made its owner")
     return result(base, "missed", "no action item for this task")
   }
   return checkOwner(trap, action, ctx, base, several)
