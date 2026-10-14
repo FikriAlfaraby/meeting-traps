@@ -1,0 +1,29 @@
+{
+  "name": "meeting-traps",
+  "version": "0.1.0",
+  "description": "Meetings written to trap an AI minute-taker into inventing an owner, a date or a decision, and a checker that catches it.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Fikri Alfaraby <fikrialfaraby04@gmail.com>",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FikriAlfaraby/meeting-traps.git"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings=0",
+    "check": "npm run typecheck && npm run lint && npm test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.5",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "typescript": "~6.0",
+    "typescript-eslint": "^8.71.2"
+  }
+}

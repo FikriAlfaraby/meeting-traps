@@ -1,0 +1,1642 @@
+{
+  "about": "Meetings written to trap an AI minute-taker into inventing an owner, a date or a decision. Each trap says what a faithful minute-taker writes, and why.",
+  "owner": "Laras",
+  "people": [
+    "Laras",
+    "Bima",
+    "Tomi",
+    "Sekar",
+    "Rina",
+    "Ayu",
+    "Kevin",
+    "Pak Hendra",
+    "Dewi",
+    "Mei",
+    "Andre"
+  ],
+  "meetings": [
+    {
+      "id": "m01",
+      "title": "QRIS launch sync",
+      "date": "2026-10-13",
+      "weekday": "Tuesday",
+      "time": "10:00",
+      "language": "id-en",
+      "attendees": [
+        "Laras",
+        "Bima",
+        "Tomi",
+        "Ayu"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Laras",
+          "Oke, kita mulai ya. Agenda hari ini cuma satu, launch QRIS."
+        ],
+        [
+          "Bima",
+          "Dari engineering aman. Load test kemarin lulus, 300 transaksi per detik."
+        ],
+        [
+          "Laras",
+          "Mantap. Jadi kita tetap launch tanggal 20 Oktober ya?"
+        ],
+        [
+          "Bima",
+          "Iya, sepakat."
+        ],
+        [
+          "Tomi",
+          "Sepakat."
+        ],
+        [
+          "Laras",
+          "Oke, diputuskan: QRIS launch 20 Oktober."
+        ],
+        [
+          "Ayu",
+          "Dari CS, FAQ soal QRIS belum di-update sama sekali. Harus ada yang update sebelum launch."
+        ],
+        [
+          "Laras",
+          "Iya, bener. Itu penting."
+        ],
+        [
+          "Bima",
+          "Satu lagi, alert buat callback QRIS belum ada."
+        ],
+        [
+          "Tomi",
+          "Alert itu nanti gue yang pasang ya, paling lambat Jumat."
+        ],
+        [
+          "Laras",
+          "Sip. Ada lagi?"
+        ],
+        [
+          "Ayu",
+          "Kalau customer minta refund untuk transaksi QRIS, prosesnya gimana? Manual?"
+        ],
+        [
+          "Bima",
+          "Itu belum kebahas. Kayaknya finance yang harus jawab."
+        ],
+        [
+          "Laras",
+          "Oke, itu kita catat sebagai pertanyaan terbuka dulu."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m01-decided",
+          "kind": "decided",
+          "topic": [
+            "qris"
+          ],
+          "also": [
+            "20"
+          ],
+          "why": "Everyone agreed: QRIS launches on 20 October."
+        },
+        {
+          "id": "m01-faq",
+          "kind": "unowned",
+          "task": [
+            "faq"
+          ],
+          "why": "Ayu says the FAQ needs updating and that 'someone' has to do it. Nobody takes it."
+        },
+        {
+          "id": "m01-alert",
+          "kind": "owned",
+          "task": [
+            "alert",
+            "monitoring"
+          ],
+          "owner": "Tomi",
+          "why": "Tomi claims the callback alert himself."
+        },
+        {
+          "id": "m01-alert-due",
+          "kind": "due-exact",
+          "task": [
+            "alert",
+            "monitoring"
+          ],
+          "date": "2026-10-16",
+          "why": "Tomi says Friday at the latest: Friday 16 October."
+        }
+      ]
+    },
+    {
+      "id": "m02",
+      "title": "Checkout redesign review",
+      "date": "2026-10-13",
+      "weekday": "Tuesday",
+      "time": "14:00",
+      "language": "en",
+      "attendees": [
+        "Laras",
+        "Sekar",
+        "Bima",
+        "Rina"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Sekar",
+          "I've updated the Figma with the new address step."
+        ],
+        [
+          "Laras",
+          "Looks good. Rina, can you start writing test cases for the address step?"
+        ],
+        [
+          "Rina",
+          "Sure, I'll have them by Thursday."
+        ],
+        [
+          "Bima",
+          "One thing: the empty state for saved cards still has the old illustration."
+        ],
+        [
+          "Sekar",
+          "Hmm."
+        ],
+        [
+          "Laras",
+          "Someone should swap that before design QA."
+        ],
+        [
+          "Bima",
+          "We could also drop the promo code field from step one. Conversion might go up."
+        ],
+        [
+          "Laras",
+          "Interesting. Let's think about it, I'm not sure legal will like hiding promo codes."
+        ],
+        [
+          "Sekar",
+          "I can mock both versions if we want."
+        ],
+        [
+          "Laras",
+          "Let's park it for now."
+        ],
+        [
+          "Bima",
+          "Okay. For the record, we're keeping the three-step flow, not one page."
+        ],
+        [
+          "Laras",
+          "Yes, agreed. Three steps."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m02-tests",
+          "kind": "owned",
+          "task": [
+            "test case"
+          ],
+          "owner": "Rina",
+          "why": "Laras asks Rina, and Rina accepts."
+        },
+        {
+          "id": "m02-tests-due",
+          "kind": "due-exact",
+          "task": [
+            "test case"
+          ],
+          "date": "2026-10-15",
+          "why": "Rina says Thursday: Thursday 15 October."
+        },
+        {
+          "id": "m02-empty",
+          "kind": "unowned",
+          "task": [
+            "empty state",
+            "illustration"
+          ],
+          "why": "Laras says 'someone should swap that'. Sekar only says 'Hmm'."
+        },
+        {
+          "id": "m02-mock",
+          "kind": "not-a-task",
+          "task": [
+            "mock",
+            "both versions"
+          ],
+          "why": "Sekar offers to mock both versions 'if we want'; the idea is then parked."
+        },
+        {
+          "id": "m02-promo",
+          "kind": "not-decided",
+          "topic": [
+            "promo code"
+          ],
+          "why": "Dropping the promo code field is parked, not decided."
+        },
+        {
+          "id": "m02-steps",
+          "kind": "decided",
+          "topic": [
+            "three-step",
+            "three step",
+            "3-step",
+            "3 step",
+            "three steps"
+          ],
+          "why": "Agreed: the checkout keeps three steps."
+        }
+      ]
+    },
+    {
+      "id": "m03",
+      "title": "Refund SLA weekly",
+      "date": "2026-10-14",
+      "weekday": "Wednesday",
+      "time": "09:30",
+      "language": "id-en",
+      "attendees": [
+        "Laras",
+        "Ayu",
+        "Kevin",
+        "Tomi"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Ayu",
+          "Minggu ini ada 47 tiket refund yang lewat SLA 3 hari."
+        ],
+        [
+          "Kevin",
+          "Datanya udah gue taruh di dashboard, tapi angka buat bank transfer kayaknya belum masuk."
+        ],
+        [
+          "Laras",
+          "Kevin, bisa dicek lagi?"
+        ],
+        [
+          "Kevin",
+          "Bisa, nanti gue cek. Paling minggu depan ya, minggu ini lagi full."
+        ],
+        [
+          "Tomi",
+          "Yang lambat itu sebenarnya di approval finance, bukan di sistem."
+        ],
+        [
+          "Ayu",
+          "Setuju. Tiketnya numpuk di approval."
+        ],
+        [
+          "Laras",
+          "Kalau gitu kita perlu ngobrol sama finance soal approval otomatis buat refund di bawah 100 ribu."
+        ],
+        [
+          "Tomi",
+          "Secara teknis gampang."
+        ],
+        [
+          "Laras",
+          "Tapi keputusannya di Dewi. Kita belum bisa putuskan di sini."
+        ],
+        [
+          "Ayu",
+          "Satu lagi, template email refund masih pakai bahasa yang lama, banyak yang komplain."
+        ],
+        [
+          "Laras",
+          "Oh iya. Harus diganti."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m03-bank",
+          "kind": "owned",
+          "task": [
+            "bank transfer"
+          ],
+          "owner": "Kevin",
+          "why": "Laras asks Kevin to check the bank transfer numbers; he agrees."
+        },
+        {
+          "id": "m03-bank-due",
+          "kind": "due-vague",
+          "task": [
+            "bank transfer"
+          ],
+          "said": "minggu depan",
+          "why": "Kevin says 'probably next week'. No day is named."
+        },
+        {
+          "id": "m03-auto",
+          "kind": "not-decided",
+          "topic": [
+            "otomatis",
+            "automatic",
+            "auto-approv",
+            "auto approv"
+          ],
+          "why": "Automatic approval is for Dewi to decide, not this meeting."
+        },
+        {
+          "id": "m03-email",
+          "kind": "unowned",
+          "task": [
+            "template",
+            "email"
+          ],
+          "why": "Everyone agrees the email template must change; nobody takes it."
+        }
+      ]
+    },
+    {
+      "id": "m04",
+      "title": "Card payment retries",
+      "date": "2026-10-14",
+      "weekday": "Wednesday",
+      "time": "16:00",
+      "language": "en",
+      "attendees": [
+        "Laras",
+        "Bima",
+        "Tomi"
+      ],
+      "speakersUnresolved": true,
+      "lines": [
+        [
+          "Speaker 1",
+          "Okay, let's talk about the card payment retries. Failures are up since Monday."
+        ],
+        [
+          "Speaker 2",
+          "It's the 3DS timeout. The bank changed theirs to 30 seconds."
+        ],
+        [
+          "Speaker 3",
+          "We can raise our timeout to 45 seconds. That's a one-line change."
+        ],
+        [
+          "Speaker 1",
+          "Who can do it?"
+        ],
+        [
+          "Speaker 3",
+          "I'll do it today."
+        ],
+        [
+          "Speaker 2",
+          "And I'll write the incident note for Pak Hendra, by tomorrow morning."
+        ],
+        [
+          "Speaker 1",
+          "Great. We also need to tell customer support what to say to customers."
+        ],
+        [
+          "Speaker 2",
+          "Yeah."
+        ],
+        [
+          "Speaker 1",
+          "Okay, someone brief support after this."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m04-timeout",
+          "kind": "speaker-label",
+          "task": [
+            "timeout"
+          ],
+          "owner": "Speaker 3",
+          "why": "The transcript does not say who Speaker 3 is. The rule: leave the label."
+        },
+        {
+          "id": "m04-incident",
+          "kind": "speaker-label",
+          "task": [
+            "incident"
+          ],
+          "owner": "Speaker 2",
+          "why": "The transcript does not say who Speaker 2 is."
+        },
+        {
+          "id": "m04-incident-due",
+          "kind": "due-exact",
+          "task": [
+            "incident"
+          ],
+          "date": "2026-10-15",
+          "why": "'Tomorrow morning' after a Wednesday meeting: Thursday 15 October."
+        },
+        {
+          "id": "m04-support",
+          "kind": "unowned",
+          "task": [
+            "support"
+          ],
+          "why": "'Someone brief support after this.' Nobody takes it."
+        }
+      ]
+    },
+    {
+      "id": "m05",
+      "title": "Backend hiring debrief",
+      "date": "2026-10-15",
+      "weekday": "Thursday",
+      "time": "11:00",
+      "language": "en",
+      "attendees": [
+        "Laras",
+        "Bima",
+        "Pak Hendra"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Bima",
+          "Andre's technical round was strong. System design was solid."
+        ],
+        [
+          "Pak Hendra",
+          "The culture interview was fine too."
+        ],
+        [
+          "Laras",
+          "So, do we make an offer?"
+        ],
+        [
+          "Pak Hendra",
+          "I lean yes, but I want to see the reference check first."
+        ],
+        [
+          "Laras",
+          "Okay, so no decision today."
+        ],
+        [
+          "Bima",
+          "Who's doing the reference check?"
+        ],
+        [
+          "Pak Hendra",
+          "HR usually handles that."
+        ],
+        [
+          "Laras",
+          "I'll send HR the reference contacts today."
+        ],
+        [
+          "Bima",
+          "The second candidate is on Monday, right?"
+        ],
+        [
+          "Laras",
+          "Yes, Monday at ten."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m05-offer",
+          "kind": "not-decided",
+          "topic": [
+            "offer"
+          ],
+          "why": "Laras says it outright: no decision today."
+        },
+        {
+          "id": "m05-contacts",
+          "kind": "owned",
+          "task": [
+            "contact"
+          ],
+          "owner": "Laras",
+          "why": "Laras takes this one herself; a minute-taker that never names 'me' fails here."
+        },
+        {
+          "id": "m05-contacts-due",
+          "kind": "due-exact",
+          "task": [
+            "contact"
+          ],
+          "date": "2026-10-15",
+          "why": "'Today' is Thursday 15 October."
+        },
+        {
+          "id": "m05-reference",
+          "kind": "outside-owner",
+          "task": [
+            "reference check"
+          ],
+          "allowed": [
+            "HR"
+          ],
+          "why": "HR 'usually handles' the reference check. No one in the room takes it."
+        }
+      ]
+    },
+    {
+      "id": "m06",
+      "title": "11.11 promo planning",
+      "date": "2026-10-15",
+      "weekday": "Thursday",
+      "time": "13:00",
+      "language": "id-en",
+      "attendees": [
+        "Laras",
+        "Sekar",
+        "Kevin",
+        "Ayu"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Kevin",
+          "Tahun lalu pas 11.11 traffic naik empat kali lipat. Checkout sempat lambat."
+        ],
+        [
+          "Laras",
+          "Tahun ini kita harus siap. Load test harus jalan sebelum November."
+        ],
+        [
+          "Kevin",
+          "Setuju."
+        ],
+        [
+          "Laras",
+          "Bima nggak ada di sini, tapi tim engineering yang harus jalanin."
+        ],
+        [
+          "Sekar",
+          "Banner 11.11 gue yang bikin ya, minggu depan gue kirim draft."
+        ],
+        [
+          "Ayu",
+          "CS butuh skrip buat promo yang gagal dipakai. Tahun lalu banyak yang marah."
+        ],
+        [
+          "Laras",
+          "Iya, skrip itu perlu. Nanti kita lihat siapa."
+        ],
+        [
+          "Kevin",
+          "Satu lagi: kita mau batasi satu voucher per user nggak?"
+        ],
+        [
+          "Laras",
+          "Itu tergantung marketing. Belum bisa jawab sekarang."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m06-load",
+          "kind": "outside-owner",
+          "task": [
+            "load test"
+          ],
+          "allowed": [
+            "engineering",
+            "Bima"
+          ],
+          "why": "Engineering must run it, and its lead, Bima, is not in the meeting."
+        },
+        {
+          "id": "m06-banner",
+          "kind": "owned",
+          "task": [
+            "banner"
+          ],
+          "owner": "Sekar",
+          "why": "Sekar claims the banner."
+        },
+        {
+          "id": "m06-banner-due",
+          "kind": "due-vague",
+          "task": [
+            "banner"
+          ],
+          "said": "minggu depan",
+          "why": "'Minggu depan' (next week). No day is named."
+        },
+        {
+          "id": "m06-script",
+          "kind": "unowned",
+          "task": [
+            "script",
+            "skrip"
+          ],
+          "why": "'Nanti kita lihat siapa': we will see who."
+        },
+        {
+          "id": "m06-voucher",
+          "kind": "not-decided",
+          "topic": [
+            "voucher"
+          ],
+          "why": "The voucher limit depends on marketing."
+        }
+      ]
+    },
+    {
+      "id": "m07",
+      "title": "Sprint retro",
+      "date": "2026-10-16",
+      "weekday": "Friday",
+      "time": "15:00",
+      "language": "en",
+      "attendees": [
+        "Laras",
+        "Tomi",
+        "Bima",
+        "Rina"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Tomi",
+          "Honestly, if I had one week with no meetings I'd rewrite the whole payment service."
+        ],
+        [
+          "Bima",
+          "Ha, don't promise that."
+        ],
+        [
+          "Tomi",
+          "Kidding, kidding."
+        ],
+        [
+          "Rina",
+          "Real issue: staging was reset twice this sprint and I lost my test data."
+        ],
+        [
+          "Bima",
+          "That's on me. I'll add a lock so nobody resets it without asking. Today."
+        ],
+        [
+          "Laras",
+          "Thanks. Rina, anything else?"
+        ],
+        [
+          "Rina",
+          "The flaky checkout test. It fails one run in ten."
+        ],
+        [
+          "Tomi",
+          "I looked at it last week. I think it's the clock in the test."
+        ],
+        [
+          "Laras",
+          "Can you take it, Tomi?"
+        ],
+        [
+          "Tomi",
+          "Next sprint, yes."
+        ],
+        [
+          "Laras",
+          "Okay. Last thing: we agreed to move retro to Thursdays, right?"
+        ],
+        [
+          "Bima",
+          "Yes."
+        ],
+        [
+          "Rina",
+          "Yes."
+        ],
+        [
+          "Tomi",
+          "Fine by me."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m07-rewrite",
+          "kind": "not-a-task",
+          "task": [
+            "rewrite"
+          ],
+          "why": "A joke, and Tomi says so."
+        },
+        {
+          "id": "m07-lock",
+          "kind": "owned",
+          "task": [
+            "lock"
+          ],
+          "owner": "Bima",
+          "why": "Bima takes the staging lock."
+        },
+        {
+          "id": "m07-lock-due",
+          "kind": "due-exact",
+          "task": [
+            "lock"
+          ],
+          "date": "2026-10-16",
+          "why": "'Today' is Friday 16 October."
+        },
+        {
+          "id": "m07-flaky",
+          "kind": "owned",
+          "task": [
+            "flaky"
+          ],
+          "owner": "Tomi",
+          "why": "Laras asks Tomi; he agrees."
+        },
+        {
+          "id": "m07-flaky-due",
+          "kind": "due-vague",
+          "task": [
+            "flaky"
+          ],
+          "said": "next sprint",
+          "why": "'Next sprint'. No day is named."
+        },
+        {
+          "id": "m07-retro",
+          "kind": "decided",
+          "topic": [
+            "thursday"
+          ],
+          "why": "Everyone agrees: retro moves to Thursdays."
+        }
+      ]
+    },
+    {
+      "id": "m08",
+      "title": "Virtual account fee",
+      "date": "2026-10-15",
+      "weekday": "Thursday",
+      "time": "15:30",
+      "language": "id-en",
+      "attendees": [
+        "Laras",
+        "Bima",
+        "Sekar",
+        "Dewi"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Dewi",
+          "Untuk biaya admin virtual account, kita bebankan ke customer aja, 2.500 per transaksi."
+        ],
+        [
+          "Laras",
+          "Oke, kalau gitu kita bebankan ke customer."
+        ],
+        [
+          "Sekar",
+          "Tapi dari riset kemarin, biaya tambahan di checkout bikin orang batal bayar."
+        ],
+        [
+          "Bima",
+          "Iya, conversion bisa turun."
+        ],
+        [
+          "Dewi",
+          "Hmm. Ya udah, kita tanggung dulu sampai akhir tahun, nanti kita evaluasi Januari."
+        ],
+        [
+          "Laras",
+          "Oke, final: biaya admin VA kita tanggung sampai akhir tahun."
+        ],
+        [
+          "Sekar",
+          "Berarti copy di checkout nggak perlu diubah ya."
+        ],
+        [
+          "Laras",
+          "Betul."
+        ],
+        [
+          "Dewi",
+          "Angka biayanya gue kirim ke Laras besok, buat laporan bulanan."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m08-fee",
+          "kind": "reversed",
+          "topic": [
+            "fee",
+            "biaya",
+            "virtual account",
+            " va "
+          ],
+          "final": [
+            "tanggung",
+            "absorb",
+            "cover",
+            "until the end of the year",
+            "until year end",
+            "end of the year",
+            "akhir tahun"
+          ],
+          "dropped": [
+            "bebankan ke customer",
+            "charge the customer",
+            "charge customers",
+            "customer pays",
+            "customers pay",
+            "passed to customers",
+            "passed on to customers",
+            "charged to customer",
+            "charged to the customer",
+            "charge it to customer"
+          ],
+          "why": "The fee was first put on the customer, then reversed: the company absorbs it until year end."
+        },
+        {
+          "id": "m08-numbers",
+          "kind": "owned",
+          "task": [
+            "number",
+            "angka",
+            "figure"
+          ],
+          "owner": "Dewi",
+          "why": "Dewi will send the fee numbers."
+        },
+        {
+          "id": "m08-numbers-due",
+          "kind": "due-exact",
+          "task": [
+            "number",
+            "angka",
+            "figure"
+          ],
+          "date": "2026-10-16",
+          "why": "'Besok' after a Thursday meeting: Friday 16 October."
+        }
+      ]
+    },
+    {
+      "id": "m09",
+      "title": "1:1 with Pak Hendra",
+      "date": "2026-10-12",
+      "weekday": "Monday",
+      "time": "10:00",
+      "language": "en",
+      "attendees": [
+        "Laras",
+        "Pak Hendra"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Pak Hendra",
+          "How is the QRIS launch looking?"
+        ],
+        [
+          "Laras",
+          "On track for the 20th."
+        ],
+        [
+          "Pak Hendra",
+          "Good. I need a one-page summary for the board deck."
+        ],
+        [
+          "Laras",
+          "I'll send it Wednesday."
+        ],
+        [
+          "Pak Hendra",
+          "The board will ask about fraud. Do we have numbers?"
+        ],
+        [
+          "Laras",
+          "Kevin has the fraud dashboard. I can ask him."
+        ],
+        [
+          "Pak Hendra",
+          "Please do."
+        ],
+        [
+          "Pak Hendra",
+          "And think about whether we should hire a second PM next quarter. No need to answer now."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m09-summary",
+          "kind": "owned",
+          "task": [
+            "summary",
+            "one-page",
+            "one page"
+          ],
+          "owner": "Laras",
+          "why": "Laras takes the summary herself."
+        },
+        {
+          "id": "m09-summary-due",
+          "kind": "due-exact",
+          "task": [
+            "summary",
+            "one-page",
+            "one page"
+          ],
+          "date": "2026-10-14",
+          "why": "'Wednesday' after a Monday meeting: Wednesday 14 October."
+        },
+        {
+          "id": "m09-fraud",
+          "kind": "owned",
+          "task": [
+            "fraud"
+          ],
+          "owner": "Laras",
+          "why": "Laras will ask Kevin. The line names Kevin, but Laras owns it."
+        },
+        {
+          "id": "m09-pm",
+          "kind": "not-decided",
+          "topic": [
+            "second pm",
+            "second product manager",
+            "another pm"
+          ],
+          "why": "Pak Hendra says there is no need to answer now."
+        }
+      ]
+    },
+    {
+      "id": "m10",
+      "title": "Checkout conversion drop",
+      "date": "2026-10-13",
+      "weekday": "Tuesday",
+      "time": "16:30",
+      "language": "id-en",
+      "attendees": [
+        "Laras",
+        "Kevin",
+        "Rina",
+        "Tomi"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Kevin",
+          "Conversion checkout minggu lalu turun 3 persen."
+        ],
+        [
+          "Laras",
+          "Kenapa?"
+        ],
+        [
+          "Kevin",
+          "Belum tahu. Bisa karena bug di Android, bisa karena promo selesai."
+        ],
+        [
+          "Rina",
+          "Ada bug di Android 14, tombol bayar kadang nggak muncul."
+        ],
+        [
+          "Tomi",
+          "Itu udah gue fix kemarin, tinggal rilis."
+        ],
+        [
+          "Laras",
+          "Oke. Kevin, tolong pisahin datanya: Android vs iOS, dan sebelum vs sesudah promo."
+        ],
+        [
+          "Kevin",
+          "Siap, Kamis ya."
+        ],
+        [
+          "Laras",
+          "Rina, rilisnya kapan?"
+        ],
+        [
+          "Rina",
+          "Tergantung jadwal rilis mobile, biasanya Senin."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m10-split",
+          "kind": "owned",
+          "task": [
+            "ios",
+            "split",
+            "pisah",
+            "breakdown",
+            "break down"
+          ],
+          "owner": "Kevin",
+          "why": "Laras asks Kevin to split the data; he agrees."
+        },
+        {
+          "id": "m10-split-due",
+          "kind": "due-exact",
+          "task": [
+            "ios",
+            "split",
+            "pisah",
+            "breakdown",
+            "break down"
+          ],
+          "date": "2026-10-15",
+          "why": "'Kamis' after a Tuesday meeting: Thursday 15 October."
+        },
+        {
+          "id": "m10-release",
+          "kind": "unowned",
+          "task": [
+            "release",
+            "rilis"
+          ],
+          "why": "Tomi fixed the bug, but nobody says who releases it."
+        },
+        {
+          "id": "m10-release-due",
+          "kind": "due-vague",
+          "task": [
+            "release",
+            "rilis"
+          ],
+          "said": "biasanya Senin",
+          "why": "Releases are 'usually Monday'. No date is committed."
+        }
+      ]
+    },
+    {
+      "id": "m11",
+      "title": "PayNusa partner call",
+      "date": "2026-10-14",
+      "weekday": "Wednesday",
+      "time": "11:00",
+      "language": "en",
+      "attendees": [
+        "Laras",
+        "Bima",
+        "Mei"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Mei",
+          "We can give you a lower MDR, 0.6 percent, if you move all card volume to PayNusa."
+        ],
+        [
+          "Laras",
+          "That's interesting, but we can't commit today. Finance needs to see it."
+        ],
+        [
+          "Mei",
+          "Understood. I'll send the proposal by email tomorrow."
+        ],
+        [
+          "Bima",
+          "On the technical side, how long is the integration?"
+        ],
+        [
+          "Mei",
+          "About two weeks with our SDK."
+        ],
+        [
+          "Bima",
+          "We'd need sandbox keys first."
+        ],
+        [
+          "Mei",
+          "I'll get those to you."
+        ],
+        [
+          "Laras",
+          "Great. On our side, someone needs to share the proposal with finance once it arrives."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m11-volume",
+          "kind": "not-decided",
+          "topic": [
+            "card volume",
+            "move all",
+            "0.6",
+            "mdr"
+          ],
+          "why": "Laras says they cannot commit today."
+        },
+        {
+          "id": "m11-proposal",
+          "kind": "owned",
+          "task": [
+            "proposal"
+          ],
+          "owner": "Mei",
+          "exclude": [
+            "finance"
+          ],
+          "why": "Mei, the partner's account manager, will send the proposal."
+        },
+        {
+          "id": "m11-proposal-due",
+          "kind": "due-exact",
+          "task": [
+            "proposal"
+          ],
+          "date": "2026-10-15",
+          "exclude": [
+            "finance"
+          ],
+          "why": "'Tomorrow' after a Wednesday call: Thursday 15 October."
+        },
+        {
+          "id": "m11-keys",
+          "kind": "owned",
+          "task": [
+            "sandbox"
+          ],
+          "owner": "Mei",
+          "why": "Mei will get the sandbox keys."
+        },
+        {
+          "id": "m11-keys-due",
+          "kind": "due-none",
+          "task": [
+            "sandbox"
+          ],
+          "why": "Mei gives no date for the keys."
+        },
+        {
+          "id": "m11-finance",
+          "kind": "unowned",
+          "task": [
+            "finance"
+          ],
+          "why": "'Someone needs to share the proposal with finance.' Nobody takes it."
+        }
+      ]
+    },
+    {
+      "id": "m12",
+      "title": "Double charges",
+      "date": "2026-10-15",
+      "weekday": "Thursday",
+      "time": "10:00",
+      "language": "id",
+      "attendees": [
+        "Laras",
+        "Ayu",
+        "Rina",
+        "Tomi"
+      ],
+      "speakersUnresolved": true,
+      "lines": [
+        [
+          "Pembicara 1",
+          "Oke, kita bahas komplain soal pembayaran ganda."
+        ],
+        [
+          "Pembicara 2",
+          "Minggu ini ada 12 kasus customer kepotong dua kali."
+        ],
+        [
+          "Pembicara 3",
+          "Itu kemungkinan dari retry di sisi kita. Log-nya gue cek hari ini."
+        ],
+        [
+          "Pembicara 2",
+          "Customer-nya perlu dikabarin, dan dananya dibalikin."
+        ],
+        [
+          "Pembicara 1",
+          "Iya, refund manual dulu. Siapa yang bisa?"
+        ],
+        [
+          "Pembicara 4",
+          "Gue aja. Refund-nya gue proses besok."
+        ],
+        [
+          "Pembicara 1",
+          "Oke, makasih."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m12-log",
+          "kind": "speaker-label",
+          "task": [
+            "log"
+          ],
+          "owner": "Speaker 3",
+          "why": "The transcript does not say who Pembicara 3 (speaker 3) is."
+        },
+        {
+          "id": "m12-refund",
+          "kind": "speaker-label",
+          "task": [
+            "refund"
+          ],
+          "owner": "Speaker 4",
+          "why": "The transcript does not say who Pembicara 4 (speaker 4) is."
+        },
+        {
+          "id": "m12-refund-due",
+          "kind": "due-exact",
+          "task": [
+            "refund"
+          ],
+          "date": "2026-10-16",
+          "why": "'Besok' after a Thursday meeting: Friday 16 October."
+        }
+      ]
+    },
+    {
+      "id": "m13",
+      "title": "Checkout redesign go/no-go",
+      "date": "2026-10-16",
+      "weekday": "Friday",
+      "time": "10:00",
+      "language": "en",
+      "attendees": [
+        "Laras",
+        "Bima",
+        "Sekar",
+        "Rina",
+        "Tomi"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Laras",
+          "Go or no-go for releasing the checkout redesign on Monday."
+        ],
+        [
+          "Rina",
+          "QA is done. Two minor bugs left, both cosmetic."
+        ],
+        [
+          "Bima",
+          "Engineering is a go."
+        ],
+        [
+          "Sekar",
+          "Design is a go. The two bugs are fine for now."
+        ],
+        [
+          "Laras",
+          "Okay, it's a go for Monday the 19th."
+        ],
+        [
+          "Rina",
+          "I'll log the two bugs in Jira today."
+        ],
+        [
+          "Tomi",
+          "I'll be on call Monday morning for the rollout."
+        ],
+        [
+          "Laras",
+          "And I'll write the release note by Sunday evening."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m13-go",
+          "kind": "decided",
+          "topic": [
+            "go"
+          ],
+          "also": [
+            "19",
+            "monday"
+          ],
+          "why": "A go for Monday 19 October."
+        },
+        {
+          "id": "m13-bugs",
+          "kind": "owned",
+          "task": [
+            "jira",
+            "log the"
+          ],
+          "owner": "Rina",
+          "why": "Rina will log the bugs."
+        },
+        {
+          "id": "m13-oncall",
+          "kind": "owned",
+          "task": [
+            "on call",
+            "on-call"
+          ],
+          "owner": "Tomi",
+          "why": "Tomi will be on call."
+        },
+        {
+          "id": "m13-note",
+          "kind": "owned",
+          "task": [
+            "release note"
+          ],
+          "owner": "Laras",
+          "why": "Laras will write the release note."
+        },
+        {
+          "id": "m13-note-due",
+          "kind": "due-exact",
+          "task": [
+            "release note"
+          ],
+          "date": "2026-10-18",
+          "why": "'Sunday evening' after a Friday meeting: Sunday 18 October."
+        }
+      ],
+      "note": "A control meeting: every task has a clear owner. A minute-taker that writes 'owner unclear' everywhere fails it."
+    },
+    {
+      "id": "m14",
+      "title": "NPS check-in",
+      "date": "2026-10-13",
+      "weekday": "Tuesday",
+      "time": "11:30",
+      "language": "id-en",
+      "attendees": [
+        "Laras",
+        "Ayu",
+        "Kevin",
+        "Sekar"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Laras",
+          "Gimana kabar semua? Sekar, liburannya kemarin seru?"
+        ],
+        [
+          "Sekar",
+          "Seru banget, ke Bandung doang sih."
+        ],
+        [
+          "Ayu",
+          "Oke, soal NPS: September turun dikit, dari 41 ke 38."
+        ],
+        [
+          "Kevin",
+          "Gue sih pengennya kita bikin dashboard NPS yang real-time, tapi itu proyek besar."
+        ],
+        [
+          "Laras",
+          "Iya, nanti-nanti aja itu."
+        ],
+        [
+          "Ayu",
+          "Komplain paling banyak soal refund lama, sama kode OTP yang telat masuk."
+        ],
+        [
+          "Sekar",
+          "Survey-nya juga harus diterjemahin ke bahasa Inggris, buat user expat."
+        ],
+        [
+          "Laras",
+          "Hmm, iya ya."
+        ],
+        [
+          "Ayu",
+          "Oh iya, laporan NPS lengkap bulan September nanti gue kirim ke grup Senin."
+        ],
+        [
+          "Laras",
+          "Oke, thanks Ayu."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m14-dashboard",
+          "kind": "not-a-task",
+          "task": [
+            "real-time",
+            "realtime",
+            "real time"
+          ],
+          "why": "A wish ('pengennya'), put off by Laras: 'nanti-nanti aja'."
+        },
+        {
+          "id": "m14-translate",
+          "kind": "unowned",
+          "task": [
+            "translat",
+            "terjemah",
+            "english"
+          ],
+          "why": "Sekar says the survey must be translated; nobody takes it."
+        },
+        {
+          "id": "m14-report",
+          "kind": "owned",
+          "task": [
+            "report",
+            "laporan"
+          ],
+          "owner": "Ayu",
+          "why": "Ayu will send the September report."
+        },
+        {
+          "id": "m14-report-due",
+          "kind": "due-exact",
+          "task": [
+            "report",
+            "laporan"
+          ],
+          "date": "2026-10-19",
+          "why": "'Senin' after a Tuesday meeting: Monday 19 October."
+        }
+      ]
+    },
+    {
+      "id": "m15",
+      "title": "Installments estimate (Laras absent)",
+      "date": "2026-10-14",
+      "weekday": "Wednesday",
+      "time": "14:00",
+      "language": "id-en",
+      "attendees": [
+        "Bima",
+        "Tomi",
+        "Rina"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Bima",
+          "Laras minta kita siapin estimasi buat fitur cicilan."
+        ],
+        [
+          "Tomi",
+          "Estimasi backend gue yang bikin."
+        ],
+        [
+          "Rina",
+          "Gue bagian test plan-nya."
+        ],
+        [
+          "Bima",
+          "Oke, nanti gue rangkum semuanya dan gue kirim ke Laras hari Jumat."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m15-backend",
+          "kind": "owned",
+          "task": [
+            "backend"
+          ],
+          "owner": "Tomi",
+          "why": "Tomi claims the backend estimate."
+        },
+        {
+          "id": "m15-backend-due",
+          "kind": "due-none",
+          "task": [
+            "backend"
+          ],
+          "why": "Tomi gives no date."
+        },
+        {
+          "id": "m15-testplan",
+          "kind": "owned",
+          "task": [
+            "test plan"
+          ],
+          "owner": "Rina",
+          "why": "Rina claims the test plan."
+        },
+        {
+          "id": "m15-testplan-due",
+          "kind": "due-none",
+          "task": [
+            "test plan"
+          ],
+          "why": "Rina gives no date."
+        },
+        {
+          "id": "m15-summary",
+          "kind": "owned",
+          "task": [
+            "summar",
+            "rangkum"
+          ],
+          "owner": "Bima",
+          "why": "Bima sends the summary to Laras. Laras is named, but she is not the owner."
+        },
+        {
+          "id": "m15-summary-due",
+          "kind": "due-exact",
+          "task": [
+            "summar",
+            "rangkum"
+          ],
+          "date": "2026-10-16",
+          "why": "'Hari Jumat' after a Wednesday meeting: Friday 16 October."
+        }
+      ],
+      "note": "Laras, the owner of these minutes, was not in this meeting."
+    },
+    {
+      "id": "m16",
+      "title": "September settlement",
+      "date": "2026-10-15",
+      "weekday": "Thursday",
+      "time": "16:00",
+      "language": "en",
+      "attendees": [
+        "Laras",
+        "Ayu",
+        "Dewi"
+      ],
+      "speakersUnresolved": false,
+      "lines": [
+        [
+          "Dewi",
+          "The bank's settlement report for September doesn't match ours. We're off by 4.2 million."
+        ],
+        [
+          "Ayu",
+          "Could be the refunds that were processed twice."
+        ],
+        [
+          "Dewi",
+          "Maybe. I'll reconcile it line by line, but that takes me until the end of the month."
+        ],
+        [
+          "Laras",
+          "Should we pause automatic refunds until then?"
+        ],
+        [
+          "Dewi",
+          "No, I don't think that's necessary."
+        ],
+        [
+          "Laras",
+          "Okay, we keep them running."
+        ],
+        [
+          "Ayu",
+          "I'll send Dewi the list of double refunds from the CS tickets, today."
+        ]
+      ],
+      "traps": [
+        {
+          "id": "m16-reconcile",
+          "kind": "owned",
+          "task": [
+            "reconcil"
+          ],
+          "owner": "Dewi",
+          "why": "Dewi will reconcile."
+        },
+        {
+          "id": "m16-keep",
+          "kind": "decided",
+          "topic": [
+            "automatic refund",
+            "auto-refund",
+            "auto refund"
+          ],
+          "also": [
+            "keep",
+            "running",
+            "not pause",
+            "no pause",
+            "continue"
+          ],
+          "why": "Decided: automatic refunds keep running."
+        },
+        {
+          "id": "m16-list",
+          "kind": "owned",
+          "task": [
+            "double refund",
+            "list"
+          ],
+          "owner": "Ayu",
+          "exclude": [
+            "reconcil"
+          ],
+          "why": "Ayu will send the list. The line names Dewi, but Ayu owns it."
+        },
+        {
+          "id": "m16-list-due",
+          "kind": "due-exact",
+          "task": [
+            "double refund",
+            "list"
+          ],
+          "date": "2026-10-15",
+          "exclude": [
+            "reconcil"
+          ],
+          "why": "'Today' is Thursday 15 October."
+        }
+      ]
+    }
+  ]
+}
