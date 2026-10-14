@@ -1,0 +1,189 @@
+{
+  "recordedAt": "2026-10-14T13:40:14.502Z",
+  "model": {
+    "name": "gpt-6-luna",
+    "provider": "openai",
+    "model": "cx/gpt-6-luna",
+    "endpoint": "http://127.0.0.1:20128/v1",
+    "maxTokens": 3000
+  },
+  "promptHash": "bebd3c1e9cc79d64",
+  "runs": [
+    {
+      "meeting": "m01",
+      "repeat": 0,
+      "reply": "# QRIS launch sync — 13 October 2026\n\nThe meeting was to check QRIS launch readiness. Engineering reported that the load test passed at 300 transactions per second, and the team confirmed the launch date of 20 October. The CS FAQ still needs updating, an alert for QRIS callbacks is missing, and the QRIS refund process remains unresolved.\n\n## Decisions\n- QRIS will launch on 20 October. Laras said, “diputuskan: QRIS launch 20 Oktober,” after Bima and Tomi agreed.\n\n## Action items\n- Update the QRIS FAQ before launch — **owner unclear**; Ayu raised the need, but no owner was assigned. Deadline: before 20 October. [node:qris-launch]\n- Set up the QRIS callback alert — Tomi; by Friday. Tomi said, “nanti gue yang pasang ya, paling lambat Jumat.” [node:qris-launch]\n\n## Open questions\n- What is the process for refunding QRIS transactions—manual or otherwise? Finance needs to answer; Bima said, “finance yang harus jawab.” [node:qris-launch]\n\nPath: `notes/meetings/2026-10-13-qris-launch.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 921,
+        "output": 257
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m02",
+      "repeat": 0,
+      "reply": "# Checkout redesign review\n\n**Date:** Tuesday 13 October 2026, 14:00 WIB  \n**Attendees:** Laras, Sekar, Bima, Rina\n\nThe meeting reviewed the checkout redesign, including Sekar’s updated Figma address step. The team confirmed it will keep the three-step flow. Rina will write test cases for the address step; the saved-cards empty-state illustration still needs replacing before design QA, and whether to remove the promo-code field from step one remains unresolved.\n\n## Decisions\n- Keep the three-step checkout flow, not a single-page flow. Laras agreed: “Yes, agreed. Three steps.”\n\n## Action items\n- Write test cases for the address step — **Rina**, by Thursday, 15 October 2026 (“Sure, I'll have them by Thursday.”) [node:checkout-redesign]\n- Replace the old illustration in the saved-cards empty state before design QA — **owner unclear**; the notes say, “Someone should swap that before design QA.” [node:checkout-redesign]\n\n## Open questions\n- Should the promo-code field be removed from step one? Laras raised a concern that legal may object to hiding promo codes. **Legal needs to answer** whether this is acceptable; Laras and the team have not decided. Sekar offered to mock both versions if wanted, but the team parked the proposal. [node:checkout-redesign]\n\n**File path:** `notes/meetings/2026-10-13-checkout-redesign-review.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 873,
+        "output": 505
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m03",
+      "repeat": 0,
+      "reply": "# Refund SLA weekly\n\n**Date:** Wednesday, 14 October 2026, 09:30 WIB  \n**Attendees:** Laras, Ayu, Kevin, Tomi\n\nThe meeting reviewed refund SLA delays: Ayu reported 47 tickets had exceeded the three-day SLA this week, and Ayu and Tomi said the main bottleneck was finance approval rather than the system. Kevin’s dashboard may be missing bank-transfer figures; he agreed to check, but said he was full this week and would likely do it next week. The group discussed automatic approval for refunds under Rp100,000, but left the decision to Dewi. They also agreed the refund email template needs updating; no owner or deadline was set.\n\n## Decisions\n\n- The refund email template needs to be updated because it uses outdated language and has prompted complaints. Laras said, “Harus diganti.”\n\n## Action items\n\n- Check whether bank-transfer figures are missing from the refund dashboard data — **Kevin**; **likely next week** (“Paling minggu depan ya”); [node:refunds]\n- Discuss automatic approval for refunds under Rp100,000 with Finance — **owner unclear**; **by when not stated**. Laras said, “kita perlu ngobrol sama finance”; flag: no owner was assigned. [node:refunds]\n- Update the refund email template — **owner unclear**; **by when not stated**. Laras said, “Harus diganti”; flag: no owner was assigned. [node:refunds]\n\n## Open questions\n\n- Will Dewi approve automatic finance approval for refunds under Rp100,000? **Dewi** needs to answer; the meeting did not settle the decision.\n- Who will own updating the refund email template, and by when? **Owner and deadline need to be clarified.**\n- When will Kevin complete the dashboard check? He said it would probably be next week, but did not give a specific date.\n\n**File path:** `notes/meetings/2026-10-14-refund-sla.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 889,
+        "output": 660
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m04",
+      "repeat": 0,
+      "reply": "# Card payment retries\n\n**Meeting:** Wednesday 14 October 2026, 16:00 WIB  \n**Attendees:** Laras, Bima, Tomi (the recording did not identify who is speaking)\n\nCard payment failures have been up since Monday, and the meeting focused on a reported 3DS timeout change by the bank. The team settled on raising its timeout to 45 seconds; Speaker 3 committed to making the change today. Speaker 2 will write an incident note for Pak Hendra by tomorrow morning. The team also agreed customer support needs guidance, but no owner or specific guidance was settled.\n\n## Decisions\n\n- Raise the 3DS timeout to 45 seconds. The transcript records the proposal, “We can raise our timeout to 45 seconds,” followed by a commitment to make the change.\n\n## Action items\n\n- Raise the 3DS timeout to 45 seconds — **Speaker 3** — today, 14 October 2026. Source: “I’ll do it today.” [node:payments-reliability]\n- Write an incident note for Pak Hendra — **Speaker 2** — tomorrow morning, 15 October 2026. Source: “I’ll write the incident note for Pak Hendra, by tomorrow morning.” [node:payments-reliability]\n- Brief customer support on what to tell customers — **owner unclear**; the meeting did not assign an owner. Source: “someone brief support after this.” [node:payments-reliability]\n\n## Open questions\n\n- Who will brief customer support, and what should support tell customers? The transcript raises the need for a briefing but does not specify an owner or the guidance. **Needs an answer from the meeting participants.**\n\nPath: `notes/meetings/2026-10-14-card-payment-retries.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 844,
+        "output": 583
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m05",
+      "repeat": 0,
+      "reply": "Andre’s backend hiring debrief reviewed his strong technical round and a fine culture interview. No offer decision was made: Pak Hendra leans yes but wants a reference check first. Laras will send HR the reference contacts today; the second candidate is scheduled for Monday at ten.\n\n## Decisions\n- No offer decision for Andre today; the reference check is needed before deciding.\n\n## Action items\n- Send HR Andre’s reference contacts — **Laras**, by **Thursday, 15 October 2026** (“I’ll send HR the reference contacts today.”) [node:hiring]\n\n## Open questions\n- Who in HR will conduct the reference check, and what is its outcome? **HR** needs to confirm who will handle it; **Pak Hendra** needs the result before deciding whether to make an offer.\n\nFile path: `notes/meetings/2026-10-15-backend-hiring-debrief.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 818,
+        "output": 456
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m06",
+      "repeat": 0,
+      "reply": "# 11.11 Promo Planning\n\n**Meeting:** 11.11 promo planning  \n**Date:** Thursday, 15 October 2026, 13:00 WIB  \n**Attendees:** Laras, Sekar, Kevin, Ayu  \n**Work-tree node:** `promos`\n\nThe meeting was to prepare for the 11.11 promotion, informed by last year’s fourfold traffic increase and slow checkout. The squad agreed that a load test needs to happen before November, and Sekar will prepare a banner draft next week. Customer-support scripting for failed promo use was identified as a need, but no owner or deadline was set. Whether to limit vouchers to one per user remains open pending Marketing’s input.\n\n## Decisions\n\n- A load test must take place before November. Laras said, “Load test harus jalan sebelum November,” and Kevin agreed, “Setuju.”\n\n## Action items\n\n- Run a load test before November; **owner:** engineering team (Bima was not present); **by:** before November. Source: “tim engineering yang harus jalanin.” [node:promos]\n- Send a draft of the 11.11 banner; **owner:** Sekar; **by:** next week. Source: “minggu depan gue kirim draft.” [node:promos]\n- Prepare a customer-support script for promo failures; **owner:** unclear (flagged); **by:** not specified. Ayu raised the need, but no owner or deadline was confirmed. [node:promos]\n\n## Open questions\n\n- Should the promotion be limited to one voucher per user? **Needs an answer from Marketing.** Laras said, “Itu tergantung marketing. Belum bisa jawab sekarang.”\n\n**File path:** `notes/meetings/2026-10-15-1111-promo-planning.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 857,
+        "output": 647
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m07",
+      "repeat": 0,
+      "reply": "# Sprint retro — 16 October 2026\n\nThe meeting reviewed sprint friction and agreed to protect staging from unapproved resets, have Tomi investigate a flaky checkout test next sprint, and move retrospectives to Thursdays. Rina reported losing test data after staging was reset twice; Bima took responsibility and committed to adding a lock today. The flaky test, which Tomi suspects is affected by the test clock, remains to be investigated.\n\n## Decisions\n\n- Move retrospectives to Thursdays. Bima, Rina, and Tomi agreed; no effective date was specified.\n\n## Action items\n\n- Add a lock so staging cannot be reset without asking — Bima — today (16 October 2026) — [node:checkout-redesign]. Bima’s commitment: “I’ll add a lock so nobody resets it without asking. Today.”\n- Investigate the flaky checkout test, which fails about one run in ten — Tomi — next sprint (no date specified) — [node:checkout-redesign]. Tomi’s commitment: “Next sprint, yes.”\n\n## Open questions\n\n- What is the cause of the flaky checkout test? Tomi needs to investigate; he said, “I think it’s the clock in the test.”\n- When does the move to Thursday retrospectives take effect? No one specified.\n\n**File:** `notes/meetings/2026-10-16-sprint-retro.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 877,
+        "output": 291
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m08",
+      "repeat": 0,
+      "reply": "The meeting was to decide who pays the virtual-account (VA) admin fee and whether checkout messaging should change. The initial proposal was to charge customers Rp2,500 per transaction, but concerns that an added checkout fee could reduce conversion led the group to settle on covering the fee internally until the end of the year and reviewing the approach in January. Checkout copy will remain unchanged.\n\n## Decisions\n- The company will cover the VA admin fee until the end of 2026, then review the approach in January. Laras confirmed: “final: biaya admin VA kita tanggung sampai akhir tahun”; Dewi said, “kita evaluasi Januari.”\n- Checkout copy will not change. Laras confirmed: “Betul.”\n\n## Action items\n- Send Laras the fee figures for the monthly report by Friday, 16 October 2026 — Dewi (“Angka biayanya gue kirim ke Laras besok, buat laporan bulanan.”) [node:checkout-redesign]\n\n## Open questions\n- None raised and left unresolved.\n\nFile path: `notes/meetings/2026-10-15-virtual-account-fee.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 859,
+        "output": 532
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m09",
+      "repeat": 0,
+      "reply": "# 1:1 with Pak Hendra\n\n**Date:** Monday 12 October 2026, 10:00 WIB  \n**Attendees:** Laras, Pak Hendra\n\nThe meeting was to check the QRIS launch and prepare for board questions. The launch remains on track for the 20th, and Laras committed to send Pak Hendra a one-page summary on Wednesday. Fraud figures are not yet confirmed; Laras will ask Kevin about the dashboard. Whether to hire a second PM next quarter was raised but left open.\n\n## Decisions\n- None.\n\n## Action items\n- Send Pak Hendra a one-page QRIS summary for the board deck by Wednesday, 14 October 2026 — **Laras**. Source: “I'll send it Wednesday.” [node:qris-launch]\n- Ask Kevin about the fraud dashboard and available figures — **Laras**, deadline not stated. Source: “Laras: Kevin has the fraud dashboard. I can ask him.” / “Pak Hendra: Please do.” [node:qris-launch]\n- Consider whether to hire a second PM next quarter — **Laras**, deadline not stated. Source: “And think about whether we should hire a second PM next quarter.” [node:qris-launch]\n\n## Open questions\n- What fraud figures are available for the board? **Kevin** needs to provide or confirm the dashboard numbers.\n- Should the team hire a second PM next quarter? **Laras** to consider; no answer was requested yet (“No need to answer now.”).\n\n**File path:** `notes/meetings/2026-10-12-pak-hendra-1-1.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 811,
+        "output": 586
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m10",
+      "repeat": 0,
+      "reply": "# Checkout conversion drop\n\n**Date:** Tuesday, 13 October 2026, 16:30 WIB  \n**Attendees:** Laras, Kevin, Rina, Tomi\n\nCheckout conversion was down 3% the previous week, but the cause was not established: the team discussed an Android 14 issue where the payment button sometimes does not appear and the possibility that a promotion ending affected conversion. Tomi said he had fixed the bug and that it still needed to be released. Kevin will break down conversion by operating system and by before/after the promotion; the release timing remains unresolved.\n\n## Decisions\n- None. The cause of the conversion drop and the release timing were not settled.\n\n## Action items\n- Break down checkout conversion by Android vs. iOS and before vs. after the promotion; **Kevin**; by **Thursday, 15 October 2026** (“Kamis ya”); [node:checkout-redesign]\n\n## Open questions\n- What caused the 3% conversion drop: the Android issue, the promotion ending, or something else? **Kevin** to investigate; analysis due Thursday.\n- When will the Android 14 payment-button fix be released? **Rina** to clarify against the mobile release schedule. Rina said, “Tergantung jadwal rilis mobile, biasanya Senin”; no specific release date was confirmed.\n\n**File path:** `notes/meetings/2026-10-13-checkout-conversion-drop.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 832,
+        "output": 611
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m11",
+      "repeat": 0,
+      "reply": "# PayNusa partner call\n\n**Date:** Wednesday 14 October 2026, 11:00 WIB  \n**Attendees:** Laras, Bima, Mei\n\nThe call was to discuss PayNusa’s card-processing offer and the technical requirements for integration. PayNusa offered a 0.6% MDR on the condition that all card volume moves to PayNusa, but Laras said Finance needs to review it and no commitment was made. Mei said integration would take about two weeks using PayNusa’s SDK, and agreed to send a proposal and sandbox keys. The squad still needs to review the proposal and clarify who will share it with Finance.\n\n## Decisions\n\n- None. The lower MDR offer and potential move of all card volume remain under consideration.\n\n## Action items\n\n- Email the proposal — **Mei**, by **Thursday 15 October 2026**; source: “I’ll send the proposal by email tomorrow.” [node:payments-reliability]\n- Provide sandbox keys — **Mei**, **no date specified**; source: “I’ll get those to you.” [node:payments-reliability]\n- Share the proposal with Finance once it arrives — **owner unclear** (Laras said “someone” needs to do this); **no date specified**. [node:payments-reliability]\n\n## Open questions\n\n- Will Finance approve moving all card volume to PayNusa in exchange for the 0.6% MDR? **Finance needs to answer; no individual was named.**\n- Who will share the proposal with Finance once it arrives? **Owner unclear.**\n\n**File path:** `notes/meetings/2026-10-14-paynusa-partner-call.md`\n\n*Work-tree node used: `payments-reliability` as the closest available fit for a payment-provider discussion; the tree has no node specifically for card-provider integrations.*",
+      "finish": "stop",
+      "usage": {
+        "input": 824,
+        "output": 748
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m12",
+      "repeat": 0,
+      "reply": "# Double charges\n\n**Meeting:** Double charges  \n**Date:** Thursday 15 October 2026, 10:00 WIB  \n**Attendees:** Laras, Ayu, Rina, Tomi  \n*The recording did not identify who was speaking; speaker labels are retained.*\n\n## Summary\n\nThe meeting addressed 12 customer reports of being charged twice this week. A retry on our side was raised as a possible cause, but not confirmed. The group settled on processing refunds manually for now; the retry logs will be checked, and a refund was committed for tomorrow. The discussion also raised the need to contact affected customers, but did not settle who would do that or when.\n\n## Decisions\n\n- Process refunds manually for now. Source: “Iya, refund manual dulu.”\n\n## Action items\n\n- Check the logs for a possible retry issue — **owner unclear** (Speaker 3; flag: recording did not identify the speaker), **by 15 October 2026** (“Log-nya gue cek hari ini.”) [node:payments-reliability]\n- Process the refund — **owner unclear** (Speaker 4; flag: recording did not identify the speaker), **by 16 October 2026** (“Refund-nya gue proses besok.”) [node:payments-reliability]\n- Contact affected customers — **owner unclear** (flag: no owner or deadline stated) [node:payments-reliability]\n\n## Open questions\n\n- Did a retry on our side cause the double charges? Speaker 3 needs to answer after checking the logs.\n- Who will contact the affected customers, and when? Owner and timing were not settled.\n\n**File path:** `notes/meetings/2026-10-15-double-charges.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 841,
+        "output": 608
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m13",
+      "repeat": 0,
+      "reply": "# Checkout redesign go/no-go\n\n**Meeting:** Checkout redesign go/no-go  \n**Date:** Friday 16 October 2026, 10:00 WIB  \n**Attendees:** Laras, Bima, Sekar, Rina, Tomi\n\nThe meeting was to decide whether the checkout redesign was ready to release on Monday. QA, engineering, and design were all reported as ready; the two remaining cosmetic bugs were accepted for now. The team decided to go ahead with the release on Monday, 19 October.\n\n## Decisions\n- Release the checkout redesign on Monday, 19 October. Laras said, “it's a go for Monday the 19th.”\n- Accept the two remaining bugs as cosmetic and not a blocker for release. Rina described them as “both cosmetic,” and Sekar said, “The two bugs are fine for now.”\n\n## Action items\n- Log the two bugs in Jira — **Rina**, by Friday 16 October (“I'll log the two bugs in Jira today”). [node:checkout-redesign]\n- Be on call for the rollout — **Tomi**, Monday morning, 19 October (“I'll be on call Monday morning for the rollout”). [node:checkout-redesign]\n- Write the release note — **Laras**, by Sunday evening, 18 October (“I'll write the release note by Sunday evening”). [node:checkout-redesign]\n\n## Open questions\n- None recorded.\n\n**Path:** `notes/meetings/2026-10-16-checkout-redesign-go-no-go.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 815,
+        "output": 503
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m14",
+      "repeat": 0,
+      "reply": "# NPS check-in\n\n**Meeting:** NPS check-in  \n**Date:** Tuesday, 13 October 2026, 11:30 WIB  \n**Attendees:** Laras, Ayu, Kevin, Sekar\n\nSeptember NPS fell from 41 to 38. The main complaints raised were slow refunds and delayed OTPs. A real-time NPS dashboard was discussed but deferred; translating the survey into English was also raised, with no decision or owner recorded. Ayu committed to sending the full September NPS report to the group on Monday.\n\n## Decisions\n\n- A real-time NPS dashboard will not be pursued for now. Laras responded to the proposal with, “Iya, nanti-nanti aja itu.”\n\n## Action items\n\n- Send the full September NPS report to the group by Monday, 19 October 2026 — Ayu. (“Laporan NPS lengkap bulan September nanti gue kirim ke grup Senin.”) **[node:unclear]**\n\n## Open questions\n\n- Should the survey be translated into English for expat users? Sekar raised this; no one was assigned to decide or follow up.\n- Which work-tree node should this meeting’s action item be filed under? The discussion spans NPS, refunds, and OTP delays, and no single node is an obvious fit.\n\nI can’t file a note in this session. Suggested path: `notes/meetings/2026-10-13-nps-check-in.md`. Please confirm the work-tree node before filing.",
+      "finish": "stop",
+      "usage": {
+        "input": 871,
+        "output": 716
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m15",
+      "repeat": 0,
+      "reply": "# Installments estimate\n\n**Meeting:** Wednesday 14 October 2026, 14:00 WIB  \n**Attendees:** Bima, Tomi, Rina\n\nThe meeting was to prepare an estimate for an installments feature requested by Laras. The work was split: Tomi will prepare the backend estimate, Rina the test plan, and Bima will compile both and send them to Laras on Friday. No estimate or feature scope was settled in the meeting.\n\n## Decisions\n\n- No decisions were recorded.\n\n## Action items\n\n- Prepare the backend estimate for the installments feature — **Tomi** — **deadline not stated** — [node:checkout-redesign]. Source: “Estimasi backend gue yang bikin.”\n- Prepare the test plan for the installments feature — **Rina** — **deadline not stated** — [node:checkout-redesign]. Source: “Gue bagian test plan-nya.”\n- Compile the materials and send them to Laras — **Bima** — **Friday; exact date not stated** — [node:checkout-redesign]. Source: “nanti gue rangkum semuanya dan gue kirim ke Laras hari Jumat.”\n\n## Open questions\n\n- What is the scope of the installments feature to be estimated, and what should the estimate cover? **Laras** needs to clarify.\n\nI can’t file a note in this session, so the requested path is: `notes/meetings/2026-10-14-installments-estimate.md`.",
+      "finish": "stop",
+      "usage": {
+        "input": 763,
+        "output": 307
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m16",
+      "repeat": 0,
+      "reply": "The meeting was to address a 4.2 million discrepancy between the bank’s September settlement report and the team’s records, possibly related to refunds processed twice. Dewi will reconcile the report line by line, and Ayu will send her the list of suspected double refunds from CS tickets. The team decided to keep automatic refunds running while the discrepancy is investigated.\n\n## Decisions\n- Keep automatic refunds running; do not pause them.\n\n## Action items\n- Send Dewi the list of double refunds from CS tickets — **Ayu**, today (15 October 2026). Source: “I’ll send Dewi the list of double refunds from the CS tickets, today.” [node:refunds]\n- Reconcile the September settlement report line by line — **Dewi**, by the end of October. Source: “I’ll reconcile it line by line, but that takes me until the end of the month.” [node:refunds]\n\n## Open questions\n- What accounts for the 4.2 million discrepancy, and were double-processed refunds a cause? **Dewi** to determine this through the reconciliation.\n\n**File path:** `notes/meetings/2026-10-15-september-settlement.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 811,
+        "output": 482
+      },
+      "usd": 0
+    }
+  ]
+}
