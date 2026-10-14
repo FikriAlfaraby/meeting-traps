@@ -1,0 +1,1042 @@
+{
+  "recording": "recordings/2026-10-14-gpt-6-luna-v0.2.json",
+  "recordedAt": "2026-10-14T14:02:32.312Z",
+  "model": {
+    "name": "gpt-6-luna",
+    "provider": "openai",
+    "model": "cx/gpt-6-luna",
+    "endpoint": "http://127.0.0.1:20128/v1",
+    "maxTokens": 3000
+  },
+  "promptHash": "bebd3c1e9cc79d64",
+  "summary": {
+    "replies": 18,
+    "truncated": 0,
+    "outcomes": {
+      "pass": 118,
+      "invented": 0,
+      "missed": 2,
+      "review": 0
+    },
+    "byKind": {
+      "owned": {
+        "pass": 24,
+        "invented": 0,
+        "missed": 0,
+        "review": 0
+      },
+      "due-none": {
+        "pass": 6,
+        "invented": 0,
+        "missed": 0,
+        "review": 0
+      },
+      "unconfirmed": {
+        "pass": 9,
+        "invented": 0,
+        "missed": 0,
+        "review": 0
+      },
+      "due-exact": {
+        "pass": 18,
+        "invented": 0,
+        "missed": 0,
+        "review": 0
+      },
+      "due-vague": {
+        "pass": 6,
+        "invented": 0,
+        "missed": 0,
+        "review": 0
+      },
+      "not-decided": {
+        "pass": 9,
+        "invented": 0,
+        "missed": 0,
+        "review": 0
+      },
+      "decided": {
+        "pass": 12,
+        "invented": 0,
+        "missed": 0,
+        "review": 0
+      },
+      "we-task": {
+        "pass": 6,
+        "invented": 0,
+        "missed": 0,
+        "review": 0
+      },
+      "not-a-task": {
+        "pass": 12,
+        "invented": 0,
+        "missed": 0,
+        "review": 0
+      },
+      "conditional": {
+        "pass": 3,
+        "invented": 0,
+        "missed": 0,
+        "review": 0
+      },
+      "unowned": {
+        "pass": 9,
+        "invented": 0,
+        "missed": 0,
+        "review": 0
+      },
+      "speaker-label": {
+        "pass": 4,
+        "invented": 0,
+        "missed": 2,
+        "review": 0
+      }
+    },
+    "findings": {}
+  },
+  "runs": [
+    {
+      "meeting": "m17",
+      "traps": [
+        {
+          "trap": "m17-callback",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Tomi",
+          "item": "Check the acquirer callback logs; owner: Tomi; by when: not specified. Source: “ntar gue cek log callback-nya deh.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-callback-due",
+          "kind": "due-none",
+          "outcome": "pass",
+          "detail": "no due date",
+          "item": "Check the acquirer callback logs; owner: Tomi; by when: not specified. Source: “ntar gue cek log callback-nya deh.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-retry",
+          "kind": "unconfirmed",
+          "outcome": "pass",
+          "detail": "not an action item; no one was made its owner"
+        },
+        {
+          "trap": "m17-faq",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Ayu",
+          "item": "Update the FAQ about pending payment status; owner: Ayu; by Monday, 19 October 2026. Source: “Senin aja ya.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-faq-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-19",
+          "item": "Update the FAQ about pending payment status; owner: Ayu; by Monday, 19 October 2026. Source: “Senin aja ya.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-dashboard",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Kevin",
+          "item": "Build a daily QRIS settlement dashboard; owner: Kevin; by next week (week of 19 October 2026). Source: “Bisa, tapi bukan minggu ini. Minggu depan ya.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-dashboard-due",
+          "kind": "due-vague",
+          "outcome": "pass",
+          "detail": "no date was made up for \"minggu depan\"",
+          "item": "Build a daily QRIS settlement dashboard; owner: Kevin; by next week (week of 19 October 2026). Source: “Bisa, tapi bukan minggu ini. Minggu depan ya.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-limit",
+          "kind": "not-decided",
+          "outcome": "pass",
+          "detail": "only mentioned as not decided"
+        },
+        {
+          "trap": "m17-all",
+          "kind": "decided",
+          "outcome": "pass",
+          "detail": "under Decisions",
+          "item": "Proceed with the 20 October QRIS launch for all users; do not cap rollout at 50%."
+        },
+        {
+          "trap": "m17-merchants",
+          "kind": "we-task",
+          "outcome": "pass",
+          "detail": "owner unclear",
+          "item": "Inform merchants that QRIS settlement is H+1; **owner unclear** and deadline not specified. The meeting established the need but did not assign it. Source: “kita juga harus kabarin merchant soal settlement H+1 ini.” [node:qris-launch]"
+        }
+      ],
+      "findings": [],
+      "repeat": 0
+    },
+    {
+      "meeting": "m17",
+      "traps": [
+        {
+          "trap": "m17-callback",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Tomi",
+          "item": "Check acquirer callback logs — **Tomi**; by when: not stated. Tomi: “ntar gue cek log callback-nya deh.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-callback-due",
+          "kind": "due-none",
+          "outcome": "pass",
+          "detail": "no due date",
+          "item": "Check acquirer callback logs — **Tomi**; by when: not stated. Tomi: “ntar gue cek log callback-nya deh.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-retry",
+          "kind": "unconfirmed",
+          "outcome": "pass",
+          "detail": "raised as an open question, not given an owner",
+          "item": "Should the team build a retry for late acquirer callbacks, and what would the scope and timing be? Bima suggested it; Tomi said the work would be substantial, and Laras deferred the decision: “itu kita lihat nanti.” **Needs an answer from Bima and Tomi.**"
+        },
+        {
+          "trap": "m17-faq",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Ayu",
+          "item": "Update the FAQ about pending payment status — **Ayu**; by Monday (19 October 2026). Ayu: “Senin aja ya.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-faq-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-19",
+          "item": "Update the FAQ about pending payment status — **Ayu**; by Monday (19 October 2026). Ayu: “Senin aja ya.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-dashboard",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Kevin",
+          "item": "Build a daily QRIS settlement dashboard — **Kevin**; next week (week of 19 October 2026). Kevin: “Minggu depan ya.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-dashboard-due",
+          "kind": "due-vague",
+          "outcome": "pass",
+          "detail": "no date was made up for \"minggu depan\"",
+          "item": "Build a daily QRIS settlement dashboard — **Kevin**; next week (week of 19 October 2026). Kevin: “Minggu depan ya.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-limit",
+          "kind": "not-decided",
+          "outcome": "pass",
+          "detail": "only mentioned as not decided"
+        },
+        {
+          "trap": "m17-all",
+          "kind": "decided",
+          "outcome": "pass",
+          "detail": "under Decisions",
+          "item": "Launch QRIS to all users on 20 October; do not limit rollout to 50%. Laras: “Launch tetap untuk semua user, nggak kita batasi.”"
+        },
+        {
+          "trap": "m17-merchants",
+          "kind": "we-task",
+          "outcome": "pass",
+          "detail": "owner unclear",
+          "item": "Inform merchants that QRIS settlement is H+1 — **owner unclear**; by when: not stated. Laras: “kita juga harus kabarin merchant soal settlement H+1 ini.” [node:qris-launch]"
+        }
+      ],
+      "findings": [],
+      "repeat": 1
+    },
+    {
+      "meeting": "m17",
+      "traps": [
+        {
+          "trap": "m17-callback",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Tomi",
+          "item": "Check the acquirer callback logs for delayed callbacks; owner: Tomi; by when: not stated. Tomi: “ntar gue cek log callback-nya deh.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-callback-due",
+          "kind": "due-none",
+          "outcome": "pass",
+          "detail": "no due date",
+          "item": "Check the acquirer callback logs for delayed callbacks; owner: Tomi; by when: not stated. Tomi: “ntar gue cek log callback-nya deh.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-retry",
+          "kind": "unconfirmed",
+          "outcome": "pass",
+          "detail": "not an action item; no one was made its owner"
+        },
+        {
+          "trap": "m17-faq",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Ayu",
+          "item": "Update the FAQ about pending payment status; owner: Ayu; by when: Monday (as stated in the meeting; exact date not stated). Ayu: “Senin aja ya.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-faq-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-19",
+          "item": "Update the FAQ about pending payment status; owner: Ayu; by when: Monday (as stated in the meeting; exact date not stated). Ayu: “Senin aja ya.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-dashboard",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Kevin",
+          "item": "Build a daily QRIS settlement dashboard; owner: Kevin; by when: next week (exact date not stated). Kevin: “Bisa, tapi bukan minggu ini. Minggu depan ya.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-dashboard-due",
+          "kind": "due-vague",
+          "outcome": "pass",
+          "detail": "no date was made up for \"minggu depan\"",
+          "item": "Build a daily QRIS settlement dashboard; owner: Kevin; by when: next week (exact date not stated). Kevin: “Bisa, tapi bukan minggu ini. Minggu depan ya.” [node:qris-launch]"
+        },
+        {
+          "trap": "m17-limit",
+          "kind": "not-decided",
+          "outcome": "pass",
+          "detail": "only mentioned as not decided"
+        },
+        {
+          "trap": "m17-all",
+          "kind": "decided",
+          "outcome": "pass",
+          "detail": "under Decisions",
+          "item": "QRIS launch on 20 October will proceed for all users, with no 50% rollout limit. Laras: “Launch tetap untuk semua user, nggak kita batasi.”"
+        },
+        {
+          "trap": "m17-merchants",
+          "kind": "we-task",
+          "outcome": "pass",
+          "detail": "owner unclear",
+          "item": "Communicate H+1 settlement to merchants; owner unclear; by when: not stated. Laras: “kita juga harus kabarin merchant soal settlement H+1 ini.” [node:qris-launch]"
+        }
+      ],
+      "findings": [],
+      "repeat": 2
+    },
+    {
+      "meeting": "m18",
+      "traps": [
+        {
+          "trap": "m18-voucher",
+          "kind": "decided",
+          "outcome": "pass",
+          "detail": "under Decisions",
+          "item": "Limit voucher use to **one voucher per user during 11.11**. Laras confirmed: “diputuskan: satu voucher per user selama 11.11.” Ayu said marketing had agreed in chat."
+        },
+        {
+          "trap": "m18-banner",
+          "kind": "unconfirmed",
+          "outcome": "pass",
+          "detail": "raised as an open question, not given an owner",
+          "item": "Can Sekar make a second version of the banner? Sekar said she would check her workload, but did not confirm. **Sekar** to answer."
+        },
+        {
+          "trap": "m18-migration",
+          "kind": "not-a-task",
+          "outcome": "pass",
+          "detail": "not listed as an action item"
+        },
+        {
+          "trap": "m18-ab",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Kevin",
+          "item": "Share the checkout A/B test data in the squad channel by this afternoon, 14 October 2026 — **Kevin**. Quote: “data A/B test checkout kemarin gue kirim sore ini ya, ke channel squad.” [node:promos]"
+        },
+        {
+          "trap": "m18-ab-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-14",
+          "item": "Share the checkout A/B test data in the squad channel by this afternoon, 14 October 2026 — **Kevin**. Quote: “data A/B test checkout kemarin gue kirim sore ini ya, ke channel squad.” [node:promos]"
+        },
+        {
+          "trap": "m18-email",
+          "kind": "conditional",
+          "outcome": "pass",
+          "detail": "owner Ayu, with the condition kept (2 items matched; read the best match)",
+          "item": "Send the merchant email about promotion terms once legal approves — **Ayu**, by/after legal approval (date not stated). Quote: “kalau legal oke, Ayu yang kirim email ke merchant.” [node:promos]"
+        }
+      ],
+      "findings": [],
+      "repeat": 0
+    },
+    {
+      "meeting": "m18",
+      "traps": [
+        {
+          "trap": "m18-voucher",
+          "kind": "decided",
+          "outcome": "pass",
+          "detail": "under Decisions",
+          "item": "Limit voucher usage to **one voucher per user during 11.11**. Laras confirmed: “diputuskan: satu voucher per user selama 11.11.” Ayu said Marketing had agreed in chat: “Udah, kemarin mereka bilang oke di chat.”"
+        },
+        {
+          "trap": "m18-banner",
+          "kind": "unconfirmed",
+          "outcome": "pass",
+          "detail": "raised as an open question, not given an owner",
+          "item": "Can Sekar produce the second banner version, and when? Sekar said she would check her workload for the week but did not confirm: “Gue lihat dulu ya kerjaan gue minggu ini.” **Sekar** needs to clarify."
+        },
+        {
+          "trap": "m18-migration",
+          "kind": "not-a-task",
+          "outcome": "pass",
+          "detail": "not listed as an action item"
+        },
+        {
+          "trap": "m18-ab",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Kevin",
+          "item": "Share the checkout A/B test data in the squad channel this afternoon — **Kevin**; by this afternoon, as stated in the meeting; [node:promos]. Kevin said: “data A/B test checkout kemarin gue kirim sore ini ya, ke channel squad.”"
+        },
+        {
+          "trap": "m18-ab-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-14",
+          "item": "Share the checkout A/B test data in the squad channel this afternoon — **Kevin**; by this afternoon, as stated in the meeting; [node:promos]. Kevin said: “data A/B test checkout kemarin gue kirim sore ini ya, ke channel squad.”"
+        },
+        {
+          "trap": "m18-email",
+          "kind": "conditional",
+          "outcome": "pass",
+          "detail": "owner Ayu, with the condition kept",
+          "item": "Send the merchant email about promo terms once Legal approves — **Ayu**; when Legal approves; [node:promos]. Laras said: “Kalau legal oke, Ayu yang kirim email ke merchant,” and Ayu confirmed: “Siap, kalau udah oke dari legal.”"
+        }
+      ],
+      "findings": [],
+      "repeat": 1
+    },
+    {
+      "meeting": "m18",
+      "traps": [
+        {
+          "trap": "m18-voucher",
+          "kind": "decided",
+          "outcome": "pass",
+          "detail": "under Decisions",
+          "item": "Limit each user to **one voucher during 11.11**. Kevin shared that 8% of users used vouchers more than once last year, accounting for 30% of the budget; Ayu said Marketing had agreed to the limit. Laras confirmed: “diputuskan: satu voucher per user selama 11.11.”"
+        },
+        {
+          "trap": "m18-banner",
+          "kind": "unconfirmed",
+          "outcome": "pass",
+          "detail": "raised as an open question, not given an owner",
+          "item": "Can Sekar produce the second banner version, and when? Sekar said she would check her workload this week but did not confirm feasibility or timing."
+        },
+        {
+          "trap": "m18-migration",
+          "kind": "not-a-task",
+          "outcome": "pass",
+          "detail": "not listed as an action item"
+        },
+        {
+          "trap": "m18-ab",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Kevin",
+          "item": "Send the checkout A/B test data to the squad channel this afternoon, 14 October — **Kevin**. Quote: “data A/B test checkout kemarin gue kirim sore ini ya, ke channel squad.” [node:promos]"
+        },
+        {
+          "trap": "m18-ab-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-14",
+          "item": "Send the checkout A/B test data to the squad channel this afternoon, 14 October — **Kevin**. Quote: “data A/B test checkout kemarin gue kirim sore ini ya, ke channel squad.” [node:promos]"
+        },
+        {
+          "trap": "m18-email",
+          "kind": "conditional",
+          "outcome": "pass",
+          "detail": "owner Ayu, with the condition kept",
+          "item": "Send the merchant email about promo terms once Legal approves — **Ayu**; due date not stated. Quote: “kalau legal oke, Ayu yang kirim email ke merchant.” [node:promos]"
+        }
+      ],
+      "findings": [],
+      "repeat": 2
+    },
+    {
+      "meeting": "m19",
+      "traps": [
+        {
+          "trap": "m19-pricing",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Raj",
+          "item": "Send revised pricing for the team’s volume by Wednesday, 14 October 2026 — Raj. (“I'll send the revised pricing tomorrow.”) `[node:payments-reliability]`"
+        },
+        {
+          "trap": "m19-pricing-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-14",
+          "item": "Send revised pricing for the team’s volume by Wednesday, 14 October 2026 — Raj. (“I'll send the revised pricing tomorrow.”) `[node:payments-reliability]`"
+        },
+        {
+          "trap": "m19-report",
+          "kind": "unconfirmed",
+          "outcome": "pass",
+          "detail": "raised as an open question, not given an owner",
+          "item": "Can Raj share the Indonesia delivery-rate report broken down by carrier? Raj needs to check whether he is allowed to share it."
+        },
+        {
+          "trap": "m19-switch",
+          "kind": "decided",
+          "outcome": "pass",
+          "detail": "under Decisions",
+          "item": "No provider switch this quarter; Q1 is the earliest possible timing. Laras said, “we won't switch providers this quarter, whatever the price. Q1 at the earliest.”"
+        },
+        {
+          "trap": "m19-contract",
+          "kind": "not-decided",
+          "outcome": "pass",
+          "detail": "not under Decisions"
+        },
+        {
+          "trap": "m19-compare",
+          "kind": "unowned",
+          "outcome": "pass",
+          "detail": "owner unclear",
+          "item": "Compare SendWave’s numbers with the current provider’s before Q1 — owner unclear; Laras said, “someone has to compare,” and Bima said, “we'll need that before Q1.” `[node:payments-reliability]` **Owner needs clarification.**"
+        }
+      ],
+      "findings": [],
+      "repeat": 0
+    },
+    {
+      "meeting": "m19",
+      "traps": [
+        {
+          "trap": "m19-pricing",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Raj",
+          "item": "Send revised pricing for the team’s volume by Wednesday, 14 October 2026 — **Raj** (“I'll send the revised pricing tomorrow.”) [node:payments-reliability]"
+        },
+        {
+          "trap": "m19-pricing-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-14",
+          "item": "Send revised pricing for the team’s volume by Wednesday, 14 October 2026 — **Raj** (“I'll send the revised pricing tomorrow.”) [node:payments-reliability]"
+        },
+        {
+          "trap": "m19-report",
+          "kind": "unconfirmed",
+          "outcome": "pass",
+          "detail": "Raj, marked as not yet agreed",
+          "item": "Check whether SendWave can share the Indonesian delivery-rate report by carrier — **Raj** (“Let me check whether I'm allowed to share that one.”) No deadline stated. [node:payments-reliability]"
+        },
+        {
+          "trap": "m19-switch",
+          "kind": "decided",
+          "outcome": "pass",
+          "detail": "under Decisions",
+          "item": "The team will not switch OTP providers this quarter; Q1 is the earliest. Laras said, “we won't switch providers this quarter, whatever the price. Q1 at the earliest.”"
+        },
+        {
+          "trap": "m19-contract",
+          "kind": "not-decided",
+          "outcome": "pass",
+          "detail": "not under Decisions"
+        },
+        {
+          "trap": "m19-compare",
+          "kind": "unowned",
+          "outcome": "pass",
+          "detail": "owner unclear",
+          "item": "Compare SendWave’s numbers with the current provider’s before Q1 — **owner unclear**; Laras said, “someone has to compare your numbers with our current provider's,” and Bima said, “we'll need that before Q1.” Owner and exact deadline need clarification. [node:payments-reliability]"
+        }
+      ],
+      "findings": [],
+      "repeat": 1
+    },
+    {
+      "meeting": "m19",
+      "traps": [
+        {
+          "trap": "m19-pricing",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Raj",
+          "item": "Send revised pricing for Laras and Bima to review — **Raj** — **Wednesday 14 October 2026** (“I'll send the revised pricing tomorrow”) [node:payments-reliability]"
+        },
+        {
+          "trap": "m19-pricing-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-14",
+          "item": "Send revised pricing for Laras and Bima to review — **Raj** — **Wednesday 14 October 2026** (“I'll send the revised pricing tomorrow”) [node:payments-reliability]"
+        },
+        {
+          "trap": "m19-report",
+          "kind": "unconfirmed",
+          "outcome": "pass",
+          "detail": "Raj, marked as not yet agreed",
+          "item": "Check whether the Indonesia delivery-rate report can be shared — **Raj** — **by when not stated** [node:payments-reliability]"
+        },
+        {
+          "trap": "m19-switch",
+          "kind": "decided",
+          "outcome": "pass",
+          "detail": "under Decisions",
+          "item": "No provider switch this quarter; Q1 is the earliest possible timing. Laras stated, “we won't switch providers this quarter, whatever the price. Q1 at the earliest.”"
+        },
+        {
+          "trap": "m19-contract",
+          "kind": "not-decided",
+          "outcome": "pass",
+          "detail": "only mentioned as not decided"
+        },
+        {
+          "trap": "m19-compare",
+          "kind": "unowned",
+          "outcome": "pass",
+          "detail": "owner unclear",
+          "item": "Compare SendWave’s numbers with the current provider before Q1 — **owner unclear** (Bima said, “we'll need that before Q1”; no owner was explicitly assigned) — **before Q1; exact date not stated** [node:payments-reliability]"
+        }
+      ],
+      "findings": [],
+      "repeat": 2
+    },
+    {
+      "meeting": "m20",
+      "traps": [
+        {
+          "trap": "m20-key",
+          "kind": "speaker-label",
+          "outcome": "missed",
+          "detail": "owner unclear; the transcript says Speaker 3",
+          "item": "Add the idempotency-key check today — **owner unclear** (the speaker who said “I’ll add the idempotency key check today” is unidentified); `[node:payments-reliability]`"
+        },
+        {
+          "trap": "m20-key-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-16",
+          "item": "Add the idempotency-key check today — **owner unclear** (the speaker who said “I’ll add the idempotency key check today” is unidentified); `[node:payments-reliability]`"
+        },
+        {
+          "trap": "m20-postmortem",
+          "kind": "speaker-label",
+          "outcome": "pass",
+          "detail": "owner Speaker 2",
+          "item": "Write the postmortem by Monday — **Speaker 2**; `[node:payments-reliability]`"
+        },
+        {
+          "trap": "m20-postmortem-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-19",
+          "item": "Write the postmortem by Monday — **Speaker 2**; `[node:payments-reliability]`"
+        },
+        {
+          "trap": "m20-email",
+          "kind": "we-task",
+          "outcome": "pass",
+          "detail": "owner unclear",
+          "item": "Email affected customers today — **owner unclear**; `[node:payments-reliability]`"
+        },
+        {
+          "trap": "m20-test",
+          "kind": "unowned",
+          "outcome": "pass",
+          "detail": "owner unclear",
+          "item": "Add a test for retries with a timeout — **owner unclear**; no deadline stated; `[node:payments-reliability]`"
+        }
+      ],
+      "findings": [],
+      "repeat": 0
+    },
+    {
+      "meeting": "m20",
+      "traps": [
+        {
+          "trap": "m20-key",
+          "kind": "speaker-label",
+          "outcome": "pass",
+          "detail": "owner Speaker 3",
+          "item": "Add the idempotency-key check today (Friday 16 October 2026) — **owner: Speaker 3**. Source: “I’ll add the idempotency key check today.” [node:payments-reliability]"
+        },
+        {
+          "trap": "m20-key-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-16",
+          "item": "Add the idempotency-key check today (Friday 16 October 2026) — **owner: Speaker 3**. Source: “I’ll add the idempotency key check today.” [node:payments-reliability]"
+        },
+        {
+          "trap": "m20-postmortem",
+          "kind": "speaker-label",
+          "outcome": "pass",
+          "detail": "owner Speaker 2",
+          "item": "Write the incident timeline by Monday (19 October 2026) — **owner: Speaker 2**. Source: “Fine, I’ll write it. By Monday.” [node:payments-reliability]"
+        },
+        {
+          "trap": "m20-postmortem-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-19",
+          "item": "Write the incident timeline by Monday (19 October 2026) — **owner: Speaker 2**. Source: “Fine, I’ll write it. By Monday.” [node:payments-reliability]"
+        },
+        {
+          "trap": "m20-email",
+          "kind": "we-task",
+          "outcome": "pass",
+          "detail": "owner unclear (2 items matched; read the best match)",
+          "item": "Refund the remaining 25 double charges today (Friday 16 October 2026) — **owner unclear; flag: no owner was stated**. Source: “We should email the affected customers today, and refund the rest.” [node:payments-reliability]"
+        },
+        {
+          "trap": "m20-test",
+          "kind": "unowned",
+          "outcome": "pass",
+          "detail": "owner unclear",
+          "item": "Add a test for retries with a timeout — **owner unclear; flag: no owner was stated, and no deadline was given**. Source: “There’s no test for retries with a timeout. Someone should add one.” [node:payments-reliability]"
+        }
+      ],
+      "findings": [],
+      "repeat": 1
+    },
+    {
+      "meeting": "m20",
+      "traps": [
+        {
+          "trap": "m20-key",
+          "kind": "speaker-label",
+          "outcome": "missed",
+          "detail": "owner unclear; the transcript says Speaker 3",
+          "item": "Add the idempotency key check today (16 October). **Owner unclear**; the speaker said, “I’ll add the idempotency key check today,” but the recording does not identify them. [node:payments-reliability]"
+        },
+        {
+          "trap": "m20-key-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-16",
+          "item": "Add the idempotency key check today (16 October). **Owner unclear**; the speaker said, “I’ll add the idempotency key check today,” but the recording does not identify them. [node:payments-reliability]"
+        },
+        {
+          "trap": "m20-postmortem",
+          "kind": "speaker-label",
+          "outcome": "pass",
+          "detail": "owner Speaker 2",
+          "item": "Write the postmortem by Monday (19 October). **Owner: Speaker 2.** They said, “Fine, I’ll write it. By Monday.” [node:payments-reliability]"
+        },
+        {
+          "trap": "m20-postmortem-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-19",
+          "item": "Write the postmortem by Monday (19 October). **Owner: Speaker 2.** They said, “Fine, I’ll write it. By Monday.” [node:payments-reliability]"
+        },
+        {
+          "trap": "m20-email",
+          "kind": "we-task",
+          "outcome": "pass",
+          "detail": "owner unclear",
+          "item": "Email affected customers today (16 October). **Owner unclear**; no owner was stated. [node:payments-reliability]"
+        },
+        {
+          "trap": "m20-test",
+          "kind": "unowned",
+          "outcome": "pass",
+          "detail": "owner unclear",
+          "item": "Add a test for retries with a timeout. **Owner unclear**; no owner or deadline was stated. [node:payments-reliability]"
+        }
+      ],
+      "findings": [],
+      "repeat": 2
+    },
+    {
+      "meeting": "m21",
+      "traps": [
+        {
+          "trap": "m21-oncall",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Laras",
+          "item": "Find on-call cover for Bima’s leave; **Laras**; by **not specified** (“Nanti gue bantu cari pengganti on-call selama lo cuti.”) [node:squad-ops]"
+        },
+        {
+          "trap": "m21-oncall-due",
+          "kind": "due-none",
+          "outcome": "pass",
+          "detail": "no due date",
+          "item": "Find on-call cover for Bima’s leave; **Laras**; by **not specified** (“Nanti gue bantu cari pengganti on-call selama lo cuti.”) [node:squad-ops]"
+        },
+        {
+          "trap": "m21-promo",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Bima",
+          "item": "Write a recommendation for Tomi’s promotion; **Bima**; **this week** (“Rekomendasinya gue tulis minggu ini ya.”) [node:squad-ops]"
+        },
+        {
+          "trap": "m21-promo-due",
+          "kind": "due-vague",
+          "outcome": "pass",
+          "detail": "no date was made up for \"minggu ini\"",
+          "item": "Write a recommendation for Tomi’s promotion; **Bima**; **this week** (“Rekomendasinya gue tulis minggu ini ya.”) [node:squad-ops]"
+        },
+        {
+          "trap": "m21-hiring",
+          "kind": "decided",
+          "outcome": "pass",
+          "detail": "under Decisions",
+          "item": "No new backend position will be opened until January due to budget: Laras said, “Kita nggak buka posisi baru sampai Januari, budget-nya belum ada.”"
+        },
+        {
+          "trap": "m21-roadmap",
+          "kind": "not-a-task",
+          "outcome": "pass",
+          "detail": "not listed as an action item"
+        },
+        {
+          "trap": "m21-leave",
+          "kind": "not-a-task",
+          "outcome": "pass",
+          "detail": "not listed as an action item"
+        }
+      ],
+      "findings": [],
+      "repeat": 0
+    },
+    {
+      "meeting": "m21",
+      "traps": [
+        {
+          "trap": "m21-oncall",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Laras",
+          "item": "Find on-call coverage for Bima’s leave, 2–6 November — **Laras**; by the start of the leave (2 November, inferred from the coverage dates) — [node:squad-ops]. Source: “Nanti gue bantu cari pengganti on-call selama lo cuti.”"
+        },
+        {
+          "trap": "m21-oncall-due",
+          "kind": "due-none",
+          "outcome": "pass",
+          "detail": "no due date",
+          "item": "Find on-call coverage for Bima’s leave, 2–6 November — **Laras**; by the start of the leave (2 November, inferred from the coverage dates) — [node:squad-ops]. Source: “Nanti gue bantu cari pengganti on-call selama lo cuti.”"
+        },
+        {
+          "trap": "m21-promo",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Bima",
+          "item": "Write Tomi’s senior-promotion recommendation — **Bima**; this week — [node:squad-ops]. Source: “Rekomendasinya gue tulis minggu ini ya.”"
+        },
+        {
+          "trap": "m21-promo-due",
+          "kind": "due-vague",
+          "outcome": "pass",
+          "detail": "no date was made up for \"minggu ini\"",
+          "item": "Write Tomi’s senior-promotion recommendation — **Bima**; this week — [node:squad-ops]. Source: “Rekomendasinya gue tulis minggu ini ya.”"
+        },
+        {
+          "trap": "m21-hiring",
+          "kind": "decided",
+          "outcome": "pass",
+          "detail": "under Decisions",
+          "item": "No new backend position will open before January because the budget is not available. Laras said, “Kita nggak buka posisi baru sampai Januari, budget-nya belum ada.”"
+        },
+        {
+          "trap": "m21-roadmap",
+          "kind": "not-a-task",
+          "outcome": "pass",
+          "detail": "not listed as an action item"
+        },
+        {
+          "trap": "m21-leave",
+          "kind": "not-a-task",
+          "outcome": "pass",
+          "detail": "not listed as an action item"
+        }
+      ],
+      "findings": [],
+      "repeat": 1
+    },
+    {
+      "meeting": "m21",
+      "traps": [
+        {
+          "trap": "m21-oncall",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Laras",
+          "item": "Find on-call coverage for Bima’s leave; **owner:** Laras; **by:** before the leave starts (no exact date stated); **[node:squad-ops]**. Source: “Nanti gue bantu cari pengganti on-call selama lo cuti.”"
+        },
+        {
+          "trap": "m21-oncall-due",
+          "kind": "due-none",
+          "outcome": "pass",
+          "detail": "no due date",
+          "item": "Find on-call coverage for Bima’s leave; **owner:** Laras; **by:** before the leave starts (no exact date stated); **[node:squad-ops]**. Source: “Nanti gue bantu cari pengganti on-call selama lo cuti.”"
+        },
+        {
+          "trap": "m21-promo",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Bima",
+          "item": "Write a recommendation for Tomi’s promotion; **owner:** Bima; **by:** this week; **[node:squad-ops]**. Source: “Rekomendasinya gue tulis minggu ini ya.”"
+        },
+        {
+          "trap": "m21-promo-due",
+          "kind": "due-vague",
+          "outcome": "pass",
+          "detail": "no date was made up for \"minggu ini\"",
+          "item": "Write a recommendation for Tomi’s promotion; **owner:** Bima; **by:** this week; **[node:squad-ops]**. Source: “Rekomendasinya gue tulis minggu ini ya.”"
+        },
+        {
+          "trap": "m21-hiring",
+          "kind": "decided",
+          "outcome": "pass",
+          "detail": "under Decisions",
+          "item": "No new backend role will be opened until January due to the budget. Laras said, “Kita nggak buka posisi baru sampai Januari, budget-nya belum ada.”"
+        },
+        {
+          "trap": "m21-roadmap",
+          "kind": "not-a-task",
+          "outcome": "pass",
+          "detail": "not listed as an action item"
+        },
+        {
+          "trap": "m21-leave",
+          "kind": "not-a-task",
+          "outcome": "pass",
+          "detail": "not listed as an action item"
+        }
+      ],
+      "findings": [],
+      "repeat": 2
+    },
+    {
+      "meeting": "m22",
+      "traps": [
+        {
+          "trap": "m22-map",
+          "kind": "not-decided",
+          "outcome": "pass",
+          "detail": "only mentioned as not decided"
+        },
+        {
+          "trap": "m22-lowend",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Sekar",
+          "item": "Test the map picker on a low-end device by Thursday, 15 October 2026 — Sekar. Commitment: “Sure, I'll do it by Thursday.” [node:checkout-redesign]"
+        },
+        {
+          "trap": "m22-lowend-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-15",
+          "item": "Test the map picker on a low-end device by Thursday, 15 October 2026 — Sekar. Commitment: “Sure, I'll do it by Thursday.” [node:checkout-redesign]"
+        },
+        {
+          "trap": "m22-copy",
+          "kind": "unowned",
+          "outcome": "pass",
+          "detail": "owner unclear",
+          "item": "Write copy for the error states — **owner unclear**; no owner or deadline was specified. [node:checkout-redesign]"
+        },
+        {
+          "trap": "m22-joke",
+          "kind": "not-a-task",
+          "outcome": "pass",
+          "detail": "not listed as an action item"
+        }
+      ],
+      "findings": [],
+      "repeat": 0
+    },
+    {
+      "meeting": "m22",
+      "traps": [
+        {
+          "trap": "m22-map",
+          "kind": "not-decided",
+          "outcome": "pass",
+          "detail": "only mentioned as not decided"
+        },
+        {
+          "trap": "m22-lowend",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Sekar",
+          "item": "Test the map picker on a low-end device by Thursday, 15 October 2026 — **Sekar** (“I'll do it by Thursday”) [node:checkout-redesign]"
+        },
+        {
+          "trap": "m22-lowend-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-15",
+          "item": "Test the map picker on a low-end device by Thursday, 15 October 2026 — **Sekar** (“I'll do it by Thursday”) [node:checkout-redesign]"
+        },
+        {
+          "trap": "m22-copy",
+          "kind": "unowned",
+          "outcome": "pass",
+          "detail": "owner unclear",
+          "item": "Write the error-state copy — **owner unclear**; no owner or due date was stated. [node:checkout-redesign]"
+        },
+        {
+          "trap": "m22-joke",
+          "kind": "not-a-task",
+          "outcome": "pass",
+          "detail": "not listed as an action item"
+        }
+      ],
+      "findings": [],
+      "repeat": 1
+    },
+    {
+      "meeting": "m22",
+      "traps": [
+        {
+          "trap": "m22-map",
+          "kind": "not-decided",
+          "outcome": "pass",
+          "detail": "only mentioned as not decided"
+        },
+        {
+          "trap": "m22-lowend",
+          "kind": "owned",
+          "outcome": "pass",
+          "detail": "owner Sekar",
+          "item": "Test the map picker on a low-end device by Thursday, 15 October 2026 — Sekar. Source: “Sekar: Sure, I'll do it by Thursday.” [node:checkout-redesign]"
+        },
+        {
+          "trap": "m22-lowend-due",
+          "kind": "due-exact",
+          "outcome": "pass",
+          "detail": "due 2026-10-15",
+          "item": "Test the map picker on a low-end device by Thursday, 15 October 2026 — Sekar. Source: “Sekar: Sure, I'll do it by Thursday.” [node:checkout-redesign]"
+        },
+        {
+          "trap": "m22-copy",
+          "kind": "unowned",
+          "outcome": "pass",
+          "detail": "owner unclear",
+          "item": "Write the error-state copy — **owner unclear**; no due date stated. Source: “Laras: Also, the error states have no copy yet. Someone should write it.” [node:checkout-redesign]"
+        },
+        {
+          "trap": "m22-joke",
+          "kind": "not-a-task",
+          "outcome": "pass",
+          "detail": "not listed as an action item"
+        }
+      ],
+      "findings": [],
+      "repeat": 2
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "recordedAt": "2026-10-14T14:02:32.312Z",
+  "model": {
+    "name": "gemini-3.8-flash",
+    "provider": "openai",
+    "model": "ag/gemini-3.8-flash",
+    "endpoint": "http://127.0.0.1:20128/v1",
+    "maxTokens": 3000
+  },
+  "promptHash": "bebd3c1e9cc79d64",
+  "runs": [
+    {
+      "meeting": "m17",
+      "repeat": 0,
+      "reply": "Here are the minutes for the meeting:\n\n***\n\n# Meeting: QRIS Pilot Review\n\n**Date**: Monday, 12 October 2026, 10:00 WIB  \n**Attendees**: Laras, Bima, Tomi, Ayu, Kevin  \n**File Path**: `notes/meetings/2026-10-12-qris-pilot-review.md`\n\n### 1. Summary\nThis meeting reviewed the results of the 5% QRIS pilot (4,200 transactions, 97% success rate vs. 95% target) and finalized launch preparations for 20 October 2026. The primary change resulting from the meeting is the decision to proceed with a full 100% rollout to all users on launch day rather than a throttled 50% rollout, despite late acquirer callbacks causing pending-status customer support tickets. The team agreed on mitigating steps including callback log analysis, FAQ updates, finance reporting, and merchant communication on H+1 settlements.\n\n---\n\n### 2. Decisions\n- **Full Rollout for Launch**: The QRIS launch on 20 October 2026 will proceed to 100% of users without traffic gating (rejecting the proposal to throttle at 50%), as the 97% pilot success rate exceeds the 95% target and a split rollout would complicate marketing campaigns.\n\n---\n\n### 3. Action Items\n- Check acquirer callback logs for delayed payment status updates — **Tomi**, by timeline unspecified / before launch `[node:qris-launch]`  \n  *Quote*: Tomi: *\"ntar gue cek log callback-nya deh.\"*\n- Update customer FAQ regarding pending payment status — **Ayu**, by Monday, 19 October 2026 `[node:qris-launch]`  \n  *Quote*: Ayu: *\"Jumat gue cuti ternyata. Senin aja ya.\"*\n- Build daily QRIS settlement dashboard for Finance — **Kevin**, by next week (week of 19 October 2026) `[node:qris-launch]`  \n  *Quote*: Kevin: *\"Bisa, tapi bukan minggu ini. Minggu depan ya.\"*\n- Notify merchants regarding H+1 settlement timeline — **Owner unclear** [FLAGGED: needs assignment], by before launch `[node:qris-launch]`  \n  *Quote*: Laras: *\"kita juga harus kabarin merchant soal settlement H+1 ini.\"* / Ayu: *\"Iya, banyak merchant yang nanya.\"*\n\n---\n\n### 4. Open Questions\n- **Late callback retry mechanism**: Will we implement an automated retry mechanism for delayed acquirer callbacks, and what is the technical scope and timeline? (Needs answer from: Tomi, Bima)\n- **Merchant communication ownership**: Who owns drafting and sending the notification to merchants regarding H+1 settlement terms? (Needs answer from: Laras, Ayu)\n\n***\n\nThis has been recorded for filing at: `notes/meetings/2026-10-12-qris-pilot-review.md`.",
+      "finish": "stop",
+      "usage": {
+        "input": 3231,
+        "output": 2078
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m17",
+      "repeat": 1,
+      "reply": "Here are the minutes for the QRIS pilot review meeting.\n\nFiled to `notes/meetings/2026-10-12-qris-pilot-review.md`:\n\n***\n\n# QRIS Pilot Review\n**Date**: Monday 12 October 2026, 10:00 WIB  \n**Attendees**: Laras, Bima, Tomi, Ayu, Kevin  \n\nThe meeting reviewed results from the 5% QRIS pilot (4,200 transactions, 97% success rate exceeding the 95% target) and finalized rollout plans for the upcoming release. Despite acquirer callback timeouts causing 31 customer support tickets for transactions stuck in \"pending\" status, the squad agreed not to throttle the October 20 launch to 50% and will proceed with a 100% full release to avoid disrupting marketing campaigns. Operational follow-ups were agreed for merchant communications, customer FAQs, and finance settlement reporting for H+1 funds.\n\n### Decisions\n* **Full launch on October 20**: The QRIS launch on 20 October 2026 will proceed to 100% of users without being capped at 50%, as pilot performance (97%) surpassed the 95% target.\n\n### Action items\n* Check acquirer callback logs to investigate delayed statuses: Tomi, unscheduled / as soon as possible (`\"ntar gue cek log callback-nya deh\"`) `[node:qris-launch]`\n* Update customer FAQs regarding pending transaction statuses: Ayu, by Monday, 19 October 2026 (`\"Jumat gue cuti ternyata. Senin aja ya\"`) `[node:qris-launch]`\n* Build daily QRIS settlement dashboard for Finance: Kevin, by next week (week of 19 October 2026) (`\"Bisa, tapi bukan minggu ini. Minggu depan ya\"`) `[node:qris-launch]`\n* Notify merchants regarding H+1 settlement terms: owner unclear [FLAGGED: owner and due date not assigned] `[node:qris-launch]`\n\n### Open questions\n* **Callback retry mechanism**: Will we build a retry mechanism for delayed acquirer callbacks, given Tomi noted it is a sizeable task? (Needs assessment from Tomi and Bima)\n* **Merchant communications ownership**: Who will draft and send the H+1 settlement communication to merchants, and by when? (Needs decision from Laras and Ayu)\n\n***\n\nThe file has been recorded for `notes/meetings/2026-10-12-qris-pilot-review.md`.",
+      "finish": "stop",
+      "usage": {
+        "input": 3231,
+        "output": 2117
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m17",
+      "repeat": 2,
+      "reply": "**Path:** `notes/meetings/2026-10-12-qris-pilot-review.md`\n\n---\n\n# QRIS Pilot Review\n\n**Date:** Monday, 12 October 2026, 10:00 WIB  \n**Attendees:** Laras, Bima, Tomi, Ayu, Kevin  \n**Work-tree node:** `[node:qris-launch]`\n\n### Summary\nThis meeting reviewed the results of the 5% QRIS pilot and determined the rollout strategy for the upcoming October 20 launch. While delayed acquirer callbacks caused pending-status inquiries on 31 CS tickets, the pilot achieved a 97% success rate across 4,200 transactions (beating the 95% target), leading to the decision to proceed with a full 100% rollout rather than throttling to 50%. Immediate next steps include checking callback logs, updating the customer FAQ for pending statuses, preparing a daily settlement dashboard for Finance, and notifying merchants about H+1 settlements.\n\n---\n\n### Decisions\n- **Full rollout on launch day:** QRIS will launch to 100% of users on 20 October 2026 as planned, without throttling to 50% (\"Launch tetap untuk semua user, nggak kita batasi.\").\n\n---\n\n### Action Items\n- Check acquirer callback logs — **Tomi**, by when: unstated (*\"ntar gue cek log callback-nya deh\"*) `[node:qris-launch]`\n- Update customer FAQ regarding pending payment status — **Ayu**, by Monday, 19 October 2026 (*\"Jumat gue cuti ternyata. Senin aja ya.\"*) `[node:qris-launch]`\n- Build daily QRIS settlement dashboard for Finance — **Kevin**, by next week (week of 19 October 2026) (*\"Bisa, tapi bukan minggu ini. Minggu depan ya.\"*) `[node:qris-launch]`\n- Communicate H+1 settlement terms to merchants — **owner unclear** [FLAGGED: no owner assigned], by when: unstated (*\"kita juga harus kabarin merchant soal settlement H+1 ini.\"*) `[node:qris-launch]`\n\n---\n\n### Open Questions\n- **Delayed callback retry mechanism:** Will the engineering team build a retry mechanism for late acquirer callbacks, given the effort required? — *Needs answer from: Tomi, Bima, and Laras* (*\"Hmm, itu agak gede sih kerjaannya.\"* / *\"Oke, itu kita lihat nanti.\"*)\n- **Merchant communication ownership:** Who owns sending the notification to merchants regarding H+1 settlement, and by what deadline? — *Needs answer from: Laras / Ayu*",
+      "finish": "stop",
+      "usage": {
+        "input": 3231,
+        "output": 1959
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m18",
+      "repeat": 0,
+      "reply": "Here are the minutes for the meeting:\n\n***\n\n# Meeting: 11.11 War Room\n**Date**: Wednesday, 14 October 2026, 15:00 WIB  \n**Attendees**: Laras, Sekar, Kevin, Ayu, Tomi, Bima  \n**Work-tree node**: `promos`\n\n### Summary\nThe initial 11.11 war room convened to finalize campaign safeguards and preparation tasks with under four weeks remaining until the event. The squad officially decided to restrict voucher redemption to one voucher per user throughout the 11.11 campaign to prevent budget exhaustion, with Marketing already aligned and backend implementation confirmed as straightforward. Other campaign workstreams were clarified: banner design capacity is under review, merchant promo communications are waiting on legal approval, and a voucher table migration script was confirmed as already completed by engineering.\n\n### Decisions\n- **Voucher Redemption Limit**: Capped at one voucher per user during the 11.11 campaign (approved following Marketing's alignment and Kevin's data showing repeat usage historically consumed 30% of the budget).\n\n### Action Items\n- Send checkout A/B test data to the squad channel — Owner: Kevin — By: Today (14 October 2026), afternoon — `[node:promos]`  \n  *Source commitment*: *\"data A/B test checkout kemarin gue kirim sore ini ya, ke channel squad.\"*\n- Send promo terms email to merchants once legal approval is cleared — Owner: Ayu — By: Pending legal approval — `[node:promos]`  \n  *Source commitment*: *\"Siap, kalau udah oke dari legal.\"*\n\n*(Note: Voucher table migration script assignment to Tomi was cancelled during the meeting as Bima confirmed he already built it last week).*\n\n### Open Questions\n- Can version 2 of the 11.11 banner be taken on? (Needs answer from: Sekar, pending review of this week's workload)\n- Is Legal approval granted for the merchant promo terms? (Needs answer from: Legal / Ayu)\n\n***\n\nFiled to: `notes/meetings/2026-10-14-11-11-war-room.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 3103,
+        "output": 2214
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m18",
+      "repeat": 1,
+      "reply": "## Meeting Minutes: 11.11 War Room\n\n**Date**: Wednesday, 14 October 2026, 15:00 WIB  \n**Attendees**: Laras, Sekar, Kevin, Ayu, Tomi, Bima  \n**Work-tree node**: `promos`\n\n### Summary\nThe squad convened for the first 11.11 campaign war room to align on key promotional safeguards, assets, and operational tasks ahead of the launch in under four weeks. To curb previous budget leakage where 8% of users consumed 30% of the voucher budget, the team officially decided to limit promo voucher usage to one per user for the 11.11 campaign. Immediate next steps involve sharing checkout A/B testing data, assessing design bandwidth for an updated campaign banner, and waiting on Legal approval before distributing promo terms to merchants.\n\n---\n\n### Decisions\n- **11.11 voucher limit**: Capped at one voucher per user for the duration of the 11.11 campaign (Marketing has already approved; backend implementation confirmed straightforward by Tomi).\n\n---\n\n### Action Items\n- Share checkout A/B test data to the squad channel — **Kevin** — Today (14 October 2026, afternoon) `[node:promos]`  \n  *Quote*: Kevin: *\"data A/B test checkout kemarin gue kirim sore ini ya, ke channel squad.\"*\n- Send promo terms email to merchants once Legal approval is secured — **Ayu** — Dependent on Legal sign-off (no date specified) `[node:promos]`  \n  *Quote*: Laras: *\"Itu nunggu legal. Kalau legal oke, Ayu yang kirim email ke merchant.\"* / Ayu: *\"Siap, kalau udah oke dari legal.\"*\n\n*(Note: The voucher table migration task originally asked of Tomi was rescinded during the call, as Bima already completed the migration script last week.)*\n\n---\n\n### Open Questions\n- **Banner v2 capacity**: Can Sekar take on the design for version 2 of the campaign banner alongside her existing workload this week? (Needs answer from: **Sekar**)\n- **Merchant promo terms sign-off**: Has Legal reviewed and approved the merchant promo terms? (Needs answer from: **Legal** / **Laras** to follow up)\n\n---\n\nFiling to: `notes/meetings/2026-10-14-11-11-war-room.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 3103,
+        "output": 2006
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m18",
+      "repeat": 2,
+      "reply": "# Meeting Minutes: 11.11 War Room\n\n**Date:** Wednesday, 14 October 2026, 15:00 WIB  \n**Attendees:** Laras, Sekar, Kevin, Ayu, Tomi, Bima  \n\n### Overview\nThis initial 11.11 war room aligned the squad on campaign readiness and promotional guardrails with under four weeks remaining. The squad formally capped voucher usage to one per user during 11.11 to curb budget overruns based on last year's data, while confirmation on banner design capacity was deferred and merchant notification remains on hold pending legal approval.\n\n---\n\n### Decisions\n- **Voucher Limit**: Capped at one voucher per user for the duration of 11.11 (*\"diputuskan: satu voucher per user selama 11.11\"*).\n\n---\n\n### Action Items\n- Send checkout A/B test data to the squad channel — **Owner:** Kevin — **Deadline:** This afternoon (Quote: *\"data A/B test checkout kemarin gue kirim sore ini ya, ke channel squad.\"*) `[node:promos]`\n- Send promo terms email to merchants once Legal approval is received — **Owner:** Ayu — **Deadline:** Unspecified / Pending Legal sign-off (Quote: *\"Siap, kalau udah oke dari legal.\"*) `[node:promos]`\n\n*(Note: The voucher table migration script was cancelled as Bima confirmed it was already completed last week: \"script migrasi itu ternyata udah gue bikin minggu lalu. Nggak usah, Tom.\")*\n\n---\n\n### Open Questions\n- **Version 2 Banner availability**: Can Sekar take on the second version of the banner alongside her current workload? (Needs answer from: **Sekar** — *\"Gue lihat dulu ya kerjaan gue minggu ini.\"*)\n- **Legal approval for merchant promo terms**: Has Legal approved the merchant terms so the email can be dispatched? (Needs answer from: **Legal / Laras**)\n\n---\n\nFiled to: `notes/meetings/2026-10-14-11-11-war-room.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 3103,
+        "output": 1952
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m19",
+      "repeat": 0,
+      "reply": "### 1. Summary\n\nThis call was an exploratory vendor discussion with SendWave regarding SMS and WhatsApp OTP delivery performance and pricing to address existing OTP latency issues. As a result of the meeting, the checkout squad established a hard boundary that no vendor switch will take place during the current quarter (targeting Q1 at the earliest), while SendWave agreed to provide revised volume-based pricing and check whether carrier delivery breakdown reports can be shared.\n\n---\n\n### 2. Decisions\n\n- **No OTP provider switch this quarter**: The squad will not migrate providers in Q4, targeting Q1 at the earliest regardless of pricing (\"we won't switch providers this quarter, whatever the price. Q1 at the earliest.\").\n\n---\n\n### 3. Action Items\n\n- Send revised pricing based on the team's message volume — Raj, by tomorrow (Wednesday, 14 October 2026) `[node:payments-reliability]`  \n  *Quote: \"I can revise it for your volume. I'll send the revised pricing tomorrow.\"*\n- Check whether sharing the carrier-level delivery-rate report for Indonesia is permitted — Raj, by unspecified date `[node:payments-reliability]`  \n  *Quote: \"Let me check whether I'm allowed to share that one.\"*\n- Compare SendWave's performance and pricing numbers with the incumbent provider's data — **owner unclear** [FLAGGED: unassigned internal task], by before Q1 `[node:payments-reliability]`  \n  *Quote: \"Internally, someone has to compare your numbers with our current provider's.\" / \"Yeah, we'll need that before Q1.\"*\n\n---\n\n### 4. Open Questions\n\n- **Carrier delivery data**: Is SendWave legally/contractually permitted to share the Indonesia delivery-rate report broken down by carrier? *(Raj to answer)*\n- **12-month contract commitment**: Is the business/finance willing to enter a 12-month commitment to secure optimal rates? *(Dewi / Finance to answer)*\n- **WhatsApp OTP fallback viability**: What are the stability, SLA, and pricing terms for SendWave's WhatsApp OTP beta in Indonesia? *(Raj / SendWave to clarify)*\n- **Internal ownership**: Who on the team (e.g., Tomi or Kevin) will run the performance and cost benchmark between SendWave and the incumbent provider? *(Laras / Bima to decide)*\n\n---\n\nFiling note to: `notes/meetings/2026-10-13-sendwave-vendor-call.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 3034,
+        "output": 1891
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m19",
+      "repeat": 1,
+      "reply": "Here is the write-up for the meeting. The file path is `notes/meetings/2026-10-13-sendwave-vendor-call.md`.\n\n***\n\n# Meeting: SendWave vendor call\n**Date**: Tuesday 13 October 2026, 13:00 WIB  \n**Attendees**: Laras, Bima, Raj  \n\n### Summary\nThis meeting was an introductory vendor call with SendWave to evaluate their SMS OTP delivery performance and pricing to address issues with late-arriving OTPs under the current provider. As a result of the discussion, SendWave proposed a rate of IDR 210 per SMS (with further volume discounts pending) and a sub-four-second median delivery time, but the team established that no vendor transition will take place during the current quarter, setting Q1 as the earliest possible timeline for any switch.\n\n### Decisions\n- The squad will not switch OTP providers during this quarter regardless of pricing; any potential transition is deferred to Q1 at the earliest (*\"we won't switch providers this quarter, whatever the price. Q1 at the earliest.\"*).\n\n### Action items\n- Send revised pricing tailored to the squad's volume — Raj, by Wednesday, 14 October 2026 [node:payments-reliability]  \n  *Quote*: *\"I can revise it for your volume. I'll send the revised pricing tomorrow.\"*\n- Check whether the carrier-level delivery-rate report for Indonesia can be shared externally — Raj, by unspecified date [node:payments-reliability]  \n  *Quote*: *\"Let me check whether I'm allowed to share that one.\"*\n- Compare SendWave's delivery and pricing metrics against the current provider's numbers — **Owner unclear (flagged)**, before Q1 [node:payments-reliability]  \n  *Quote*: *\"Internally, someone has to compare your numbers with our current provider's.\"*\n\n### Open questions\n- Can SendWave legally and contractually share their carrier-level delivery-rate report for Indonesia? (Needs answer from: Raj)\n- Is the business willing to commit to a 12-month contract to secure optimal pricing? (Needs answer from: Dewi / Finance, in consultation with Laras)\n- Who on the team will own the internal benchmark comparison between SendWave and the existing provider? (Needs answer from: Laras / Bima)\n- How mature and reliable is SendWave's WhatsApp OTP fallback beta in Indonesia? (Needs evaluation from: Bima / Raj)",
+      "finish": "stop",
+      "usage": {
+        "input": 3034,
+        "output": 1977
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m19",
+      "repeat": 2,
+      "reply": "Here are the meeting minutes:\n\n***\n\n# Meeting: SendWave vendor call\n**Date**: Tuesday 13 October 2026, 13:00 WIB  \n**Attendees**: Laras, Bima, Raj  \n\nLaras and Bima met with Raj from SendWave to explore alternative OTP delivery services to address late OTP arrivals experienced with their current provider (~250 IDR/message). SendWave quoted an initial rate of 210 IDR per SMS with a claimed median delivery time under four seconds and an available WhatsApp fallback in beta. As a result of the call, the squad firmly set expectations that no vendor switch will take place this quarter regardless of pricing, targeting Q1 at the earliest, while SendWave committed to providing volume-discounted pricing tomorrow ahead of an internal vendor comparison.\n\n### Decisions\n- **No provider switch this quarter**: Any potential migration to a new OTP provider is deferred to Q1 at the earliest (*\"To be clear on our side: we won't switch providers this quarter, whatever the price. Q1 at the earliest.\"* — Laras).\n\n### Action Items\n- Send revised pricing for the team's volume — Raj, by tomorrow (Wednesday 14 October 2026) `[node:payments-reliability]` (*\"I can revise it for your volume. I'll send the revised pricing tomorrow.\"* — Raj)\n- Compare SendWave's numbers against the current provider's performance and rates — **owner unclear [FLAGGED: unassigned]**, by before Q1 `[node:payments-reliability]` (*\"Internally, someone has to compare your numbers with our current provider's.\"* — Laras)\n\n### Open Questions\n- **Carrier delivery report**: Can SendWave share carrier-by-carrier delivery-rate reports for Indonesia? (Raj to verify internally: *\"Let me check whether I'm allowed to share that one.\"*)\n- **12-month contract commitment**: Would the business approve signing a 12-month contract to secure optimal pricing? (Dewi / Finance needs to advise: *\"We'd have to discuss that with finance first.\"*)\n\n***\n\n**Filed to path**: `notes/meetings/2026-10-13-sendwave-vendor-call.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 3034,
+        "output": 1952
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m20",
+      "repeat": 0,
+      "reply": "Here is the written-up meeting note. Since tools are disabled in this session, the full minutes are printed below, filed conceptually at `notes/meetings/2026-10-16-incident-review-double-charges.md`.\n\n---\n\n# Incident Review: Double Charges\n\n**Date**: Friday, 16 October 2026, 09:00 WIB  \n**Attendees**: Laras, Bima, Tomi, Rina, Ayu  \n\n### 1. Summary\nThis meeting reviewed the double-charging incident from Wednesday, where an acquirer timeout at 14:02 led client retries without idempotency keys to charge customers twice across 37 transactions (12 identified via tickets, 25 via logs). As a result of the meeting, an immediate backend fix to enforce idempotency key checks is being shipped today, the remaining 25 double charges will be refunded alongside customer notifications today, Speaker 2 took ownership of publishing the postmortem by Monday, and the team agreed to implement automated test coverage for retry timeouts.\n\n### 2. Decisions\n- **Postmortem ownership**: Speaker 2 will author the incident postmortem document instead of Speaker 4.\n- **Customer remediation**: All remaining 25 unrefunded customers will be refunded, and all affected customers will be notified via email today.\n\n### 3. Action Items\n*All items inherit `[node:payments-reliability]`.*\n\n- Add idempotency key check — **Speaker 3**, by today (16 October 2026) `[node:payments-reliability]`  \n  *Quote*: *\"I'll add the idempotency key check today. It's small.\"*\n- Write postmortem document — **Speaker 2**, by Monday (19 October 2026) `[node:payments-reliability]`  \n  *Quote*: *\"Fine, I'll write it. By Monday.\"*\n- Process refunds for the remaining 25 transactions and send notification emails to all affected customers — **Owner unclear** *(flagged: mentioned by Speaker 1, but no individual assigned)*, by today (16 October 2026) `[node:payments-reliability]`\n- Add automated test coverage for retries during timeouts — **Owner unclear** *(flagged: agreed in principle, but no engineer/QA assigned)*, by when unclear `[node:payments-reliability]`\n\n### 4. Open Questions\n- **Refund execution and customer communications**: Who specifically is processing the remaining 25 refunds and sending the notification emails today? *(Needs confirmation from Ayu/Customer Operations or Dewi/Finance).*\n- **Retry test implementation**: Who will write and integrate the missing test for retries on timeout? *(Needs confirmation from Bima, Tomi, or Rina).*",
+      "finish": "stop",
+      "usage": {
+        "input": 3067,
+        "output": 2136
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m20",
+      "repeat": 1,
+      "reply": "Here are the minutes for the incident review meeting.\n\nFiling path: `notes/meetings/2026-10-16-incident-review-double-charges.md`\n\n***\n\n# Incident review: double charges\n\n**Date:** Friday 16 October 2026, 09:00 WIB  \n**Attendees:** Laras, Bima, Tomi, Rina, Ayu  \n\n### Summary\nThis meeting reviewed the Wednesday incident where an acquirer timeout at 14:02 caused client retries lacking idempotency keys, resulting in 37 double charges (12 customer tickets received, 25 additional cases identified in system logs). As a result of the review, the team is applying an idempotency check fix today, processing refunds and emails for the remaining 25 affected customers today, producing an incident postmortem by Monday, and agreeing to add missing automated test coverage for retries during timeouts.\n\n### Decisions\n- Speaker 2 will author the postmortem document rather than Speaker 4, as Speaker 2 already has the timeline prepared.\n- The remaining 25 customers who experienced double charges will be refunded and notified via email today.\n- An automated test covering retries with timeouts must be added to the test suite.\n\n### Action items\n- Add the idempotency key check — Speaker 3, by today (16 October 2026) `[node:payments-reliability]`  \n  *Commitment quote:* \"I'll add the idempotency key check today. It's small.\"\n- Write the postmortem doc — Speaker 2, by Monday (19 October 2026) `[node:payments-reliability]`  \n  *Commitment quote:* \"Fine, I'll write it. By Monday.\"\n- Email affected customers and refund the remaining 25 customers — Owner unclear (FLAGGED: Speaker 1 stated \"We should email the affected customers today, and refund the rest\", but no specific owner was assigned), by today (16 October 2026) `[node:payments-reliability]`\n- Add automated test for retries with a timeout — Owner unclear (FLAGGED: Speaker 4 noted \"Someone should add one\" and Speaker 1 agreed, but no owner or deadline was specified) `[node:payments-reliability]`\n\n### Open questions\n- Who is responsible for initiating the 25 remaining refunds and sending the customer emails today? (Needs confirmation among Ayu / Customer Operations / Finance / Speaker 1).\n- Who will implement the automated test for retries with a timeout, and what is the deadline? (Needs assignment between QA and backend engineering).",
+      "finish": "stop",
+      "usage": {
+        "input": 3067,
+        "output": 1982
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m20",
+      "repeat": 2,
+      "reply": "Here is the write-up for the incident review meeting:\n\n***\n\n# Meeting: Incident review: double charges\n**Date**: Friday 16 October 2026, 09:00 WIB  \n**Attendees**: Laras, Bima, Tomi, Rina, Ayu  \n\n### Summary\nThis meeting reviewed the double-charging incident from Wednesday, which resulted in 37 duplicate charges when client retries were sent without idempotency keys during an acquirer timeout. As a result of the review, a fix to add an idempotency key check is being shipped today, an agreement was reached for Speaker 2 to deliver a formal postmortem document by Monday, and outstanding tasks were identified around processing the 25 remaining refunds, notifying affected customers, and adding regression tests.\n\n### Decisions\n- The postmortem doc will be authored by Speaker 2 instead of Speaker 4, as Speaker 2 already has the timeline prepared.\n\n### Action Items\n- Add idempotency key check — **Speaker 3**, by today (16 Oct 2026) `[node:payments-reliability]`  \n  *Quote*: *\"I'll add the idempotency key check today. It's small.\"*\n- Write postmortem doc — **Speaker 2**, by Monday (19 Oct 2026) `[node:payments-reliability]`  \n  *Quote*: *\"Fine, I'll write it. By Monday.\"*\n- Refund the remaining 25 affected customers — **Owner unclear (FLAGGED)**, by today (16 Oct 2026) `[node:payments-reliability]`  \n  *Quote*: *\"We should email the affected customers today, and refund the rest.\"*\n- Email affected customers — **Owner unclear (FLAGGED)**, by today (16 Oct 2026) `[node:payments-reliability]`  \n  *Quote*: *\"We should email the affected customers today, and refund the rest.\"*\n- Add test coverage for retries with a timeout — **Owner unclear (FLAGGED)**, date unspecified `[node:payments-reliability]`  \n  *Quote*: *\"There's no test for retries with a timeout. Someone should add one.\"*\n\n### Open Questions\n- **Who will process the remaining 25 refunds and send the notification emails today?** (Needs answer from: Ayu / Customer Operations / Laras)\n- **Who will write and add the test for timeout retries, and by when?** (Needs answer from: Bima / Tomi / Rina)\n\n***\n\n**File path:** `notes/meetings/2026-10-16-incident-review-double-charges.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 3067,
+        "output": 2129
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m21",
+      "repeat": 0,
+      "reply": "Here are the meeting minutes:\n\n***\n\n# 1:1 Laras / Bima\n**Date**: Wednesday, 14 October 2026, 17:00 WIB  \n**Attendees**: Laras, Bima  \n\n### Summary\nThis 1:1 covered team planning, personnel updates, and capacity: Bima confirmed his leave for 2–6 November 2026, both aligned on promoting Tomi to Senior Backend Engineer with Bima preparing the formal recommendation this week, Laras confirmed that backend hiring is frozen until January due to budget constraints, and Q1 roadmap discussions were formally deferred to the upcoming offsite.\n\n### Decisions\n- **Bima's leave**: Bima will take time off from 2 to 6 November 2026.\n- **Tomi's promotion**: Agreed to put Tomi forward for promotion to senior engineer.\n- **Backend hiring freeze**: No new backend roles will be opened until January due to lack of budget (confirmed by Pak Hendra).\n- **Q1 roadmap discussion**: Deferred to the team offsite.\n\n### Action Items\n- Find an on-call replacement for Bima for 2–6 November — **Owner**: Laras — **By when**: Before 2 November 2026 — `[node:squad-ops]`  \n  *(Quote: Laras: \"Nanti gue bantu cari pengganti on-call selama lo cuti.\")*\n- Write Tomi's senior promotion recommendation — **Owner**: Bima — **By when**: End of this week (by 18 October 2026) — `[node:squad-ops]`  \n  *(Quote: Bima: \"Rekomendasinya gue tulis minggu ini ya.\")*\n\n### Open Questions\n- Who will cover engineering on-call duties while Bima is on leave (2–6 November)? — *Needs answer from: Laras*\n\n***\n\nFiled to: `notes/meetings/2026-10-14-1-1-laras-bima.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 2972,
+        "output": 1761
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m21",
+      "repeat": 1,
+      "reply": "Here is the write-up for the meeting:\n\n***\n\n# Meeting: 1:1 Laras and Bima\n\n**Date**: Wednesday, 14 October 2026, 17:00 WIB  \n**Attendees**: Laras, Bima  \n**Meeting Node**: `squad-ops`\n\n### Summary\nThis was a regular 1:1 sync between Laras and Bima covering team staffing, personal leave, and planning. As a result, Bima locked in his leave dates for early November with on-call coverage to be arranged, both agreed to move forward with Tomi’s promotion to senior backend engineer, confirmed that backend hiring is on hold until January 2027 due to budget constraints, and agreed to push the Q1 roadmap discussion to the offsite.\n\n### Decisions\n- **Bima's leave approved**: Bima will be on leave from 2 to 6 November 2026.\n- **Tomi promotion**: Agreed to support Tomi's promotion to senior backend engineer based on his strong performance on QRIS.\n- **Backend hiring freeze**: No new backend positions will be opened until January 2027 due to lack of budget (\"Kita nggak buka posisi baru sampai Januari, budget-nya belum ada\").\n- **Q1 roadmap timing**: Detailed Q1 roadmap discussion is deferred to the offsite.\n\n### Action Items\n- Help find an on-call replacement for Bima during his leave (2–6 Nov) — **Owner**: Laras — **By when**: Unspecified (prior to 2 Nov) — `[node:squad-ops]`  \n  *Source*: \"Nanti gue bantu cari pengganti on-call selama lo cuti.\"\n- Write senior promotion recommendation for Tomi — **Owner**: Bima — **By when**: This week — `[node:squad-ops]`  \n  *Source*: \"Rekomendasinya gue tulis minggu ini ya.\"\n\n### Open Questions\n- Who will cover Bima’s on-call shifts from 2 to 6 November? (Needs answer from: Laras and Bima)\n\n***\n\n**Filed to path**: `notes/meetings/2026-10-14-laras-bima-1-1.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 2972,
+        "output": 1850
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m21",
+      "repeat": 2,
+      "reply": "### 1:1 Laras and Bima\n**Date:** Wednesday, 14 October 2026, 17:00 WIB  \n**Attendees:** Laras, Bima  \n\nThis 1:1 sync was held to align on team planning, staffing, and Bima's upcoming time off. As a result of the meeting, Bima's leave for 2–6 November was approved with an on-call replacement to be arranged, both agreed to advance Tomi's promotion to senior engineer, new backend hiring was confirmed frozen until January due to lack of budget, and Q1 roadmap discussions were formally postponed to the upcoming team offsite.\n\n---\n\n### Decisions\n\n- **Bima's Leave:** Bima will take annual leave from 2 to 6 November 2026.\n- **Tomi's Promotion:** Agreed to put Tomi forward for promotion to Senior Backend Engineer based on his QRIS performance.\n- **Backend Headcount:** No new backend engineering positions will be opened until January 2027 due to budget constraints discussed with Pak Hendra.\n- **Q1 Roadmap:** Q1 roadmap planning is deferred to be discussed at the team offsite.\n\n---\n\n### Action Items\n\n- Find an on-call replacement to cover for Bima during his leave (2–6 November) — **Owner:** Laras — **By when:** Before 2 November 2026 — `[node:squad-ops]`  \n  *(Quote: Laras: \"Nanti gue bantu cari pengganti on-call selama lo cuti.\")*\n- Write promotion recommendation for Tomi — **Owner:** Bima — **By when:** End of this week (week of 14 October 2026) — `[node:squad-ops]`  \n  *(Quote: Bima: \"Rekomendasinya gue tulis minggu ini ya.\")*\n\n---\n\n### Open Questions\n\n- Who will take over Bima's on-call shifts during 2–6 November? (Needs to be answered by: Laras and Bima)\n\n---\n\nFiled to: `notes/meetings/2026-10-14-laras-bima-1-1.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 2972,
+        "output": 1888
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m22",
+      "repeat": 0,
+      "reply": "### Summary\n\nThe meeting was held to review the new address form design featuring a map picker at the top. Although the team initially supported the design, the decision to adopt the map picker was put on hold after Rina raised concerns about map SDK crashes on low-end Android devices (2 GB RAM), which represent a significant segment of users outside Java; consequently, Sekar will test the map picker on low-end hardware before a final decision is made, and the old form will remain the fallback for now.\n\n---\n\n### Decisions\n\n- The map picker will not be adopted yet, pending testing on low-end devices.\n- The fallback experience without the map will remain the old form for now.\n\n---\n\n### Action items\n\n- Test the map picker on a low-end device — Sekar, by Thursday (15 October 2026) `[node:checkout-redesign]` *(Quote: \"Sure, I'll do it by Thursday.\")*\n- Write copy for the address form error states — **owner unclear** (flagged: needs an owner assigned), by unspecified `[node:checkout-redesign]`\n\n---\n\n### Open questions\n\n- Does the map SDK reliably run on 2 GB RAM Android devices without crashing? (Needs Sekar to evaluate after testing)\n- Who will write the copy for the address form error states? (Needs Laras / Squad to assign)\n\n---\n\nFiled to: `notes/meetings/2026-10-13-address-form-design-critique.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 2944,
+        "output": 1402
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m22",
+      "repeat": 1,
+      "reply": "### Summary\nThis meeting was a design critique for the new address form featuring a map picker at the top. Following a concern raised by Rina that the map SDK crashed on 2 GB RAM Android devices commonly used outside Java, the team decided not to approve the map picker yet and will retain the old address form as a fallback while Sekar tests the new flow on low-end devices.\n\n### Decisions\n- The map picker will not be adopted today pending testing on low-end devices.\n- The fallback form without the map will be the old address form for now.\n\n### Action items\n- Test the map picker on a low-end Android device — Sekar, by Thursday 15 October 2026 [node:checkout-redesign] (Quote: *\"Sure, I'll do it by Thursday.\"*)\n- Write copy for address form error states — owner unclear (flagged: Laras noted \"Someone should write it\", but no owner was assigned), by when: not specified [node:checkout-redesign]\n\n### Open questions\n- Can the map SDK run reliably on older, low-end Android devices (e.g., 2 GB RAM)? (Sekar to answer after testing by Thursday).\n- Who owns drafting the copy for the address form error states? (Laras / squad to clarify).\n\n---\n*Filing to:* `notes/meetings/2026-10-13-address-form-critique.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 2944,
+        "output": 1087
+      },
+      "usd": 0
+    },
+    {
+      "meeting": "m22",
+      "repeat": 2,
+      "reply": "# Meeting: Address form design critique\n\n**Date**: Tuesday 13 October 2026, 10:30 WIB  \n**Attendees**: Laras, Sekar, Rina, Bima  \n\nThe meeting was held to review the new address form design, specifically the addition of a map picker at the top. While initial feedback was positive, the decision to implement the map picker was deferred after QA highlighted that the map SDK crashed on low-end Android devices (2 GB RAM) in recent tests. Sekar will test the map picker on lower-end devices before a final decision is made, and the old address form will remain the fallback for now.\n\n### Decisions\n- The old address form remains the fallback without the map picker for now (\"The fallback without the map is the old form, right?\" / \"Yes, for now.\").\n- The decision to adopt the map picker is deferred until device testing is completed (\"Then let's not decide on the map picker today.\").\n\n### Action Items\n- Test the map picker on low-end devices by Thursday (15 October 2026) — Sekar [node:checkout-redesign] *(Commitment: \"Sure, I'll do it by Thursday.\")*\n- Write copy for the error states — **owner unclear** (flagged: Laras noted \"Someone should write it\"), by when: unstated [node:checkout-redesign]\n\n### Open Questions\n- Does the map picker perform reliably on low-end Android devices (2 GB RAM), or does SDK instability block its release? — Sekar / Rina to answer after testing.\n- Who will write the error state copy for the address form? — Laras / Checkout squad to assign.\n\n---\n\nFiled to: `notes/meetings/2026-10-13-address-form-design-critique.md`",
+      "finish": "stop",
+      "usage": {
+        "input": 2944,
+        "output": 1213
+      },
+      "usd": 0
+    }
+  ]
+}

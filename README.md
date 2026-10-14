@@ -50,13 +50,20 @@ prompt. This repo checks whether the minutes keep them.
 |---|---|---:|---:|---:|---:|
 | v0.1, 16 short | gpt-6-luna | 72 of 72 | 0 | 0 | 0 |
 | v0.1, 16 short | gemini-3.8-flash | 70 of 72 | 2 | 0 | 0 |
+| v0.2, 6 harder, 3 runs each | gpt-6-luna | 118 of 120 | 0 | 2 | 0 |
+| v0.2, 6 harder, 3 runs each | gemini-3.8-flash | 119 of 120 | 1 | 0 | 0 |
 
-v0.2 has not been run yet.
+The rules in the command hold. Across all 68 replies, the models made up three things, all dates:
+in m15, Bima said he would send the summary on Friday, and Gemini gave Tomi's backend estimate and
+Rina's test plan the same Friday, though neither of them gave a date; in m21, Gemini turned
+"minggu ini" (this week) into "by 18 October" once in three runs. Luna's two misses are the
+opposite mistake: twice in three runs it wrote "owner unclear" where the transcript said Speaker 3,
+which invents nothing but drops the label the command says to keep.
 
-Gemini's two inventions are in one meeting (m15): Bima said he would send the summary on Friday,
-and Gemini gave Tomi's backend estimate and Rina's test plan the same Friday. Neither of them gave a
-date. Both models kept every quote verbatim, kept the labels of unnamed speakers ("Speaker 3", "Pembicara 3"), and never handed
-an unclaimed task to the owner of the minutes.
+Both models kept every quote verbatim and never handed an unclaimed task to the owner of the
+minutes. They also kept the harder lines: a light promise stayed with its speaker, an owner who
+never agreed was not made one, the condition "if legal agrees" stayed attached, the cancelled task
+stayed out, and the moved due date was the new one.
 
 ### Reading every flag
 
@@ -72,7 +79,19 @@ the checker has. Its first version flagged 30 outcomes. I read every one against
   question instead of an action item, and "owner unclear" written with the speaker label kept
   beside it.
 
-Each misreading is now a test cut from the real reply.
+The v0.2 runs went the same way: the checker flagged 36 outcomes and 3 were real. The rest were
+"next week (week of 19 October)" read as a date, "do not cap rollout at 50%" read as deciding the
+50% cap, "defer the decision on the map picker" read as a decision, a note that a task was
+cancelled read as the task, "this afternoon" not read as today, "check whether the report can be
+shared" read as promising the report, a date the meeting itself named ("Bima's leave, 2-6
+November") counted as made up, and a postmortem the model called "the incident timeline" not
+found. Of the 66 outcomes the first checkers flagged, 5 were real: the checker made up far more
+problems than the models did.
+
+Each misreading is now a test cut from the real reply. After the v0.2 runs the checker changed
+and two keyword lists, which only say where to look for a task, were widened: "email" for the
+merchant email in m18, and "incident timeline" and similar words for the postmortem in m20. What
+each check expects did not change. The data tagged `v0.2` is what the models ran on.
 
 ## Limits
 

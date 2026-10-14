@@ -522,14 +522,14 @@
           "trap": "m12-refund",
           "kind": "speaker-label",
           "outcome": "pass",
-          "detail": "owner Speaker 4 (2 items matched; read the first)",
+          "detail": "owner Speaker 4 (2 items matched; read the best match)",
           "item": "Process manual refunds for the 12 affected customers — Pembicara 4, by tomorrow (16 Oct 2026) `[node:payments-reliability]` *Commitment quote:* Pembicara 4: *\"Gue aja. Refund-nya gue proses besok.\"*"
         },
         {
           "trap": "m12-refund-due",
           "kind": "due-exact",
           "outcome": "pass",
-          "detail": "due 2026-10-16 (2 items matched; read the first)",
+          "detail": "due 2026-10-16 (2 items matched; read the best match)",
           "item": "Process manual refunds for the 12 affected customers — Pembicara 4, by tomorrow (16 Oct 2026) `[node:payments-reliability]` *Commitment quote:* Pembicara 4: *\"Gue aja. Refund-nya gue proses besok.\"*"
         }
       ],
@@ -598,14 +598,14 @@
           "trap": "m14-report",
           "kind": "owned",
           "outcome": "pass",
-          "detail": "owner Ayu (2 items matched; read the first)",
+          "detail": "owner Ayu (2 items matched; read the best match)",
           "item": "Share full September NPS report to the group — **Ayu** — By Monday (19 October 2026) — `[node:squad-ops]` *Quote*: \"Oh iya, laporan NPS lengkap bulan September nanti gue kirim ke grup Senin.\""
         },
         {
           "trap": "m14-report-due",
           "kind": "due-exact",
           "outcome": "pass",
-          "detail": "due 2026-10-19 (2 items matched; read the first)",
+          "detail": "due 2026-10-19 (2 items matched; read the best match)",
           "item": "Share full September NPS report to the group — **Ayu** — By Monday (19 October 2026) — `[node:squad-ops]` *Quote*: \"Oh iya, laporan NPS lengkap bulan September nanti gue kirim ke grup Senin.\""
         }
       ],
@@ -619,14 +619,14 @@
           "trap": "m15-backend",
           "kind": "owned",
           "outcome": "pass",
-          "detail": "owner Tomi (2 items matched; read the first)",
+          "detail": "owner Tomi (2 items matched; read the best match)",
           "item": "Prepare backend estimate for installments — Tomi — by Friday, 16 October 2026 (prior to Bima's compilation) — `[node:checkout-redesign]` *Commitment source: Tomi: \"Estimasi backend gue yang bikin.\"*"
         },
         {
           "trap": "m15-backend-due",
           "kind": "due-none",
           "outcome": "invented",
-          "detail": "a due date was given; the meeting gave none (2 items matched; read the first)",
+          "detail": "a due date was given; the meeting gave none (2 items matched; read the best match)",
           "item": "Prepare backend estimate for installments — Tomi — by Friday, 16 October 2026 (prior to Bima's compilation) — `[node:checkout-redesign]` *Commitment source: Tomi: \"Estimasi backend gue yang bikin.\"*"
         },
         {
