@@ -1,0 +1,8 @@
+{
+  "name": "gpt-6-luna",
+  "provider": "openai",
+  "model": "cx/gpt-6-luna",
+  "endpoint": "http://127.0.0.1:20128/v1",
+  "apiKeyEnv": "LLM_API_KEY",
+  "maxTokens": 3000
+}

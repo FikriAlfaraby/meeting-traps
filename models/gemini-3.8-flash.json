@@ -1,0 +1,8 @@
+{
+  "name": "gemini-3.8-flash",
+  "provider": "openai",
+  "model": "ag/gemini-3.8-flash",
+  "endpoint": "http://127.0.0.1:20128/v1",
+  "apiKeyEnv": "LLM_API_KEY",
+  "maxTokens": 3000
+}
