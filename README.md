@@ -88,7 +88,8 @@ November") counted as made up, and a postmortem the model called "the incident t
 found. Of the 66 outcomes the first checkers flagged, 5 were real: the checker made up far more
 problems than the models did.
 
-Each misreading is now a test cut from the real reply. After the v0.2 runs the checker changed
+Every flag and its verdict is in `review/flags.json`; a test keeps its "real" ones equal to what the
+checker flags today. Each misreading is now a test cut from the real reply. After the v0.2 runs the checker changed
 and two keyword lists, which only say where to look for a task, were widened: "email" for the
 merchant email in m18, and "incident timeline" and similar words for the postmortem in m20. What
 each check expects did not change. The data tagged `v0.2` is what the models ran on.

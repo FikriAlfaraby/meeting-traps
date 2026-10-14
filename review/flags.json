@@ -1,0 +1,670 @@
+{
+  "about": "Every outcome the first checkers flagged, read against the reply. v0.1: the first checker, never committed (fixed before the first commit). v0.2: the checker tagged v0.2, before any model ran on those meetings.",
+  "verdicts": {
+    "real": "the model made something up, or dropped something the meeting stated",
+    "misread": "the checker misread the minutes",
+    "faithful": "the model handled it faithfully, in a way the checker did not accept yet"
+  },
+  "flags": [
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m03-bank",
+      "flagged": "missed",
+      "verdict": "misread",
+      "type": "hyphen",
+      "why": "“bank-transfer” with a hyphen was not found"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m03-bank-due",
+      "flagged": "missed",
+      "verdict": "misread",
+      "type": "hyphen",
+      "why": "“bank-transfer” with a hyphen was not found"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m05-offer",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "none-decision",
+      "why": "“No offer decision for Andre today” under Decisions read as a decision"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m05-contacts",
+      "flagged": "review",
+      "verdict": "misread",
+      "type": "owner-not-seen",
+      "why": "the owner in bold after a dash was not seen"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m05-reference",
+      "flagged": "missed",
+      "verdict": "faithful",
+      "type": "open-question",
+      "why": "the reference check was raised as an open question, not given an owner"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m08-numbers",
+      "flagged": "review",
+      "verdict": "misread",
+      "type": "owner-not-seen",
+      "why": "the owner after a dash, before a quote, was not seen"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m09-summary",
+      "flagged": "review",
+      "verdict": "misread",
+      "type": "owner-not-seen",
+      "why": "the owner in bold after a dash was not seen"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m09-fraud",
+      "flagged": "missed",
+      "verdict": "misread",
+      "type": "deadline-as-owner",
+      "why": "“deadline not stated” read as “owner not stated”"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m10-release",
+      "flagged": "missed",
+      "verdict": "faithful",
+      "type": "open-question",
+      "why": "the release was raised as an open question, not given an owner"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m10-release-due",
+      "flagged": "missed",
+      "verdict": "faithful",
+      "type": "open-question",
+      "why": "the release was raised as an open question, so it has no due date"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m11-volume",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "none-decision",
+      "why": "“None.” under Decisions read as a decision"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m12-log",
+      "flagged": "missed",
+      "verdict": "faithful",
+      "type": "label-kept",
+      "why": "“owner unclear”, with “Speaker 3” kept beside it"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m12-refund",
+      "flagged": "missed",
+      "verdict": "faithful",
+      "type": "label-kept",
+      "why": "“owner unclear”, with “Speaker 4” kept beside it"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m14-translate",
+      "flagged": "missed",
+      "verdict": "faithful",
+      "type": "open-question",
+      "why": "the translation was raised as an open question, not given an owner"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m14-report",
+      "flagged": "missed",
+      "verdict": "misread",
+      "type": "tag-as-owner",
+      "why": "the work-tree tag “[node:unclear]” read as the owner"
+    },
+    {
+      "set": "v0.1",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m16-list",
+      "flagged": "review",
+      "verdict": "misread",
+      "type": "owner-not-seen",
+      "why": "the owner in bold after a dash was not seen"
+    },
+    {
+      "set": "v0.1",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m03-auto",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "none-decision",
+      "why": "“None.” under Decisions read as a decision"
+    },
+    {
+      "set": "v0.1",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m05-reference",
+      "flagged": "missed",
+      "verdict": "faithful",
+      "type": "open-question",
+      "why": "the reference check was raised as an open question, not given an owner"
+    },
+    {
+      "set": "v0.1",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m07-lock",
+      "flagged": "missed",
+      "verdict": "misread",
+      "type": "quote-as-owner",
+      "why": "“nobody” inside a quote read as “no owner”, and “clock” matched “lock”"
+    },
+    {
+      "set": "v0.1",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m07-flaky",
+      "flagged": "review",
+      "verdict": "misread",
+      "type": "owner-not-seen",
+      "why": "the owner after a dash was not seen"
+    },
+    {
+      "set": "v0.1",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m08-numbers",
+      "flagged": "review",
+      "verdict": "misread",
+      "type": "owner-not-seen",
+      "why": "the owner after a dash was not seen"
+    },
+    {
+      "set": "v0.1",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m09-summary",
+      "flagged": "review",
+      "verdict": "misread",
+      "type": "owner-not-seen",
+      "why": "the owner after a dash was not seen"
+    },
+    {
+      "set": "v0.1",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m09-fraud",
+      "flagged": "review",
+      "verdict": "misread",
+      "type": "owner-not-seen",
+      "why": "the owner after a dash was not seen"
+    },
+    {
+      "set": "v0.1",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m10-release",
+      "flagged": "missed",
+      "verdict": "faithful",
+      "type": "open-question",
+      "why": "the release was raised as an open question, not given an owner"
+    },
+    {
+      "set": "v0.1",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m10-release-due",
+      "flagged": "missed",
+      "verdict": "faithful",
+      "type": "open-question",
+      "why": "the release was raised as an open question, so it has no due date"
+    },
+    {
+      "set": "v0.1",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m11-proposal",
+      "flagged": "missed",
+      "verdict": "misread",
+      "type": "tag-as-owner",
+      "why": "the work-tree tag “[node: unassigned]” read as the owner"
+    },
+    {
+      "set": "v0.1",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m11-keys",
+      "flagged": "missed",
+      "verdict": "misread",
+      "type": "tag-as-owner",
+      "why": "the work-tree tag “[node: unassigned]” read as the owner"
+    },
+    {
+      "set": "v0.1",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m14-translate",
+      "flagged": "missed",
+      "verdict": "faithful",
+      "type": "open-question",
+      "why": "the translation was raised as an open question, not given an owner"
+    },
+    {
+      "set": "v0.1",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m15-backend-due",
+      "flagged": "invented",
+      "verdict": "real",
+      "type": "invented-date",
+      "why": "Bima's Friday given to Tomi's estimate; Tomi gave no date"
+    },
+    {
+      "set": "v0.1",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m15-testplan-due",
+      "flagged": "invented",
+      "verdict": "real",
+      "type": "invented-date",
+      "why": "Bima's Friday given to Rina's test plan; Rina gave no date"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m17-dashboard-due",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "named-date",
+      "why": "“next week (week of 19 October)” names a week, not a due date"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m17-limit",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "refusal-as-decision",
+      "why": "a decision that turns the 50% cap down read as deciding it"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 1,
+      "trap": "m17-dashboard-due",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "named-date",
+      "why": "“next week (week of 19 October)” names a week, not a due date"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 1,
+      "trap": "m17-limit",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "refusal-as-decision",
+      "why": "a decision that turns the 50% cap down read as deciding it"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 2,
+      "trap": "m17-limit",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "refusal-as-decision",
+      "why": "a decision that turns the 50% cap down read as deciding it"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m18-email",
+      "flagged": "missed",
+      "verdict": "misread",
+      "type": "wrong-item",
+      "why": "two items mention the merchants; the checker read the wrong one"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 1,
+      "trap": "m18-ab-due",
+      "flagged": "missed",
+      "verdict": "misread",
+      "type": "named-date",
+      "why": "“this afternoon” not read as today"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 1,
+      "trap": "m19-report",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "check-as-promise",
+      "why": "“check whether the report can be shared” is what Raj agreed to"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 2,
+      "trap": "m19-report",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "check-as-promise",
+      "why": "“check whether the report can be shared” is what Raj agreed to"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m20-key",
+      "flagged": "missed",
+      "verdict": "real",
+      "type": "label-dropped",
+      "why": "“owner unclear” where the transcript says Speaker 3: nothing made up, but the label is lost"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 1,
+      "trap": "m20-postmortem",
+      "flagged": "missed",
+      "verdict": "misread",
+      "type": "paraphrase",
+      "why": "the postmortem was called “the incident timeline”"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 1,
+      "trap": "m20-postmortem-due",
+      "flagged": "missed",
+      "verdict": "misread",
+      "type": "paraphrase",
+      "why": "the postmortem was called “the incident timeline”"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 2,
+      "trap": "m20-key",
+      "flagged": "missed",
+      "verdict": "real",
+      "type": "label-dropped",
+      "why": "“owner unclear” where the transcript says Speaker 3: nothing made up, but the label is lost"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 1,
+      "trap": "m21-oncall-due",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "named-date",
+      "why": "a date the meeting itself named (Bima's leave, 2-6 November)"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 0,
+      "trap": "m22-map",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "refusal-as-decision",
+      "why": "“defer the decision” or “without the map picker” read as deciding it"
+    },
+    {
+      "set": "v0.2",
+      "model": "gpt-6-luna",
+      "run": 2,
+      "trap": "m22-map",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "refusal-as-decision",
+      "why": "“defer the decision” or “without the map picker” read as deciding it"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m17-callback-due",
+      "flagged": "invented",
+      "verdict": "faithful",
+      "type": "hedged-no-date",
+      "why": "the minutes say no date was set, with a hedge (“before launch”, “as soon as possible”)"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m17-dashboard-due",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "named-date",
+      "why": "“next week (week of 19 October)” names a week, not a due date"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m17-limit",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "refusal-as-decision",
+      "why": "a decision that turns the 50% cap down read as deciding it"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 1,
+      "trap": "m17-callback-due",
+      "flagged": "invented",
+      "verdict": "faithful",
+      "type": "hedged-no-date",
+      "why": "the minutes say no date was set, with a hedge (“before launch”, “as soon as possible”)"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 1,
+      "trap": "m17-dashboard-due",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "named-date",
+      "why": "“next week (week of 19 October)” names a week, not a due date"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 1,
+      "trap": "m17-limit",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "refusal-as-decision",
+      "why": "a decision that turns the 50% cap down read as deciding it"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 2,
+      "trap": "m17-dashboard-due",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "named-date",
+      "why": "“next week (week of 19 October)” names a week, not a due date"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 2,
+      "trap": "m17-limit",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "refusal-as-decision",
+      "why": "a decision that turns the 50% cap down read as deciding it"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m18-migration",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "cancelled-as-task",
+      "why": "a note that the task was cancelled read as the task"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 1,
+      "trap": "m18-migration",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "cancelled-as-task",
+      "why": "a note that the task was cancelled read as the task"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 2,
+      "trap": "m18-migration",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "cancelled-as-task",
+      "why": "a note that the task was cancelled read as the task"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 2,
+      "trap": "m18-ab-due",
+      "flagged": "missed",
+      "verdict": "misread",
+      "type": "named-date",
+      "why": "“this afternoon” not read as today"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m19-report",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "check-as-promise",
+      "why": "“check whether the report can be shared” is what Raj agreed to"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 1,
+      "trap": "m19-report",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "check-as-promise",
+      "why": "“check whether the report can be shared” is what Raj agreed to"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m21-oncall-due",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "named-date",
+      "why": "a date the meeting itself named (Bima's leave, 2-6 November)"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 0,
+      "trap": "m21-promo-due",
+      "flagged": "invented",
+      "verdict": "real",
+      "type": "invented-date",
+      "why": "“minggu ini” (this week) turned into “by 18 October”"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 1,
+      "trap": "m21-oncall-due",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "named-date",
+      "why": "a date the meeting itself named (Bima's leave, 2-6 November)"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 2,
+      "trap": "m21-oncall-due",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "named-date",
+      "why": "a date the meeting itself named (Bima's leave, 2-6 November)"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 2,
+      "trap": "m21-promo-due",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "named-date",
+      "why": "“end of this week (week of 14 October)” names a week"
+    },
+    {
+      "set": "v0.2",
+      "model": "gemini-3.8-flash",
+      "run": 2,
+      "trap": "m22-map",
+      "flagged": "invented",
+      "verdict": "misread",
+      "type": "refusal-as-decision",
+      "why": "“defer the decision” or “without the map picker” read as deciding it"
+    }
+  ]
+}
