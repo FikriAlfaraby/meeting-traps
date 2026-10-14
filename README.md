@@ -26,6 +26,9 @@ prompt. This repo checks whether the minutes keep them.
   than decided, a decision reversed mid-meeting, a joke, a task for someone outside the room) and
   59 controls (clear owners, named days, real decisions). The controls are there so that
   minutes which hedge everything ("owner unclear" on every line) fail too.
+- **`data/glosses-en.json`**: an English gloss for every Indonesian line, written by hand for
+  readers who do not read Indonesian. The models never saw it: a test checks that no code that
+  builds a prompt reads the file.
 - **Two sets.** v0.1 is the 16 short meetings (m01-m16). v0.2 adds six harder ones (m17-m22):
   small talk around the work, a light promise ("ntar gue cek deh"), an owner proposed who never
   agreed, a commitment that holds only if legal agrees, a "we" task, a due date moved mid-meeting,
