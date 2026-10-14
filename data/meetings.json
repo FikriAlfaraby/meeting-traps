@@ -2061,6 +2061,7 @@
           "id": "m18-email",
           "kind": "conditional",
           "task": [
+            "email",
             "merchant"
           ],
           "owner": "Ayu",
@@ -2349,7 +2350,13 @@
           "kind": "speaker-label",
           "task": [
             "postmortem",
-            "post-mortem"
+            "post-mortem",
+            "post mortem",
+            "incident timeline",
+            "incident report",
+            "incident doc",
+            "write-up",
+            "writeup"
           ],
           "owner": "Speaker 2",
           "why": "Speaker 4 offers, then hands it to Speaker 2, who takes it."
@@ -2359,7 +2366,13 @@
           "kind": "due-exact",
           "task": [
             "postmortem",
-            "post-mortem"
+            "post-mortem",
+            "post mortem",
+            "incident timeline",
+            "incident report",
+            "incident doc",
+            "write-up",
+            "writeup"
           ],
           "date": "2026-10-19",
           "why": "'By Monday' after a Friday meeting: Monday 19 October."

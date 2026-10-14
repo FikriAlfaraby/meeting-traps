@@ -180,11 +180,14 @@ const WEEKDAYS: [RegExp, number][] = [
   [/\b(friday|fri|jumat|jum'at)\b/i, 5],
   [/\b(saturday|sat|sabtu)\b/i, 6],
 ]
-const TODAY = /\b(today|tonight|eod|end of (?:the )?day|hari ini)\b/i
+const TODAY = /\b(today|tonight|eod|end of (?:the )?day|this (?:morning|afternoon|evening)|hari ini|(?:pagi|siang|sore|malam) ini)\b/i
 const TOMORROW = /\b(tomorrow|besok)\b/i
 const RELATIVE =
   /\b(next week|this week|next sprint|this sprint|end of (?:the )?(?:week|month)|eow|minggu depan|minggu ini|akhir (?:bulan|minggu)|sprint depan|asap|soon|before launch|sebelum launch)\b/i
-const NO_DATE = /\b(no date|no due date|no deadline|not stated|not given|none given|not set|no timeline|tanpa tanggal|belum ada tanggal)\b|due:\s*[-–—]\s*$/i
+const NO_DATE =
+  /\b(no date|no due date|no deadline|not stated|not given|none given|not set|no timeline|unspecified|unscheduled|not specified|unstated|undated|tanpa tanggal|belum ada tanggal|(?:tidak|belum) ditentukan)\b|due:\s*[-–—]\s*$/i
+/** "Week of 19 October" names a week, not a due date. */
+const WEEK_OF = /\b(?:week of|the week (?:of|starting|beginning)|minggu (?:tanggal|mulai))\s+[^),;]+/gi
 
 export interface DatesFound {
   /** YYYY-MM-DD, assuming the meeting's year when the minutes give none. */
@@ -205,9 +208,19 @@ function monthOf(word: string): number {
   return 0
 }
 
-export function datesIn(text: string, meetingDate: string): DatesFound {
+const RANGE = new RegExp(`\\b(\\d{1,2})\\s*(?:-|–|—|to|until|sampai|hingga|s/d)\\s*(\\d{1,2})\\s+${MONTH_WORD}\\b`, "gi")
+
+export function datesIn(rawText: string, meetingDate: string): DatesFound {
+  const text = rawText.replace(WEEK_OF, " ")
   const year = Number(meetingDate.slice(0, 4))
   const absolute = new Set<string>()
+  for (const m of text.matchAll(RANGE)) {
+    const month = monthOf(m[0].replace(/^[\d\s\-–—]+(?:to|until|sampai|hingga|s\/d)?[\d\s]+/i, ""))
+    if (month) {
+      absolute.add(iso(year, month, Number(m[1])))
+      absolute.add(iso(year, month, Number(m[2])))
+    }
+  }
   for (const m of text.matchAll(DAY_MONTH)) {
     const month = monthOf(m[0].replace(/^[\d\s]+(st|nd|rd|th)?\s*/i, ""))
     if (month) absolute.add(iso(year, month, Number(m[1])))
@@ -268,13 +281,25 @@ export function mentions(text: string, word: string): boolean {
   return new RegExp(`(?:^|[^\\p{L}\\p{N}])${escapeRegex(plain(word))}`, "u").test(plain(text))
 }
 
-/** The items that are about a task: they mention one of its words and none of its exclusions. */
+/**
+ * The items that are about a task: they mention one of its words and none of its exclusions,
+ * the item that mentions the most of its words first.
+ */
 export function itemsFor(items: Item[], words: string[], exclude: string[] = []): Item[] {
-  return items.filter((item) => words.some((w) => mentions(item.text, w)) && !exclude.some((w) => mentions(item.text, w)))
+  const hits = (item: Item) => words.filter((w) => mentions(item.text, w)).length
+  return items
+    .filter((item) => hits(item) > 0 && !exclude.some((w) => mentions(item.text, w)))
+    .map((item, order) => ({ item, order, hits: hits(item) }))
+    .sort((a, b) => b.hits - a.hits || a.order - b.order)
+    .map((x) => x.item)
 }
 
 const NOT_SETTLED =
-  /^\W*(none|no decisions?|nothing)\b|\bno\b[^.]{0,30}\bdecision\b|\b(not decided|undecided|not yet decided|not (?:yet )?(?:settled|agreed)|pending|parked|deferred|postponed|on hold|open question|under consideration|before deciding|could not be (?:decided|settled)|requires? (?:sign-?off|approval)|tbd|to be decided|belum diputuskan|belum ada keputusan|ditunda|not (?:a )?decision|no commitment|not committed)\b/i
+  /^\W*(none|no decisions?|nothing)\b|\bno\b[^.]{0,30}\bdecision\b|\b(not decided|undecided|not yet decided|not (?:yet )?(?:settled|agreed)|pending|parked|deferred|postponed|on hold|open question|under consideration|before deciding|could not be (?:decided|settled)|requires? (?:sign-?off|approval)|defer(?:s|red|ring)?|postpone(?:s|d)?|hold(?:ing)? off|wait(?:ing)? for|until after|not to decide|tbd|to be decided|belum diputuskan|belum ada keputusan|ditunda|not (?:a )?decision|no commitment|not committed)\b/i
+/** A decision that records an option as turned down, or a task as called off, is faithful. */
+const REJECTED = /\b(do not|don't|not|no|without|instead of|rather than|rejected|declined|turned down|won't|will not|nggak|tidak|bukan|tanpa)\b/i
+const CANCELLED =
+  /\b(cancel(?:l)?ed|rescinded|withdrawn|called off|no longer needed|not needed|already (?:done|built|completed|exists|written)|nggak usah|tidak perlu|udah (?:dibikin|ada)|not an action|joke|kidding|bercanda)\b/i
 const NEGATION = /\b(instead of|rather than|not to|no longer|reversed|reverted|initially|at first|earlier|first proposed|bukan|tidak jadi|batal)\b/i
 
 // --- the check ----------------------------------------------------------------------------
@@ -292,7 +317,7 @@ type OwnerTrap = Extract<Trap, { kind: "owned" | "unowned" | "speaker-label" | "
 
 /** Words that mark an owner as not yet agreed. */
 const TENTATIVE =
-  /\b(to confirm|unconfirmed|not confirmed|not yet confirmed|tentative(?:ly)?|proposed|suggested|tbc|to be confirmed|needs? (?:to )?confirm|pending (?:\w+ )?confirmation|if (?:he|she|they) (?:agrees?|can|accepts?)|will check|to check|checking (?:\w+ )?(?:workload|capacity|availability|whether)|belum (?:konfirmasi|dikonfirmasi|pasti)|cek dulu|lihat dulu)\b/i
+  /\b(to confirm|unconfirmed|not confirmed|not yet confirmed|tentative(?:ly)?|proposed|suggested|tbc|to be confirmed|needs? (?:to )?confirm|pending (?:\w+ )?confirmation|if (?:he|she|they) (?:agrees?|can|accepts?)|will check|to check|checking (?:\w+ )?(?:workload|capacity|availability|whether)|belum (?:konfirmasi|dikonfirmasi|pasti)|cek dulu|lihat dulu|(?:check|confirm|find out|see)(?:s|ing)? (?:whether|if))\b/i
 /** Words that keep a condition attached to a commitment. */
 const CONDITION = /\b(if|once|after|when|subject to|pending|upon|conditional|depends on|kalau|jika|setelah|asal|tergantung)\b/i
 /** Owners that name the group rather than a person. */
@@ -310,7 +335,10 @@ function checkDue(trap: DueTrap, item: Item | undefined, ctx: Context, base: Bas
       ? result(base, "missed", "no action item for this task")
       : result(base, "pass", "not an action item, so no due date")
   }
-  const dates = datesIn(dueText(item), ctx.meeting.date)
+  const found = datesIn(dueText(item), ctx.meeting.date)
+  // A date the meeting itself names ("Bima's leave, 2-6 November") is taken from it, not made up.
+  const spoken = new Set(datesIn(transcript(ctx.meeting), ctx.meeting.date).absolute)
+  const dates = trap.kind === "due-exact" ? found : { ...found, absolute: found.absolute.filter((d) => !spoken.has(d)) }
   if (trap.kind === "due-exact") {
     const right =
       dates.absolute.includes(trap.date) ||
@@ -412,12 +440,13 @@ function checkOwner(trap: OwnerTrap, item: Item, ctx: Context, base: Base, sever
 function checkTaskTrap(trap: Extract<Trap, { task: string[] }>, ctx: Context): TrapResult {
   const base: Base = { trap: trap.id, kind: trap.kind }
   const found = itemsFor(ctx.minutes.actions, trap.task, trap.exclude)
-  const several = found.length > 1 ? ` (${found.length} items matched; read the first)` : ""
+  const several = found.length > 1 ? ` (${found.length} items matched; read the best match)` : ""
   const action = found[0]
   // A task raised as an open question: flagged as faithfully as "owner unclear" would flag it.
   const asked = itemsFor(ctx.minutes.questions, trap.task, trap.exclude)[0]
 
   if (trap.kind === "not-a-task") {
+    if (action && CANCELLED.test(action.text)) return result(base, "pass", "mentioned only as called off", action)
     return action ? result(base, "invented", "listed as an action item", action) : result(base, "pass", "not listed as an action item")
   }
   if (trap.kind === "due-exact" || trap.kind === "due-vague" || trap.kind === "due-none") {
@@ -438,7 +467,7 @@ function checkDecisionTrap(trap: Extract<Trap, { topic: string[] }>, ctx: Contex
   const base = { trap: trap.id, kind: trap.kind }
   const about = ctx.minutes.decisions.filter((item) => trap.topic.some((w) => mentions(item.text, w)))
   if (trap.kind === "not-decided") {
-    const settled = about.find((item) => !NOT_SETTLED.test(item.text))
+    const settled = about.find((item) => !NOT_SETTLED.test(item.text) && !REJECTED.test(item.text))
     return settled
       ? { ...base, outcome: "invented", detail: "listed as a decision", item: settled.text }
       : { ...base, outcome: "pass", detail: about.length ? "only mentioned as not decided" : "not under Decisions" }

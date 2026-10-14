@@ -262,3 +262,49 @@ describe("the harder traps of v0.2", () => {
     assert.equal(outcome("m18", "## Action items\n- Write the voucher table migration script — Tomi", "m18-migration"), "invented")
   })
 })
+
+// Cut from real v0.2 replies the checker misread before (14 Oct), and the one real invention it keeps.
+describe("misreadings found by reading every v0.2 flag", () => {
+  const outcome = (id: string, minutes: string, trap: string) => checkMinutes(meeting(id), data, minutes).traps.find((t) => t.trap === trap)?.outcome
+
+  it("'next week (week of 19 October)' names a week, not a due date (Luna and Gemini, m17)", () => {
+    assert.equal(outcome("m17", "## Action items\n- Build a daily QRIS settlement dashboard — **Kevin**; next week (week of 19 October 2026).", "m17-dashboard-due"), "pass")
+  })
+
+  it("a decision that turns an option down does not decide it (m17, m22)", () => {
+    assert.equal(outcome("m17", "## Decisions\n- Proceed with the 20 October QRIS launch for all users; do not cap rollout at 50%.", "m17-limit"), "pass")
+    assert.equal(outcome("m17", "## Decisions\n- Launch QRIS to 50% of users first.", "m17-limit"), "invented")
+    assert.equal(outcome("m22", "## Decisions\n- Defer the decision on using the map picker until after low-end device testing.", "m22-map"), "pass")
+  })
+
+  it("a task noted as cancelled is not an action item (Gemini, m18)", () => {
+    const minutes = "### Action Items\n*(Note: Voucher table migration script assignment to Tomi was cancelled during the meeting as Bima confirmed he already built it last week).*"
+    assert.equal(outcome("m18", minutes, "m18-migration"), "pass")
+  })
+
+  it("'this afternoon' is today (Luna, m18)", () => {
+    assert.equal(outcome("m18", "## Action items\n- Share the checkout A/B test data in the squad channel — **Kevin**; by this afternoon", "m18-ab-due"), "pass")
+  })
+
+  it("checking whether a report may be shared is what Raj agreed to; sending it is not (m19)", () => {
+    assert.equal(outcome("m19", "## Action items\n- Check whether the Indonesia delivery-rate report can be shared — **Raj**", "m19-report"), "pass")
+    assert.equal(outcome("m19", "## Action items\n- Send the Indonesia delivery-rate report by carrier — **Raj**", "m19-report"), "invented")
+  })
+
+  it("the best-matching item is read when two mention the task (Luna, m18)", () => {
+    const minutes = `## Action items
+- Obtain legal approval for the merchant promotion terms; **owner unclear**.
+- Send the merchant email about promotion terms once legal approves — **Ayu**`
+    assert.equal(outcome("m18", minutes, "m18-email"), "pass")
+  })
+
+  it("a date the meeting itself names is not made up (Luna and Gemini, m21)", () => {
+    assert.equal(outcome("m21", "## Action items\n- Find on-call coverage for Bima's leave, 2–6 November — **Laras**; by the start of the leave (2 November)", "m21-oncall-due"), "pass")
+    assert.equal(outcome("m21", "## Action items\n- Find an on-call replacement — **Laras** — by Friday 16 October", "m21-oncall-due"), "invented")
+  })
+
+  it("keeps the one real v0.2 invention: 'minggu ini' turned into 18 October (Gemini, m21)", () => {
+    const minutes = "## Action Items\n- Write Tomi's senior promotion recommendation — **Owner**: Bima — **By when**: End of this week (by 18 October 2026)"
+    assert.equal(outcome("m21", minutes, "m21-promo-due"), "invented")
+  })
+})
