@@ -1,5 +1,5 @@
 import assert from "node:assert/strict"
-import { readFileSync } from "node:fs"
+import { readdirSync, readFileSync } from "node:fs"
 import { describe, it } from "node:test"
 
 import { loadDataset } from "../src/data.ts"
@@ -8,6 +8,7 @@ import { buildPrompt } from "../src/prompt.ts"
 interface Glosses {
   about: string
   meetings: Record<string, [line: string, gloss: string | null][]>
+  quotes: Record<string, string>
 }
 
 const data = loadDataset()
@@ -53,6 +54,35 @@ function numbers(text: string): string[] {
   })
 }
 
+/** A quote's key: the quote without the punctuation a model put after it. */
+const quoteKey = (quote: string): string => quote.trim().replace(/[\s.,;:]+$/, "")
+
+/** Every Indonesian quote inside the recorded minutes, in the order first seen. */
+function quotesInMinutes(): string[] {
+  const out = new Set<string>()
+  for (const file of readdirSync(new URL("../recordings/", import.meta.url)).filter((f) => f.endsWith(".json")).sort()) {
+    const recording = JSON.parse(readFileSync(new URL(`../recordings/${file}`, import.meta.url), "utf8")) as { runs: { reply: string }[] }
+    for (const { reply } of recording.runs) {
+      for (const [, quote = ""] of reply.matchAll(/["“]([^"”\n]{2,}?)["”]/g)) if (INDONESIAN.test(quote)) out.add(quoteKey(quote))
+    }
+  }
+  return [...out]
+}
+
+/** The checks every gloss passes: English, with the numbers, people, short names and days of its line. */
+function checkGloss(line: string, gloss: string): void {
+  assert.notEqual(gloss.trim(), "", line)
+  assert.notEqual(gloss, line)
+  assert.doesNotMatch(gloss, INDONESIAN, gloss)
+  const english = numbers(gloss)
+  for (const n of numbers(line)) assert.ok(english.includes(n), `${n} is missing from: ${gloss}`)
+  for (const person of data.people) {
+    if (new RegExp(`\\b${person}\\b`).test(line)) assert.match(gloss, new RegExp(`\\b${person}\\b`), gloss)
+  }
+  for (const [short] of line.matchAll(/\b[A-Z]{2,}\b/g)) assert.match(gloss, new RegExp(`\\b${short}\\b`), gloss)
+  for (const [said, meant] of DAYS) if (said.test(line)) assert.match(gloss, meant, `${line} -> ${gloss}`)
+}
+
 describe("the English glosses", () => {
   it("cover every line of every meeting that is not in English, in order", () => {
     for (const m of data.meetings.filter((x) => x.language !== "en")) {
@@ -71,26 +101,13 @@ describe("the English glosses", () => {
     for (const [line, gloss] of pairs) assert.equal(gloss === null, ALREADY_ENGLISH.has(line), line)
   })
 
-  it("are English: none is empty, repeats its line or keeps an Indonesian word", () => {
-    for (const [line, gloss] of pairs) {
-      if (gloss === null) continue
-      assert.notEqual(gloss.trim(), "", line)
-      assert.notEqual(gloss, line)
-      assert.doesNotMatch(gloss, INDONESIAN, gloss)
-    }
+  it("are English and keep the numbers, people, short names and days of their line", () => {
+    for (const [line, gloss] of pairs) if (gloss !== null) checkGloss(line, gloss)
   })
 
-  it("keep the numbers, people, short names and days of their line", () => {
-    for (const [line, gloss] of pairs) {
-      if (gloss === null) continue
-      const english = numbers(gloss)
-      for (const n of numbers(line)) assert.ok(english.includes(n), `${n} is missing from: ${gloss}`)
-      for (const person of data.people) {
-        if (new RegExp(`\\b${person}\\b`).test(line)) assert.match(gloss, new RegExp(`\\b${person}\\b`), gloss)
-      }
-      for (const [short] of line.matchAll(/\b[A-Z]{2,}\b/g)) assert.match(gloss, new RegExp(`\\b${short}\\b`), gloss)
-      for (const [said, meant] of DAYS) if (said.test(line)) assert.match(gloss, meant, `${line} -> ${gloss}`)
-    }
+  it("give every Indonesian quote in the recorded minutes its English, and only those", () => {
+    assert.deepEqual(Object.keys(glosses.quotes), quotesInMinutes())
+    for (const [quote, gloss] of Object.entries(glosses.quotes)) checkGloss(quote, gloss)
   })
 
   it("are not needed in the English meetings", () => {
@@ -106,7 +123,7 @@ describe("the English glosses", () => {
       const at = user.indexOf(spoken)
       assert.ok(at >= 0, `${m.id}: the prompt does not hold the lines as spoken`)
       assert.ok(at + spoken.length === user.length || user[at + spoken.length] === "\n", `${m.id}: text follows the last line`)
-      for (const [, gloss] of glosses.meetings[m.id] ?? []) {
+      for (const gloss of [...(glosses.meetings[m.id] ?? []).map(([, g]) => g), ...Object.values(glosses.quotes)]) {
         if (gloss && gloss.split(" ").length >= 4) assert.ok(!`${system}\n${user}`.includes(gloss), `${m.id}: ${gloss}`)
       }
     }
